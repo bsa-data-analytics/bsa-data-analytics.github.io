@@ -1,1 +1,0 @@
-Data Governance refers to the overall management of the availability, usability, integrity, and security of the data employed in an enterprise.
