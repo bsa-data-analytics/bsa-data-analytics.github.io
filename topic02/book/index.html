@@ -1,0 +1,320 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+      <style>
+
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.credits
+{
+  min-height:20px;
+}
+    </style>
+
+  </head>
+
+  <body>
+
+  <div class="ui container">
+<style>
+
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom: thin solid black;
+}
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+</style>
+
+<div class="ui fixed top pointing inverted menu labmenu">
+  <header class="header item">
+    <a href="../index.html">
+      <i class="sitemap icon"></i>
+      Data Discovery using Excel
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    <a class="active item" data-tab="Lab-03">
+        Lab-03
+    </a>
+      <a class="item" data-tab="01">
+        01
+      </a>
+      <a class="item" data-tab="02">
+        02
+      </a>
+      <a class="item" data-tab="03">
+        03
+      </a>
+      <a class="item" data-tab="04">
+        04
+      </a>
+      <a class="item" data-tab="05">
+        05
+      </a>
+      <a class="item" data-tab="Exercises">
+        Exercises
+      </a>
+    </div>
+</div>
+
+<br><br>
+
+  <div  class="ui tab segment lab" data-tab="Lab-03">
+    <h1>Objectives</h1>
+<p>There is a need in data analysis to describe variables using basic statistical tools. Numerical measures of location, dispersion, shape, and association provide more specific quantitative information about data. This lab will introduce you to measure of location such as average, median, and mode. Measures of dispersion which include the range, the variance, and standard deviation. Measures of shape includes coefficient of skewness. </p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="01">
+    <h1>Reminder of data types:</h1>
+<h2>Categorical (nominal) data:</h2>
+<p>categories according to specified characteristics. For example, a firm's customers might be classified by region (north america, south america, europe, and pacific), employees categorised as managers, supervisors and associates. The categories bear no quantative relationship to one another, but we usually assign an arbitrary number to each category to ease the process of managing the data and computing statistics. Categorical data are usually counted or expressed as proportions or percentages.
+This is what we did in the last lab.</p>
+<h2>Ordinal data:</h2>
+<p>ordered or ranked according to some relationship to one another. A common example in business is data from survey scales; for example, rating a service as poor, average, good, very good or excellent. Such data are categorical but also have a natural order and consequently are ordinal. other examples include ranking regions according to sales levels each month.
+Ordinal data are more meaningful than categorical data because data can be compared to one another, "excellent" is better than "very good". However like categorical data, statistics such as averages are meaningless even if numerical codes are associated with each category, statistical differences between categories are also meaningless. For example the difference between rank 2 and 3 may not be equal to the difference between 3 and 4.</p>
+<h2>Interval data:</h2>
+<p>ordered , have a spcified measure of the distance between observations but have no natural zero. Common examples are time and temperature. Time is relative to global location, and calendars have arbitrary starting dates. Both the Fahrenheit and Celsius scales represent  a specified measure of distance in degrees but have no natural zero. Ratios cannot be meaningful on interval data, for example we can't say that 50 degrees is twice as hot as 25 degrees. Only the differences provide information on how much hotter or later or better one observation is over another. We can do a comparison of ranges, averages and some other statistical measures.</p>
+<h2>Ratio data:</h2>
+<p>have a natural zero. For example, dollar/euro has an absolute zero. Thus ratios are meaningful. Knowing Munster sold €20,000 in March and Leinster sold €10,000 means that Munster sold twice as much as Leinster. Most business and economic data fall into this category, and statistical methods are the most widely applicable to them.</p>
+<p>This classifcation of data types is hierarchial, in that each level includes all of the information content of the one preceding it. For example Ratio data can be converted to any of the other types of data. Interval data can be converted to ordinal or categorical.</p>
+<ul>
+<li>Sales occurred in March : categorical</li>
+<li>Sales were higher in March than in February: ordinal</li>
+<li>Sales increased by €50,000 in March over February: interval</li>
+<li>Sales were 20% higher in March than in February: ratio</li>
+</ul>
+<p>Higher level of measurement is most useful to a manager. Therefore before data are collected, consideration must be given to the type of data needed.</p>
+<h2>Descriptive statistics for numerical data</h2>
+<h3>Measures of Location</h3>
+<p>Measures of location provide estimates of a single value that in some fashion represents "centering" of the entire set of data. The most common is the average or formally called the arithmetic mean.</p>
+<p>The mean is the sum of all observations, divided by the number of observations.</p>
+<p>For the <a href="./archives/facebook-survey.xlsx">Facebook survey data</a>, the sum of the data in column D for hours online/week is 206. by dividing this by the number of students (33), we compute the mean as:</p>
+<pre><code>206/33 = 6.24
+</code></pre>
+
+<p>You can also calculate the mean in Excel by using the AVERAGE(data range) function.
+For the Facebook data it would be AVERAGE(E4:E36) = 176.97 if we were looking for the mean number of facebook friends.</p>
+<p>The mean is unique for every data set and is meaningful for both interval and ratio data. However it can be affected by outliers, observations that are radically different from the rest.</p>
+<p>Another measure is the median, the middle value when the data are arranged from smallest to largest. For an odd number of observations, the median is the middle of the sorted numbers. For an even number of observations, the median is the mean of the two middle numbers.
+The median is the same as the 50th percentile and the second quartile that we covered in class.</p>
+<p>To find the median in Excel we have a couple of options, we can sort the values in the Facebook data and then determine the median. Since we have 33 observations the median will be the 17th observation or 120 Friends. The excel function MEDIAN(data range) would also provide the result.</p>
+<p>The median is meaningful for ratio, interval and ordinal data. As opposed to the mean, the median is not affected by outliers. In this case the median is very close in value to the mean.</p>
+<p>The mode is the observation that occurs most frequently. The mode can easily be identified from a frequency distribution or histogram. For instance in the Facebook data we can see that the largest frequency of hours online/week is 6, which corresponds to a value of 4 hours per week.</p>
+<p>You can also use the Excel function MODE.SNGL(data range).</p>
+<p>What is the mode of Facebook friends?</p>
+<p>The mode is most useful for data sets that consist of relatively small number of unique values. When a data set has few repeating values the mode is not very useful.</p>
+<p>What is the mode in this frequency distribution?</p>
+<p><img alt="" src="./img/36.png"></p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="02">
+    <h1>Measures of Dispersion</h1>
+<p>Dispersion refers to the degree of variation in the data, that is, the numerical spread of the data. For instance comparing the histograms of the facebook data clearly shows more variation in Friends than in the number of hours online/week. </p>
+<p>The range is the simplest maesurement of dispersion. It is computed as the difference between the maximum and the minimum value in the data set. Although Exel does not provide a range function you can use the combination of the MIN(data range) and MAX(data range) functions to get the answer.</p>
+<p>To avoid outliers, the interquartile (IQR) is often used, which is simply Q3-Q1. This range is the middle 50% of the data.</p>
+<p>A more commonly used measure of dispersion is the variance, whose computation depends on all the data. The larger the variance, the more the data are "spread out" from the mean, and the more variability one can expect in the observations.</p>
+<p>The formula used to calculate the variance is different for populations and samples. </p>
+<p>The function VAR.S(data range) may be used to compute the sample variance.
+The function VAR.P(data range) may be used to compute the population variance.</p>
+<p>A related measure which is perhaps the most popular and useful measure of dispersion, is the standard deviation, which is defined as the square root of the variance. </p>
+<p>The Excel function STDEV.S(data range) caculates the standard deviation for a sample.
+The Excel function STDEV.P(data range) caculates the standard deviation for a population.</p>
+<p>Using these functions for the facebook survey data, we find that the sample variance for hours online/week is 9.81 and the sample standard deviation is 3.13, and that the sample variance for the number of friends is 17996.78 and the sample standard deviation is 134.15.</p>
+<p>The standard deviation is easier to interpret as it uses the same units as the data. In this case the number of facebook friends varies by 134, this is quiet a big variation.</p>
+<p>The standard deviation is a useful measurement of risk, particularly in financial analysis.</p>
+<p>Open the excel file <a href="./archives/closing_stock_prices.xlsx">Closing Stock Prices</a>
+Calculate the average (mean) and standard deviation (sample) for each company, IBM, INTC etc. The last column is the Dow Jones Industrial average over a one month period.</p>
+<p>The average closing stock price for Intel (INTC) and General Electric (GE) are quite similar at $18.81 and $16.19 respectively. However the standard deviation of INTC's price over the time frame was $0.50, while GE's was $0.35. GE had less variability and, therefore, less risk.</p>
+<p>A larger standard deviation implies that while a greater potential exists of a higher return, there is also greater risk of realising a lower return. Many investment publications and web sites provide stadard deviations of stocks and mutual funds to help investors assess risk in this way.</p>
+<p>One of the most important results in statistics is Chebyshev's theorem.
+For any set of data, a proportion of values lie within a certain number of standard deviations of the mean.
+The empirical rules from this theorem may be applied as such:</p>
+<ul>
+<li>Approximately 68% of the observations will fall within one standard deviation of the mean.</li>
+<li>Approximately 95% of the observations will fall within two standard deviations of the mean.</li>
+<li>Approximately 99.7% of the observations will fall within three standard deviations of the mean.</li>
+</ul>
+<p>Depending on the data the percentages may be higher or lower.</p>
+<p>For the facebook data, one standard deviation around the mean yields:</p>
+<pre><code>
+mean calcuated on friends  = 176.97
+standard deviation = 134.15
+
+One standard deviation below the mean: 176.97 - 134.15 = 42.82
+One standard deviation above the mean: 176.97 + 134.15 = 311.12
+
+</code></pre>
+
+<p>If we count the number of observations in the range from 42.48 and 311.12 we find 25 out of the 33 observations lie in that area. Thus 75.8% of students fall within one standard deviation of the mean.</p>
+<p>How may students fall within 2 standard deviations of the mean in the facebook data?</p>
+<p>Calculate the obserations that fall within one, two and three standard deviations of the mean for each of the stocks in Closing Stock Prices. How do they compare with the empirical rules?</p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="03">
+    <h1>Measures of Shape</h1>
+<p>Histograms of sample data can take on a variety of different shapes. Some are symetrical, having its mode in the middle and falling away form the centre in roughly the same fashionon either side. Some are symetrical or skewed, that is, more of hte mass is concentrated on one side and the distribution of values tails off to the other. Those that tail off to the right, are called positively skewed. Those that tail off to the left are siad to be negatively skewed. </p>
+<p>The coefficient of skewness (CS), which can be found using the Excel function SKEW(data range) measures the degree of asymetry of observations around the mean. If CS is positive, the distribution of values is positively skewed; if negetive, it is negetively skewed. </p>
+<ul>
+<li>The closer CS is to 0, the lesser the degree of skewness.</li>
+<li>A CS greater than 1 or less than -1 suggests a high degree of skewness.</li>
+<li>A value between 0.5 and 1 or between -0.5 and -1 represents moderate skewness.</li>
+<li>CS between 0.5 and -0.5 indicate relative symetry.</li>
+</ul>
+<p>Caculate the CS for the facebook data, for friends.</p>
+<p>If the histogram has only one peak it is called unimodal, one with two peaks is called bimodal.
+For unimodal historams that are relatively symetrical, the mode is a fairly good estimate of the mean.
+On the other hand, for the facebook data, the mode occurs in the bin 50-100 friends (there are 9 occurences of this category). The mid range of that category is 75, this is a signifcant distance from the calculated mean of 176, skewness pulls the mean away from the mode.</p>
+<p>comparing measures of location can sometimes reveal information about the shape of the distribution of observations. For example, it it were perfectly symmetrical and unimodal, the mean, median, and mode would all be the same.</p>
+<p><img alt="" src="./img/37.png"></p>
+<p>You can use the descriptive statistics tool in Excel to get a summary of measures. On the data tab click the Data Analysis button in the Analysis section. Then choose Descriptive Statistics, select the Friends data in the facebook data and tick summary statistics. This creates a new worksheet with the summary statistics all cacluated for you. If you do not have this tool visible in your Excel Data tab then you need to go to Excel Options and choose Addins, from there choose Go to manage Excel addins and then tick the Analysis Toolpak and click OK.</p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="04">
+    <h1>Data Profiles</h1>
+<p>Data are often expressed as percentiles and quartiles. You are no doubt familiar with percentiles from standardised tests such as those used for college enterance exams. Percentiles specify the percentage of other test takers who scored at or below the score of a particular individual.</p>
+<p>Generally the kth percentile is a value at or below which at least k percent of the observations lie. There is not a standardised method for calculating the kth percentile. However the most common is as follows:</p>
+<p>First order the N data values from smallest to largest and calculate the rank of the kth percentile using the following formula:</p>
+<pre><code>Nk/100 + 0.5 
+
+rounded to the nearest integer
+</code></pre>
+
+<p>Then you take the value corresponding to that rank as the kth percentile.</p>
+<p>For example, using the Facebook data, the rank of the 90th percentile would be computed as:</p>
+<pre><code>33(90)/100 + 0.5 = 30.2
+
+rounded to nearest integer is 30
+</code></pre>
+
+<p>The 30th rank is 400, so 90 percent of students have 400 or less friends.</p>
+<p><img alt="" src="./img/14.png"></p>
+<p>Excel does have another method of calculating this using the PERCENTILE function but the values calculated can vary from the usual method.</p>
+<pre><code>
+percentile.inc(e4:e36,0.9) = 396
+
+this gives the 90th percentile as 396 or rounded to 400.
+</code></pre>
+
+<p>Quartiles represent the 25th percentile (called the first quartile, Q1), 50th percentile (second quartile, Q2), 75th percentile (third quartile, Q3), and the 100th percentile (fourth quartile, Q4). One-forth of the data is below the first quartile, and two-forths of the data are below the second quartile.</p>
+<p>For example in the facebook data, </p>
+<p>quartile.inc(e4:e36,1) = 80 = Q1
+This means 25% of the data falls below 80 Friends.</p>
+<p>quartile.inc(e4:e36,3) = 250 = Q3
+This means 75% of the data falls below 250 Friends.</p>
+<p>We can extend these ideas to other divisions of the data. For example, deciles divide the data into 10 sets: the 10th percentile, 20th percentile, and so on. If you want the 10th percentile then you can use the percentile.inc formula with 0.1 in the formula.</p>
+<p>All these types of measures are called data profiles or fractiles.</p>
+<p>(the same information can be seen in your cumulative relative frequency column)</p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="05">
+    <h1>Descriptive Statistics for categorical data</h1>
+<p>Statistics such as mean and variance are not appropriate for categorical data. Instead we are generally interested in the fraction of data that have a certain characteristic. The formal statistical measure is called the sample proportion, usually denoted as p. Proportions are key descriptive statistics for categorical data, such as defects or errors in quality control applications or consumer preferences in market research.</p>
+<p>For example the facebook data in column B lists the gender of each respondent. The proportion of females is p = 20/33 = 0.606. The Excel function COUNTIF(data range, criteria) is useful in determining how many observations meet specified characteristics. For instance, to find the number of females, we used the function =COUNTIF(B4:B36,"female"). The criteria can be numerical , such as "&gt;15" or "=0" and so on.</p>
+<p>A cross tabulation is a basic statistical tool used to summarise categorical data. It is a tabular method that displays the number of observations in a data set for different subcategories of two categorical variables. The subcategories of the variables must be mutually exclusive and exhaustive, meaning that each observation can be classified into only one subcsategory and taken together over all subcategories, they must constitute the complete data set. A cross tab is also called a contingency table.</p>
+<p>If we want to identify the number of students who are in the different categories of views/day by Gender in the facebook data. If we convert the data into the proportions of each views/day group for females and males, we obtain the result shown below in table 2.6:</p>
+<p><img alt="" src="./img/39.png"></p>
+<p>We can also convert the values to proportions of each views/day for females and males, we can see the result in the above table 2.7
+It states that 30% of females are in the 1-5 views/day group, and that 20% of males are in the 1-5 group. Looking at the differences between genders we see some differences particularly in the 21-25 age group, there the proportion of males is three times higher than females.</p>
+<p>Cross tabs are commonly used in marketing research to provide insight into characteristics of different market segments using categorical variables such as gender, educational level, marital status and so on.</p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="Exercises">
+    <h1>Exercises</h1>
+<p>Compute the mean, median, variance and standard deviation for all the variables in the file <a href="./archives/national_football_league.xlsx">National Football League</a></p>
+<p>The file <a href="./archives/Burglaries.xlsx">Burglaries</a> contains data on the number of burglaries before and after a Citizen Police program. Apply the descriptive statistics tool to these sets of data. What shows in the data? are there differences? What proportion of observations fall within one standard deviation of the mean, does that proportion increase or decrease between the two data sets?</p>
+<p>The file <a href="./archives/self_esteem.xlsx">self esteem</a> provides data on self esteem scores for randomly selected indiviuals with disabilities, it also includes the individuals marital status, length of work, type of support received, education and age.
+Construct cross tabulations of the number of individuals within each classification of marital status and support level.</p>
+  </div>
+<script>
+$('.ui.menu .item')
+  .tab({
+    history: true,
+    historyType: 'hash'
+  })
+;
+</script>
+   </div>
+
+
+
+  <br><br>
+  <div class="ui bottom fixed borderless menu">
+    <div class="ui small item">
+    <p id="footertext">
+    Prepared by  Dr. Brenda Mullally (bmullally@wit.ie). Except where otherwise noted, this content is licensed under a
+     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
+     </a>
+     </p>
+    </div>
+  </div>    <script>
+
+$(document).ready(function()
+{
+  $("img").addClass ("ui image");
+
+  var images = $(".lab img");
+  jQuery.each(images, function(i)  {
+    if((images[i].alt).length > 0)
+    {
+      var div_img = $(document.createElement("div")).addClass("ui segment");
+      $(images[i]).wrap(div_img);
+      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
+      div_label.append(images[i].alt);
+      $(div_label).insertBefore(images[i]);
+    }
+  });
+})    </script>
+
+  </body>
+ </html>

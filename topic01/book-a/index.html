@@ -1,0 +1,342 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+      <style>
+
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.credits
+{
+  min-height:20px;
+}
+    </style>
+
+  </head>
+
+  <body>
+
+  <div class="ui container">
+<style>
+
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom: thin solid black;
+}
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+</style>
+
+<div class="ui fixed top pointing inverted menu labmenu">
+  <header class="header item">
+    <a href="../index.html">
+      <i class="sitemap icon"></i>
+      Introduction to Data Analytics
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    <a class="active item" data-tab="Lab-02">
+        Lab-02
+    </a>
+      <a class="item" data-tab="01">
+        01
+      </a>
+      <a class="item" data-tab="02">
+        02
+      </a>
+      <a class="item" data-tab="03">
+        03
+      </a>
+      <a class="item" data-tab="04">
+        04
+      </a>
+      <a class="item" data-tab="05">
+        05
+      </a>
+      <a class="item" data-tab="06">
+        06
+      </a>
+      <a class="item" data-tab="Exercises">
+        Exercises
+      </a>
+    </div>
+</div>
+
+<br><br>
+
+  <div  class="ui tab segment lab" data-tab="Lab-02">
+    <h1>Objectives</h1>
+<p>In our first set of labs we will be getting familiar with Microsoft Excel, a tool used by many organisations to evaluate daily performance and to make critical strategic and operational decisions.</p>
+<p>This first lab will briefly review some of the fundamental skills needed to use Excel. This is not meant to be a complete tutorial; many good Excel tutorials can be found online.</p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="01">
+    <h1>Using Microsoft Excel</h1>
+<p>Spreadsheet software for personal computers has become an indispensable tool for business analysis, particularly for the manipulation of numberical data and the development and analysis of decision models. Some differences exist between 2007 and 2010. If you do use another version you should be able to apply Excel easily to the problems and exercises. In addition it must be noted that Mac versions of Excel do not have the full funcitonality that Windows versions have.</p>
+<p>Although Excel has some flaws and limitations from a statistical perspective, its widespread availability makes it the software of choice for many business professionals.</p>
+<h2>Instructions for working in Walton Building PC Labs:</h2>
+<p>If you are working on the workstations in the IT Building all machines should be installed with Microsoft Excel 2010.</p>
+<p>Proceed with the next step of the lab.</p>
+<h2>Instructions for working on your own laptop</h2>
+<p>You must have a copy of Microsoft Excel 2010 installed. </p>
+<p>There will be adons utilised in future practicals but for the moment the standard installation of Excel is sufficient.
+The student site that supports a book used in this module contains the links to software, along with data files and other materials.</p>
+<ul>
+<li><a href="http://wps.pearsoned.co.uk/ema_ge_evans_statdata_5e/227/58333/14933382.cw/index.html">http://wps.pearsoned.co.uk/ema_ge_evans_statdata_5e/227/58333/14933382.cw/index.html</a></li>
+</ul>
+  </div>
+  <div  class="ui tab segment lab" data-tab="02">
+    <h1>The Basics</h1>
+<p>This lab assumes you are familiar with the most elementary spreasheet concepts and procedures:</p>
+<ul>
+<li>Opening, saving and printing files.</li>
+<li>Moving around a spreadsheet.</li>
+<li>Selecting ranges.</li>
+<li>Inserting/deleting rows and columns</li>
+<li>Entering and editing text, numerical data, and formulas.</li>
+<li>Formating data.</li>
+<li>Working with text strings.</li>
+<li>Performing basic arithmetic calculations.</li>
+<li>Modifying the appearance of the spreadsheet.</li>
+<li>Sorting data.</li>
+</ul>
+<h2>File to use</h2>
+<p>Download the following file and open it in Excel</p>
+<ul>
+<li><a href="./archives/science-engineering.xlsx">science-engineering.xls</a></li>
+</ul>
+<h2>Copying Formulas</h2>
+<p>Excel provides several ways of copying formulas to different cells. This is extremely useful in building decision models, because many models require replication of formulas for different periods of time, similar products, and so on. </p>
+<p>One way is to select the cell with the formula to be copied, click the copy button from the clipboard group on the ribbon (or click Ctrl+C), click on the cell you wish to copy to and click the paste button (or click Ctrl+V). </p>
+<p>You can also enter a formula into a range of cells by selecting the range of cells typing in the formula and press Ctrl+Enter.
+Use the small black square on a selected cell to copy the formula down a column or across a row.</p>
+<p>The structure of the formula is the same as in the original cell but the cell references have been changed to reflect the relative addresses of the formula in the new cells.</p>
+<p>Practice this using the science engineering data file. Calculate the difference between the jobs in each category from 2000 to 2010. 
+To see all of your formulas on a worksheet you can use the Ctrl+` keys to toggel viewing and hiding formulas.</p>
+<p>Sometimes when you copy a formula you do not want the cell references to change. For example, calculate the percent of the total jobs for each occupation in 2010.
+In cell E4 enter the formula =C4/$C$12. Then if you copy this formula down column E for the other occupations the numerator will change to reference each occupation but the denominator will still point to cell C12. You should be careful to use relative and absolute addressing appropriately in your models.</p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="03">
+    <h1>Functions</h1>
+<p>Functions are used to perform special calculations in cells. Some of the more common functions used in statistical applications include:</p>
+<ul>
+<li>MIN(range)</li>
+<li>MAX(range)</li>
+<li>SUM(range)</li>
+<li>AVERAGE(range)</li>
+<li>COUNT(range)</li>
+<li>COUNTIF(range,criteria)</li>
+<li>AND(condition1, condition2...) returns true if all conditions are true and false if not.</li>
+<li>OR(condition1, condition2...) returns ture is any condition is true and false if not.</li>
+<li>IF(condition, value if true, value if false) returns one value if the condition is true and another if it is false.</li>
+<li>VLOOKUP(value, table range, column number) looks up a value in a table.</li>
+</ul>
+<p>The easiest way to locate a particular funciton is to select a cell and click on the Insert function button on the ribbon. This is useful when you know the name of the function but are unsure of the arguments.</p>
+<p>Using the science and egineering data include some formulas to find the maximum, minimum, and total for the number of jobs difference. What is the average difference?</p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="04">
+    <h1>Excel charts</h1>
+<p>Raw data is often hard to interpret, charts and graphs provide a convenient way to visualise data and provide information and insight for making better decisions.
+Excel provides vertical and horizontal bar charts, line charts, pie charts, area charts, scatter plots, three-dimensional charts and many others.</p>
+<h2>Column and Bar charts</h2>
+<p>Excel calls vertical bar charts, column charts and horizontal bar charts, bar charts. </p>
+<p>Open the file:</p>
+<ul>
+<li><a href="./archives/EEO-Employment-Report.xlsx">EEOEmploymentReport</a></li>
+</ul>
+<p>Create a column chart for the EEO Employment Report data.</p>
+<p>Use the data for All employees, Men and Women, (rows 4,5 and 6) the chart should show the number of workers in each category.</p>
+<p><img alt="" src="./img/01.png"></p>
+<p>What does a stacked chart look like?</p>
+<h2>Line charts</h2>
+<p>Line charts provide a useful means for displaying data over time. You can plot multiple data series in line charts; however, they can be difficult to interpret if the magnitude of the data values differs greatly. 
+Create a line chart for the closing prices in the Excel file SP500</p>
+<ul>
+<li><a href="./archives/SP500.xlsx">SP500</a></li>
+</ul>
+  </div>
+  <div  class="ui tab segment lab" data-tab="05">
+    <h1>Probability</h1>
+<p>Managers often wish to know such things as the likelihood that a new product will be profitable, or the chances that a project will be completed on time. Probability is the likelihood that an outcome occurs.</p>
+<p>Probabilities are expressed as values between 0 and 1, although many people convert them into percentages.
+The statement "there is a 10% chance that oil prices will rise next quater" is another way of saying "the probability of oil prices rising next quater is 0.1"</p>
+<p>The closer the probability to 1 the more likely it is that the outcome will occur.</p>
+<h2>Terminology used in probability is important.</h2>
+<ul>
+<li>Experiment: an experiment is a process that results in some outcome. An experiment might be as simple as rolling two dice, observing and recording weather conditions, conducting market research, or watching the stock market.</li>
+<li>Outcome: the outcome of an experiment is a result that we observe; it might be the sum of two dice, a description of the weather, the proportion of customers whom favour and new product, or the change in the Dow Jones index.</li>
+<li>Sample space: is the collection of all possible outcomes for an experiment. For instance if we roll two dice, the possible outcomes are the numbers 2 through 12; if we observe weather the outcomes may be clear, partly cloudy, or cloudy. The sample space may consist of a small number of discrete outcomes or an infinite number of outcomes.</li>
+</ul>
+<h1>Definitions of probability:</h1>
+<h2>Classical definition</h2>
+<p>Probabilities that can be deduced from theoretical arguments, this is the case if the process that generates the outcomes is known. For examples if we examine all possible outcomes associated with rolling two dice, we can easily determine that out of the 36 possible outcomes, one outcome will be the number two (1,1), two outcomes will be the number 3 (2,1) (1,2) and so on.
+Thus the probability of rolling any number is the ratio of the number of ways of rolling that number ot the total number of possible outcomes. For instance the probability of rolling a 2 is 1/36, the probability of rolling a 3 is 2/36.</p>
+<h2>Relative Frequency Definition</h2>
+<p>The second approach is based on empirical data. For example a sample of weather in Seattle shows that on average in January, 3 days were clear, 5 were partly cloudy, and 23 were cloudy. 
+Thus the probability of a clear day in Seattle in January would be calculated as 3/31 = 0.097. As more data becomes available the distribution of outcomes, and hence, the probability may change.</p>
+<h2>Basic probability rules and formulas</h2>
+<p>If we label the n elements of a samplespace as O1, O2, ... On, where Oi represents the ith outcome in the sample sapce. Let P(Oi) be the probability associated with the outcome Oi. Two basic facts govern probability:</p>
+<ul>
+<li>The probability associated with any outcome must be between 0 and 1, or 0 &lt;= P(Oi) &lt;= 1 for each outcome Oi</li>
+<li>The sum of the probabilities over all possible outcomes must be 1.0, or P(O1) + P(O2) + ... + P(On) = 1</li>
+</ul>
+<p>An event is a collection of one or more outcomes from a sample space. An example of an event would be rolling a 7 or 11 with two dice, having a clear or partly cloudy day in Seattle in January.</p>
+<h2>Rule 1: The probability of any event is the sum of the probabilities of the outcomes that compose that event.</h2>
+<p>Consider the event of rolling a 7 or an 11 on two dice. The probability of rolling a 7 is 6/36, and the probability of rolling an 11 is 2/36. Thus the probability of rolling either is 6+2= 8/36</p>
+<p>If A is any event, the complement of A, denoted as Ac, consists of all outcomes in the sample sapce not in A.</p>
+<h2>Rule 2: The probability of the complement of any event A is P(Ac) = 1-P(A)</h2>
+<p>For example in the dice rolling example if A = {7,11} then Ac={2,3,4,5,6,8,9,10,12}. The probability of P(A) was 8/36 so the complement is 1-8/36 = 28/36.</p>
+<p>The union of two events contain all outcomes that belong to either event. For example event A is rolling a 7 or 11, event B is rolling a 2, 3, or 12. The union of A and B is the event {2,3,7,11,12}. The probability of this event is shown as P (A or B). Finding this probability depends on whether these events are mutually exclusive.</p>
+<p>Two events are mutually exclusive if they have no outcomes in common. The example above of event A and B demonstrate mutually exclusive events. When events are mutually exclusive the following rule applies:</p>
+<h2>Rule 3: If events A and B are mutually exclusive, then P(A or B) = P(A) + P(B).</h2>
+<p>For example the probability of event A is P(A) = 8/36, and the probability of event B is P(B) = 4/36. Therefore the probability that either A or B occurs (roll dice 2, 3, 7, 11, or 12) is 8/36 + 4/36 = 12/36.</p>
+<p>If two events are not mutually exclusive then adding their respective probabilities would result in double counting some outcomes. This leads to the following rule:</p>
+<h2>Rule 4: If two events A and B are not mutually exclusive, then P(A or B) = P(A) + P(B) - P(A and B)</h2>
+<p>P(A and B) represent the intesection of events, i.e. those outcomes in both events.</p>
+<p>For example in the dice example event A = {2,3,12} and event B = {even numbers}, then A and B are not mutually exclusive because both events have outcomes 2 and 12.
+Therefore </p>
+<pre><code>P(A or B) = P(2,3,12) + P(even numbers) - P(2,12) 
+</code></pre>
+
+<p>or</p>
+<pre><code>4/36 + 18/36 - 2/36 = 20/36
+</code></pre>
+  </div>
+  <div  class="ui tab segment lab" data-tab="06">
+    <h1>More Probability</h1>
+<p>A survey of 150 residents of a certain city found that 120 residents subscribed to the morning newspaper, 75 subscribed to the evening newspaper, and 50 subscribed to both.
+A resident is chosen at random from the group of these 150 residents.</p>
+<p>In Excel calcuate the following:</p>
+<ul>
+<li>What is the probability that the selected resident subscribes to the morning newspaper?</li>
+<li>What is the probability that the resident subscribes to either of the newspapers?</li>
+<li>What is the probability that the resident subscribes neither to the morning nor to the evening newspaper?</li>
+</ul>
+<p>Open the following file:</p>
+<ul>
+<li><a href="./archives/census_data.xlsx">census_data.xls</a></li>
+</ul>
+<p>Row 27 of the excel file gives the number of unemployed persons having a specfic educational level.</p>
+<ul>
+<li>Find the probability that an unemployed person has attained each of the educational levels listed in the data.</li>
+<li>Suppose that A is the event "has at least an Associate's Degree" and B is the event "is at least a high school graduate". Find the probabilities of these events. Are they mutually exclusive? Why or why not? Find the probability P (A or B).</li>
+</ul>
+<p>Use the unemployed civilian labour force data in the excel file census_data to find the following:</p>
+<ul>
+<li>P(Unemployed and Advanced Degree)</li>
+<li>P(Unemployed or Advance Degree)</li>
+<li>P(Not a High School Grad or Unemployed)</li>
+</ul>
+<p>Try to do this work and then compare your results with the following solution file</p>
+<ul>
+<li><a href="./archives/lab02a_solution.xlsx">lab2 Solution</a></li>
+</ul>
+  </div>
+  <div  class="ui tab segment lab" data-tab="Exercises">
+    <h1>More Charts</h1>
+<ul>
+<li>Experiment with the other charts that are available.</li>
+<li>Line charts provide a useful means for displaying data over time.</li>
+<li>Create a line chart for the closing prices in the file SP500.xlsx</li>
+<li>For many types of data, we are interested in understanding the relative proportion of each data source to the total.</li>
+<li>Create a pie chart showing the breakdown of occupations in the Science-engineering.xlsx</li>
+<li>Scatter diagrams show the relationship between two variables.</li>
+<li>Create a scatter diagram showing the relationship between hours online/week and Log-Ins/day in the <a href="./archives/facebook-survey.xlsx">facebook-survey.xlsx</a> file.</li>
+</ul>
+  </div>
+<script>
+$('.ui.menu .item')
+  .tab({
+    history: true,
+    historyType: 'hash'
+  })
+;
+</script>
+   </div>
+
+
+
+  <br><br>
+  <div class="ui bottom fixed borderless menu">
+    <div class="ui small item">
+    <p id="footertext">
+    Prepared by  Dr. Brenda Mullally (bmullally@wit.ie). Except where otherwise noted, this content is licensed under a
+     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
+     </a>
+     </p>
+    </div>
+  </div>    <script>
+
+$(document).ready(function()
+{
+  $("img").addClass ("ui image");
+
+  var images = $(".lab img");
+  jQuery.each(images, function(i)  {
+    if((images[i].alt).length > 0)
+    {
+      var div_img = $(document.createElement("div")).addClass("ui segment");
+      $(images[i]).wrap(div_img);
+      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
+      div_label.append(images[i].alt);
+      $(div_label).insertBefore(images[i]);
+    }
+  });
+})    </script>
+
+  </body>
+ </html>
