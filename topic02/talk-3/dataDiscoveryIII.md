@@ -1,1 +1,0 @@
-Outliers are an important part of data analytics that must be dealt with.

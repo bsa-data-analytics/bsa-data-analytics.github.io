@@ -1,1 +1,0 @@
-Introduction to the first step in any data project, the data discovery stage.
