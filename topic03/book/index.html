@@ -1,0 +1,407 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+      <style>
+
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.credits
+{
+  min-height:20px;
+}
+    </style>
+
+  </head>
+
+  <body>
+
+  <div class="ui container">
+<style>
+
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom: thin solid black;
+}
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+</style>
+
+<div class="ui fixed top pointing inverted menu labmenu">
+  <header class="header item">
+    <a href="../index.html">
+      <i class="sitemap icon"></i>
+      Descriptive Statistics
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    <a class="active item" data-tab="Lab-06">
+        Lab-06
+    </a>
+      <a class="item" data-tab="01">
+        01
+      </a>
+      <a class="item" data-tab="02">
+        02
+      </a>
+      <a class="item" data-tab="03">
+        03
+      </a>
+      <a class="item" data-tab="04">
+        04
+      </a>
+    </div>
+</div>
+
+<br><br>
+
+  <div  class="ui tab segment lab" data-tab="Lab-06">
+    <h1>Objectives</h1>
+<p>QlikView is a user driven business intelligence tool that helps people make decisions based on a variety of insights drawn from data, people and the environment.</p>
+<p>Business discovery helps users ask and answer their own questions and follow their own paths to insight. It also enables teams to reach decisions collaboratively.</p>
+<p>These labs will introduce you to QlikView, teaching you how to create dashboards with interactive components.</p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="01">
+    <h1>Introcution to QlikView</h1>
+<p>QlikView applications have .qvw extensions.</p>
+<p>Download the <a href="./archives/MoviesDatabase.qvw">movie database</a>. Open QlikView on your laptop by finding it in your programs menu.</p>
+<p>From the file menu choose open, navigate to the the folder where you saved the QlikView movie application.</p>
+<p>Read the intro page and then click get started. This brings you to the next tab called How QlikView works. Practice selecting a fruit and seeing how the displayed data is presented.</p>
+<p>Now explore the traditional OLAP tab. click the magnifying glass by the word "Director", and then type "Wo". A search box displays with a list that includes Woody Allen. </p>
+<p><img alt="" src="./img/01.png"></p>
+<p>Click Woody Allen. A list containing Woody Allen's films displays.</p>
+<p><img alt="" src="./img/02.png"></p>
+<p>With traditional OLAP the navigation path to analyse data is predefined. Usually it is a top down hierarchy. </p>
+<p>Next click Clear and then go to the QlikView Model tab. </p>
+<p>Click the magnifying glass in the Title field. Type "Bananas", and then select it.</p>
+<p>You can see Bananas shows in green, this is the data you have choosen, to the left you can see Woody Allen's name in white this means that data is associated to Bananas and the other directors in the list are grey and thus not associated. To the right you can see a list of actors in white, all of whom are in the film Bananas.</p>
+<p>Make sure you still have Bananas selected in the title box, next click on the actor Woody Allen. You can then unclick the Bananas selction and it will show you all the films and associated directors that woody allen has been an actor. You can see he has played in movies by two other directors.</p>
+<p><img alt="" src="./img/03.png"></p>
+<p>In the directors list click on Woody Allen, you can then see the 17 movies he acted and directed.</p>
+<p><img alt="" src="./img/04.png"></p>
+<h2>Searching</h2>
+<p>QlikView searches for field values matching a text string that you type. When you start typing, by default it is surrounded by two * wildcard characters. You can remove either or both of the wildcards or use different ones, such as ? for any single character.</p>
+<p>You can also do numeric searches.</p>
+<h3>A fuzzy search</h3>
+<p>uses the ~ tilda, it is particularly useful where spelling mistakes in data entry is a problem. It can help you find values that are near-identical to each other.</p>
+<p>In the movie application, first clear all selections. On the QlikView model sheet, click the magnifying glass on the Director List box. Clear both asterisks **, and then type ~bargman. Check the results.</p>
+<p><img alt="" src="./img/05.png"></p>
+<h3>Select Excluded</h3>
+<p>is an important search feature in QlikView. It allows you to, for example, search for products that have not been sold in certain regions or customers that haven't placed an order on a certain date.</p>
+<p>If you want to pick a film that does not have a particular actor. The actor field contains over 4800 actors so it would be hard to select only those you wish to see. With select excluded you select the actor you want to exclude, right click and then choose "select excluded" </p>
+<h3>Associative searches</h3>
+<p>is another powerful feature in QlikView, it allows you to search related fields that are not presented in the list box. When you click on the double cheveron &gt;&gt; it will show you any related fields.</p>
+<p>Using the QlikView model sheet clear all selections, click the Title list box and type 1950. Click the chevron &gt;&gt; and click 1950's in the Decade field.</p>
+<p><img alt="" src="./img/06.png"></p>
+<p>Then type 4 and choose the Rating field.</p>
+<p><img alt="" src="./img/07.png"></p>
+<p>Then press Enter.</p>
+<p><img alt="" src="./img/08.png"></p>
+<p>The title list box displays the films from the 1950's with a rating of 4. Click the analysis tab, and click Movie List.
+The table shows Title, Year, Minutes, Rating and Director for the selected films.</p>
+<p><img alt="" src="./img/09.png"></p>
+<h3>Expressions</h3>
+<p>You can use expressions in the searches such as =, &lt;, &gt; </p>
+<p>Clear all selections, type the following into the Title list box:  </p>
+<pre><code>=Rating=4 and Year=1950
+</code></pre>
+
+<p>Press return. 
+Note that the string is evaluated if there is a one-to-one relationship between the field you search in and the related fields. In this case title and rating has a one to one relationship and title and year has a one to one relationship.</p>
+<p><img alt="" src="./img/10.png"></p>
+<h3>"AND" search</h3>
+<p>To search for movies with Sofia Coppola and Nicolas Cage appearing together was need to select both actors. If you select Nicolas Cage in the actor box and then select Sofia Coppola you cancel the value you selected first. You must press the Ctrl key when selecting more than one.</p>
+<p><img alt="" src="./img/11.png"></p>
+<p>The resulting list displays films where either Nicolas Cage or Sofia Coppola appear.</p>
+<p>If we want to see films that star both of them we have to do the following:</p>
+<p>Clear all selections. Type and select Sofia Coppola in the Actor list box. Next right click in the Title list box and choose Clear Other Fields. This means the movies that Sofia Coppola stars in are selected green and the Actor list has gone all white ready for a new selection. Type in Nicolas Cage. The title list now shows the two movies they star in together.</p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="02">
+    <h1>ABC Sales application</h1>
+<p>ABC Apparel, Inc is an international apparel company. They are looking for a QlikView application for the analysis of sales.</p>
+<h2>User Roles</h2>
+<p>CEO (Chief Executive Officer) KPI's and measures:</p>
+<ul>
+<li>Trend of total sales and number of orders CYTD (current year to date) and how this compares to LYTD (last year to date)</li>
+<li>Sales by Division and Category</li>
+<li>Number of orders CYTD and how this compares to LYTD</li>
+<li>Margin percent by product group and by country</li>
+</ul>
+<p>Examples of use scenarios:</p>
+<ul>
+<li>How the CYTD sales are in comparison to last year this time as well as monthly sales</li>
+<li>What does the sales trend look like?</li>
+<li>How do the CYTD sales vary by division or region? Are there regions that are performing well in sales that can offer help to regions that are not performing that well?</li>
+<li>Has the order value improved since the previous month/year?</li>
+<li>Has the number of orders improved since the previous month/year?</li>
+</ul>
+<p>CMO (Chief Marketing Officer) measures and dimensions:</p>
+<ul>
+<li>CYTD customer performance versus LYTD</li>
+<li>Product performance CYTD versys LYTD</li>
+<li>Trends</li>
+<li>Number of orders per product category</li>
+<li>Last orders placed</li>
+</ul>
+<p>Examples of use scenarios:</p>
+<ul>
+<li>The marketing department would like to run a campaign highlighting top-selling products in the regions. Therefore it needs to determine which products are top sellers in each region. Does this differ by region?</li>
+<li>Marketing would like to reacho out to customers who have not made a purchase in the past six months. They need to determine who these customers are.</li>
+<li>What is the average number of orders each cusotmer has made and what is the average value of these order? Is there a correlation between these two?</li>
+<li>Are there many one visit customer who have only placed an order with the company once? The CMO needs to view the customer details of these customers. Did these customers receive discounts with their orders?</li>
+</ul>
+<p>Sales Manager measures and dimensions:</p>
+<ul>
+<li>CYTD sales persons' performance versus LYTD</li>
+<li>Top and bottom sales persons - based on sales</li>
+<li>Sales persons' performance over time</li>
+</ul>
+<p>Examples of use scenarios:</p>
+<ul>
+<li>Who are the top five and the bottom five sales persons?</li>
+<li>What are the top products for the top slaes persons?</li>
+<li>Do these sales persons tend to have customers who place multiple orders or single orders?</li>
+<li>How is the discount related to average deal size?</li>
+</ul>
+<h2>The application</h2>
+<p>You are going to build a single application for the CEO, CMO and sales manager. In a real world business scenario, it is more likely that you design separate applications for the distinct user group. But for this exercise you will design one application.</p>
+<p>ABC apparel are interested in analysing their data over time. Time must be displayed based upon the order date field in the dataset. Analysis must be possible based upon Year, Month or Quarter values for the entire dataset. In order to filter the data, these fields are defined as the main dimensions:</p>
+<ul>
+<li>Customer country</li>
+<li>Sales person</li>
+<li>Product category</li>
+<li>Product</li>
+<li>Customer</li>
+</ul>
+<h2>Key Measures</h2>
+<ul>
+<li>Sales KPI:         total of the LineSalesAmount                  sum(LineSalesAmount)</li>
+<li>Sales CYTD KPI:    total of the LineSalesAmount field starting from the beginning of the current year to to the present day   Sum(LinesSalesAmount * CYTDFlag)     </li>
+<li>Margin KPI:        total of the margin field                     sum(Margin)</li>
+<li>Margin CYTD KPI:   total margin from beginning of current year to present day         sum(Margin * CYTDFlag)</li>
+<li>Margin % KPI:      percentage of sales containing margin         sum(Margin)/sum(LineSalesAmount)</li>
+<li>Orders KPI:        the number of individual orders               count(DISTINCT OrderID)</li>
+<li>Average Deal size: sales divided by orders                       sum(LineSalesAmount)/count(DISTINCT OrderID)</li>
+<li>Products:          number of unique products                     sum(RecNo_Products)</li>
+<li>Discount:          average of the discount in percentage         avg(discount)</li>
+</ul>
+<h2>Dashboard Design</h2>
+<p>D-A-R concept: We recommend you use the D-A-R (Dashboard, Analysis, Report) concept. Laying out the QlikView application according to D-A-R helps the user to get an overview of hte situtaiton, then flow into details required for anlaysis, and then, if needed, gets into the greater details of reporting. You saw this in the movies application. This is not a linear process, users can navigate across pages at any time.</p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="03">
+    <h1>Create a new application</h1>
+<p>Close the movies application by selecting File, close.</p>
+<p>Next choose New from the File menu, then choose save from the file menu. Name your application ABC_Sales and click Save.</p>
+<p>There are some document properties that are useful to set before starting, they mean that layout remains consistent throughout the application.</p>
+<p>First save the following image to the same folder you have saved your application.</p>
+<p><a href="./img/background_with_header_navigation.png">background image</a></p>
+<ul>
+<li>Open the Settings menu, and then Document Properties. </li>
+<li>In the General tab for Title, type ABC Sales App. </li>
+<li>Under Author, type your name or initials. Under </li>
+<li>Under Default Sheet Background, select Wallpaper Image.</li>
+<li>Click the change button. The select Image dialog opens.</li>
+<li>Navigate to the background image you already saved.</li>
+<li>Select Image Formatting: No stretch, Horizontal: Left, and Vertical, Top;</li>
+<li>Under Styling Mode, select Simplified</li>
+<li>Under Sheet Object Style, select Transparent</li>
+<li>Under Tabrow Style, select Straight.</li>
+<li>On the Font tab select Arial, Font Style Regular, and Size 10</li>
+<li>On the Layout tab, under Shadow Intensity, select No Shadow, and Border Width 1 pt</li>
+<li>On the Caption tab, click Font, select Arial, Font Style Bold, and Size 10.</li>
+<li>Click Ok twice.</li>
+</ul>
+<h2>The Data Model</h2>
+<p>QlikView works with many different types of data sources (SQL Server, Sybase, Access, Oracle, SalesForce, Excel, .txt, .csv, and html files)</p>
+<p>A QlikView application with the .qvw file extension is a file containing everything needed to analyse the data:</p>
+<ul>
+<li>The data itself</li>
+<li>The script needed to update the QlikView file with new data from the data source</li>
+<li>Layout information, including all the sheets, list boxes, charts and so on</li>
+<li>Document alerts, document bookmarks and document reports</li>
+</ul>
+<p>A .qvd file contains a table of data exported from QlikView. It can only be read and written to using QlikView. It is optimised for speed when reading data but is also very copact. Reading data from a qvd file is typically 10 to 100 times faster than reading from other data sources.</p>
+<p>To retrieve data for a QlikView application, you write and execute a load script. This script specifies the data source, the tables, and the fields to be loaded. When executing the script, the loaded data is kept in an internal data model, which is saved with the QlikView application. This data set is then evaluated each time a value is selected in the applications layout.</p>
+<h2>Data files for your ABC apparel application</h2>
+<p><a href="./archives/abc_sales.zip">abcSales</a></p>
+<p>The facts table contains the primary data source for the QlikView application. It contains order data.</p>
+<p>The customers table contains information about the customers.</p>
+<p>The products table contains information about the products and product categories.</p>
+<p>The sales spreadsheet contains employee information for the application and is maintained by the company's HR department.</p>
+<p>The calendar text file contains the script for the calendar and has to be included in the load script.</p>
+<p>Save all of these files into the directory that stores your ABC_Sales application. </p>
+<h2>Data Structure</h2>
+<p>Each field from a data source loaded into QlikView becomes a field in the QlikView associative data structure. Fields that display in more than one table and have identical names are associated and identified as Key fields.</p>
+<h2>Load Data</h2>
+<ul>
+<li>Ensure your ABC_Sales application is still open. </li>
+<li>From the file menu, select Edit Script (Ctrl+E). The Edit Script dialog displays.</li>
+<li>Place the cursor in the script area on an empty row below the last script statement.</li>
+<li>On the Data tab, under Data from Files, select Relative Paths.</li>
+<li>Click the Table Files button. The Open Local Files dialog displays.
+<img alt="" src="./img/12.png"></li>
+<li>Under Open Local Files, locate the Facts.qvd file and click Open.</li>
+<li>The File Wizard: Type dialog displays.</li>
+<li>Click Finish. 
+<img alt="" src="./img/13.png"></li>
+<li>Above the LOAD statement, remove the word Directory; and type Facts;
+<img alt="" src="./img/14.png"></li>
+<li>Click the Reload button to execute the script and load the data.</li>
+<li>The Sheet Properties dialog displays a list of the fields imported from the qvd.
+<img alt="" src="./img/15.png"></li>
+<li>Click OK to close the dialog.</li>
+</ul>
+<h2>Exercise</h2>
+<p>Now load the Customers.qvd and the Products.qvd files.</p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="04">
+    <h1>Data linking</h1>
+<p>It is good practice to ensure that the data is loaded correctly after adding tables to your data model. The Table Viewer is the preferred dialog in QlikView if you want to examine how the data is related.</p>
+<p>This dialog is used to display the data table structure of the current QlikView document. Tables are shown as boxes with a list of the fields they contain. Connector lines between the boxes show the associations.  Where more than two lines meet there are connector points in the form of small dots.</p>
+<ul>
+<li>Open the Table Viewer dialog by selecting Table Viewer from the File menu or pressing Ctrl+T.</li>
+<li>Ensure that all tables are connected by key fields.</li>
+</ul>
+<p><img alt="" src="./img/16.png"></p>
+<ul>
+<li>Click ok to close table viewer</li>
+</ul>
+<h2>Load Excel file</h2>
+<ul>
+<li>Open the Edit Script dialog (Ctrl+E)</li>
+<li>Place the cursor on an empty row below the load script for the qvd files.</li>
+<li>Under the Data From Files, click the Table Files button.</li>
+<li>From the Open Local Files dialog navigate to the SalesPersons_Offices.xls file that you saved earlier. Click Open.
+<img alt="" src="./img/17.png"></li>
+<li>In the File Wizard dialog under tables, ensure that Employee$ is selected.</li>
+<li>From the Labels field, select Embedded Labels</li>
+<li>Click Finish.</li>
+<li>Name the table in the load script, replace Directory; with SalesPersons:</li>
+<li>Click Reload</li>
+<li>The Sheet Properties dialog displays a list of the loaded fields. Click ok.</li>
+<li>Open the Table Viewer (Ctrl+T)</li>
+</ul>
+<p><img alt="" src="./img/18.png"></p>
+<p>Why is the SalesPersons table not connected to the Facts table?</p>
+<h2>Connecting tables</h2>
+<p>You need to connect the SalesPerson table to the Facts table. Therefore we need to have a common field name. We must rename the Employees_ID field to be called %Key_Employees</p>
+<ul>
+<li>Open the Edit Script</li>
+<li>Locate the script lines for loading the Facts table.</li>
+<li>Select %Key_Employees and copy it.</li>
+<li>Locate the script lines for loading the SalesPersons table, place your cursor between Employees_ID and the comma</li>
+<li>Type "as" and then paste the name %Key_Employees, your script should look as follows:</li>
+</ul>
+<p><img alt="" src="./img/19.png"></p>
+<ul>
+<li>Click Reload, close the sheet property dialog and open table viewer to make sure the connection has occured.</li>
+</ul>
+<p><img alt="" src="./img/20.png"></p>
+<h2>Load Master Calendar script</h2>
+<ul>
+<li>Edit the script</li>
+<li>Place cursor on a blank line from the Insert menu choose Include Statement.</li>
+<li>Locate the MasterCalendar.txt file you saved earlier. Click open, click reload and ok to close the sheet properties dialog.</li>
+<li>Open table viewer to ensure that the MasterCalendar table is properly linked to the Facts table.</li>
+</ul>
+<p>You can now clearly see the central fact table and the four dimensions that surround it, customers, calendar, products and sales persons.</p>
+<p><img alt="" src="./img/21.png"></p>
+<p>Save your work.</p>
+  </div>
+<script>
+$('.ui.menu .item')
+  .tab({
+    history: true,
+    historyType: 'hash'
+  })
+;
+</script>
+   </div>
+
+
+
+  <br><br>
+  <div class="ui bottom fixed borderless menu">
+    <div class="ui small item">
+    <p id="footertext">
+    Prepared by  Dr. Brenda Mullally (bmullally@wit.ie). Except where otherwise noted, this content is licensed under a
+     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
+     </a>
+     </p>
+    </div>
+  </div>    <script>
+
+$(document).ready(function()
+{
+  $("img").addClass ("ui image");
+
+  var images = $(".lab img");
+  jQuery.each(images, function(i)  {
+    if((images[i].alt).length > 0)
+    {
+      var div_img = $(document.createElement("div")).addClass("ui segment");
+      $(images[i]).wrap(div_img);
+      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
+      div_label.append(images[i].alt);
+      $(div_label).insertBefore(images[i]);
+    }
+  });
+})    </script>
+
+  </body>
+ </html>

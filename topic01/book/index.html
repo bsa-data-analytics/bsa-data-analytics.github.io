@@ -1,0 +1,184 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+      <style>
+
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.credits
+{
+  min-height:20px;
+}
+    </style>
+
+  </head>
+
+  <body>
+
+  <div class="ui container">
+<style>
+
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom: thin solid black;
+}
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+</style>
+
+<div class="ui fixed top pointing inverted menu labmenu">
+  <header class="header item">
+    <a href="../index.html">
+      <i class="sitemap icon"></i>
+      Introduction to Data Analytics
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    <a class="active item" data-tab="Lab-01">
+        Lab-01
+    </a>
+      <a class="item" data-tab="01">
+        01
+      </a>
+      <a class="item" data-tab="02">
+        02
+      </a>
+    </div>
+</div>
+
+<br><br>
+
+  <div  class="ui tab segment lab" data-tab="Lab-01">
+    <h1>Objectives</h1>
+<p>In our first lab we will be covering setup of the software necessary to complete this Data Analytics module.</p>
+<p>QlikView data discovery tool</p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="01">
+    <h1>Setup</h1>
+<p>You will be able to complete all labs in IT118 where you are scheduled. You may also do the labs on your laptop using Excel and the QlikView personal edition install:</p>
+<h2>Instructions for working in Walton Building PC Labs:</h2>
+<p>Each PC has Microsoft Excel and   QlikView installed, both should appear in the program menu. </p>
+<h2>Instructions for working on your Laptop:</h2>
+<p>Go to step 2 for installation of qlikview on your laptop. If you do not have your laptop with you then complete this step at home and move on to the next lab.</p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="02">
+    <h1>QlikView installation</h1>
+<p>QlikView is a data discovery tool which we will use to transform and load data sources which we will then analyse and create dashboards for viewing.</p>
+<p>QlikView is available to each of you on an academic license which lasts for 1 academic year.
+There is only one installation per student please.</p>
+<p>Go to <a href="http://www.qlik.com">http://www.qlik.com</a> </p>
+<p>You need to create a QlikView account, also known as your single sign on.</p>
+<p>Choose Login and then Not Registered? Get a QlikView Account</p>
+<p><img alt="" src="./img/02.png"></p>
+<p>Complete the form, please ensure the Company field has Waterford Institute of Technology, Job Title should have Student entered, and in the email please use your wit student gmail account. If you don't have access to your student gmail account you can use you work or personal email address.</p>
+<p><img alt="" src="./img/03.png"></p>
+<p>Login to Qlik with the details emailed to you.
+Next dowload the QlikView software.</p>
+<p><img alt="" src="./img/04.png"></p>
+<p>Choose your operating system, accept the licence agreement and hit download.</p>
+<p><img alt="" src="./img/05.png"></p>
+<p>Once it is downloaded run the executable to install QlikView. </p>
+<p>Once installed open QlikView. Click on the Settings menu and choose User Preferences, choose the license tab and enter your User Name, organisation and the following license information:</p>
+<pre><code>License Key: 2572303923403762
+Control Number: 24287
+
+</code></pre>
+  </div>
+<script>
+$('.ui.menu .item')
+  .tab({
+    history: true,
+    historyType: 'hash'
+  })
+;
+</script>
+   </div>
+
+
+
+  <br><br>
+  <div class="ui bottom fixed borderless menu">
+    <div class="ui small item">
+    <p id="footertext">
+    Prepared by  Dr. Brenda Mullally (bmullally@wit.ie). Except where otherwise noted, this content is licensed under a
+     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
+     </a>
+     </p>
+    </div>
+  </div>    <script>
+
+$(document).ready(function()
+{
+  $("img").addClass ("ui image");
+
+  var images = $(".lab img");
+  jQuery.each(images, function(i)  {
+    if((images[i].alt).length > 0)
+    {
+      var div_img = $(document.createElement("div")).addClass("ui segment");
+      $(images[i]).wrap(div_img);
+      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
+      div_label.append(images[i].alt);
+      $(div_label).insertBefore(images[i]);
+    }
+  });
+})    </script>
+
+  </body>
+ </html>
