@@ -1,0 +1,422 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+      <style>
+
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.credits
+{
+  min-height:20px;
+}
+    </style>
+
+  </head>
+
+  <body>
+
+  <div class="ui container">
+<style>
+
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom: thin solid black;
+}
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+</style>
+
+<div class="ui fixed top pointing inverted menu labmenu">
+  <header class="header item">
+    <a href="../index.html">
+      <i class="sitemap icon"></i>
+      Advanced Data Analytics
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    <a class="active item" data-tab="Lab-07">
+        Lab-07
+    </a>
+      <a class="item" data-tab="01">
+        01
+      </a>
+      <a class="item" data-tab="02">
+        02
+      </a>
+      <a class="item" data-tab="03">
+        03
+      </a>
+      <a class="item" data-tab="04">
+        04
+      </a>
+      <a class="item" data-tab="05">
+        05
+      </a>
+      <a class="item" data-tab="06">
+        06
+      </a>
+    </div>
+</div>
+
+<br><br>
+
+  <div  class="ui tab segment lab" data-tab="Lab-07">
+    <h1>Objectives</h1>
+<p>In this lab you will create list boxes, align multiple sheet objects, move and resize objects, investigate the object properties, and creating and moving sheets.</p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="01">
+    <h1>QlikView Objects</h1>
+<p>The list box is the most basic object on the screen. It contains a list of all the values of a specific field in the database. all the values contained in the database field are shown in the list box. If there is not enough space to show all values in the visible part of the list box, a scroll bar is displayed. If a value occurs several times in the same field it is only displayed once in the list box.</p>
+<h2>Create five list boxes</h2>
+<p>Another way to check that the data has loaded properly is to strat exploring the data with the help of list boxes. Create five list boxes showing the following fields and arrange them on the Main sheet.</p>
+<p>Right click the Main sheet, and then select Select Fields. </p>
+<p><img alt="" src="./img/01.png"></p>
+<p>The Sheet Properties dialog opens.</p>
+<p><img alt="" src="./img/02.png"></p>
+<p>Use the fields shown in the "Fields Displayed in Listboxes" by double clicking on a field, pressing Ctrl to select more than one field or type the first letter of the field name to jump to the field.</p>
+<p>Click Ok to close the dialog.</p>
+<p><img alt="" src="./img/03.png"></p>
+<p>We now need to distribute and align the list boxes. Instead of moving them manually, we will use the Align/Distribute, and then Adjust Left.</p>
+<p>In the Edit menu, select Activate All or press Ctrl+A</p>
+<p><img alt="" src="./img/04.png"></p>
+<p>In the Layout menu, select Align/Distribute, and then Adjust Left.</p>
+<p><img alt="" src="./img/05.png"></p>
+<p>In the Layout menu, select Align/Distribute, and then Top Align.</p>
+<p><img alt="" src="./img/06.png"></p>
+<p>Again ensure the list boxes are selected, you can do this by drawing a box around them all.
+Press the Alt key and drag the list boxes with your mouse to the desired position. Or you can press the Ctrl+Shift+Arrow keys to move the select objects with 10 pixels accuracy. (Ctrl+Arrow moves 1px)</p>
+<p>You can size list boxes and other sheet objects by dragging the border of the object.
+Move the pointer to one of the corners of the list box until the appearance of the pointer changes.
+Press and hold the mouse button and drag the list box corner to create the desired size.</p>
+<p>Altough the application is still very limited, it already allows you to answer some business questions:</p>
+<ul>
+<li>Who is the contact person for the componay Casual Clothing?</li>
+<li>Who is the Sales Person who sold to the company Casual Clothing?</li>
+<li>In which years did the company Das Alpen Shoe place orders?</li>
+<li>Which customers have never purchased a product from the category Men's Footwear?</li>
+</ul>
+  </div>
+  <div  class="ui tab segment lab" data-tab="02">
+    <h1>Object properties</h1>
+<p>There are many objects you can create. No matter what the object is the workflow of creating it is the same. The more complex objects have more properties to define.</p>
+<p>Right click the SalesPerson list box you created and select Properties. The list box properties dialog displays.</p>
+<p><img alt="" src="./img/07.png"></p>
+<h2>General tab</h2>
+<p>Here you can select the general properties such as title and search preferences.</p>
+<h2>Expressions</h2>
+<p>Here, you define expressions to be displayed in the list box. Each expression is placed in a new column in the list box. The upper-left corner o fhte dialog contains a list of the expressions. The following shows an example of the CompanyName list box with an expression that calculates the Sales amount.</p>
+<p><img alt="" src="./img/08.png"></p>
+<h2>Sort</h2>
+<p>Here, you set the sort order of the values in the sheet object.</p>
+<p>Right click the SalesPerson list box, and select properties. On the sort tab, select Text and A-&gt;Z. Clear the remaining sort definitions. Click OK. Select Autokleider in the CompanyName list box.</p>
+<p><img alt="" src="./img/09.png"></p>
+<p>Right click the SalesPerson list box and choose Properties. On the sort tab, select State Ascending. Clear the remaining sort definitions. Click OK.</p>
+<p><img alt="" src="./img/10.png"></p>
+<p>The Auto Ascending setting sorts the list box according to State only if the list box contains a vertical scroll bar. However if you enlarge the list box to show all values, the sort order of State will completly switch off.</p>
+<h2>Presentation</h2>
+<p>Here you can adjust the look and style of the list box.</p>
+<h2>Number</h2>
+<p>Each field has a default number format. Here, you can choose to override the Document Settings.</p>
+<h2>Font</h2>
+<p>Here, you can set the style and size of the font. You can set the font for any single object at Object Properties: Font, or all objects in a document at Document Properties: Font.</p>
+<h2>Layout</h2>
+<p>Here you define the layout setting for the current object.</p>
+<h2>Caption</h2>
+<p>A caption setting applies to the current object only if it is made from the Ojbect Properties tab.</p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="03">
+    <h1>Sheets, filters and navigation</h1>
+<h1>Sheet and sheet objects</h1>
+<p>A QlikView document can have one or several sheets on which the sheet objects are placed. Each sheet can contain many sheet objects. If two fields are logically connected, it does not matter if they are put on the same sheet or on different sheets.
+Each sheet has a tab attached to it, containing hte name of hte sheet. By clicking on the tab you activate the sheet attached to it.</p>
+<h2>Sheet Properties</h2>
+<p>You set the sheet properties in the Sheet Properties dialog, which you can open by choosing Properties from the Object menu, by choosing Sheet properties from the Settings menu, or by clicking the Sheet Prperties button on the design toolbar. 
+By default, a new sheet inherits the default backgorund that is set in the documnet properties. If you want to change it you can set a special background colour or image in the Background group on the General tab in properties.</p>
+<h2>General Tab</h2>
+<p>Control settings such as Title, Background colour, and Background image for the sheet.</p>
+<h2>Fields Tab</h2>
+<p>You decide what fields to display as list boxes on the sheet.</p>
+<h2>Objects Tab</h2>
+<p>Contains a list of all sheet objects on the current sheet.</p>
+<h2>Security Tab</h2>
+<p>This tab is useful for documents with access restriction. By deselecting an option in the list, the ADMIN user inactivates that particular command or function, thus preventing undesired changes. </p>
+<h2>Triggers</h2>
+<p>You can specify actions, including macros, to invoked on sheet and sheet object events.</p>
+<h2>Sheet Objects</h2>
+<p>Sheet objects include all the various types of objects available to you as a QlikView designer. Most of these objects will covered in these labs. The following shows the New Sheet Ojbect menu (activate when you right click on a sheet):</p>
+<p><img alt="" src="./img/11.png"></p>
+<h2>Design Toolbar</h2>
+<p>The QlikView design toolbar contains useful buttons for tasks you perform when creating or changeing the layout of a document. By default, this toolbar is not displayed. To toggle the design toolbar on or off, select View-&gt;Toolbars-&gt;Design.</p>
+<p><img alt="" src="./img/12.png"></p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="04">
+    <h1>Creating, Moving Sheets, List boxes and Calendar</h1>
+<ul>
+<li>From the layout menu, select Add Sheet, or click the <img alt="" src="./img/13.png"> Add Sheet button on the design toolbar.</li>
+<li>Right click the sheet, and then select Properties.</li>
+<li>In the Tilte field under the General tab, type Customer Details.</li>
+<li>Click OK.</li>
+<li>Repeat the above steps  and create five sheets with the following names:</li>
+<li>Dashboard</li>
+<li>Product Details</li>
+<li>Order Details</li>
+<li>Sales Person Details</li>
+<li>
+<p>Intro</p>
+</li>
+<li>
+<p>Now remove the Main sheet you worked on earlier, click the Main tab and right click the sheet, then select Remove.</p>
+</li>
+</ul>
+<p><img alt="" src="./img/14.png"></p>
+<p>You can also rearrange the order of sheets.
+- Right click the tab, and then choose Promote Sheet or Demote Sheet or use the buttons on the Design toolbar <img alt="" src="./img/15.png"> until they display in the following order:</p>
+<p><img alt="" src="./img/16.png"></p>
+<h2>Changing the background on the Dashboard and Intro sheet</h2>
+<ul>
+<li>Download and unzip the following, save all images to the same folder as your QlikView application <a href="./archives/img.zip">images</a></li>
+<li>Click the Dashboard tab.</li>
+<li>Right click the sheet, and then select Properties. The Sheet properties opens.</li>
+<li>On the General tab, select Sheet Settings in the Background area.</li>
+<li>Select Image and then click Change.</li>
+<li>Locate the image you just saved.</li>
+<li>Under image formatting, select No stretch.</li>
+<li>Under Horizontal, select Left and under Vertical, select Top.</li>
+<li>click OK</li>
+</ul>
+<p>Do the same steps for the Intro tab, use the intro_sheet_background.jpg image.</p>
+<p><img alt="" src="./img/17.png"></p>
+<h2>Filters</h2>
+<p>You will now design the overall frameowrk of the application, including the navigation menu that allows the user to filter the data and navigate through the applicaiton and selections.
+You will learn how to :
+- Create and align list boxes
+- Design list boxes that are optoimised for displaying a claendar
+- Create linked objects
+- Combine several fields in a multi box
+- Configure a search box
+- Configure Current Selection</p>
+<p>To design a consistent navigation that allows users to filter and move through the data we should ensure the application is optimised for a particular screen resolution. Recommended is 1024 * 768. There may be monitors with higher resolution, this is a design decision based on the user profile. You can place objects manually, use the Ctrl+Arrow or Ctrl+Shift+Arrow to move in 1 or 10 pixel distances, or you can set the X and Y positions along with width and height in the Captioin properties tab.</p>
+<ul>
+<li>In the View menu, select Resize Window, and then 1024*768</li>
+<li>Right click the Customer Details sheet, and then select Select Fields. The Sheet properties dialog opens.</li>
+<li>Select the CompanyName, Country, ProductName, and SalesPerson fields and click Add.</li>
+<li>Click OK</li>
+<li>Align the boxes and place them below the grey navigation area down the left side as shown below:</li>
+</ul>
+<p><img alt="" src="./img/18.png"></p>
+<p>Remember you can use the Active All in the View menu and then the Align/Distribute in the Layout menu.
+You can also individually position each list box by chaning the X and Y coordinates in the properties dialog. Try setting the size of each list box to width 200 and height 88. Their X coordinate would each be 10 and then figure out what their Y coordinate will be.</p>
+<p>We can now change the list box titles so they are meaningful and comprehensive.</p>
+<ul>
+<li>Right click on CompanyName list box and choose properties.</li>
+<li>On the General Tab type Customer for the title.</li>
+<li>Repeat for the other list boxes renaming ProductName to Product, and SalesPerson to Sales Person.</li>
+</ul>
+<p>Next you need to show date fields, such as year, quater, and month. This is in order to provide a time dimension with which the user can slice, dice and drill into the data. A list box can also have a horizontal orientation, this is appropriate for the calendar.</p>
+<ul>
+<li>Create a new list box on the current sheet. </li>
+<li>In the general tab, under field, select Year.</li>
+<li>In the presentation tab, clear single column, under alignment, select Centre for Numbers.</li>
+<li>In the Layout tab, set border width to 0 pt.</li>
+<li>In the Caption tab, clear Show Caption.</li>
+<li>click OK.</li>
+<li>Resize the list box until it shows one single row.</li>
+</ul>
+<p><img alt="" src="./img/19.png"></p>
+<p>To make a copy of an existing sheet object you can press Ctrl+Alt and left click the mouse on the sheet object, drag it to a blank space and release. A copy of the object is created. Do this to the Year list box you just created.</p>
+<ul>
+<li>Right click on the new object and change the Field to be Quarter.</li>
+<li>Ensure the presentation stays as single column, with centre alignment.</li>
+<li>Do this again to create a Month list box.</li>
+<li>Arrange the boxes as below:</li>
+</ul>
+<p><img alt="" src="./img/20.png"></p>
+<p>Make sure they are spaced apart evenly and aligned correctly.</p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="05">
+    <h1>Design Grid, Navigation Box, Navigation Buttons, Search Object</h1>
+<p>Objects with no borders like our time dimensions can be problematic to move or resize. You can define a Design Grid in User Preferences. When you select an object with the design grid activated you can see the actual boundaries of the object.</p>
+<ul>
+<li>In the View menu, select Design Grid, or click the <img alt="" src="./img/21.png"> button on the toolbar.</li>
+<li>In the settings menu, select User Preferences, on the design tab under design grid settings, set snap step to 3, and line distance to 2.
+<img alt="" src="./img/22.png"></li>
+</ul>
+<h2>Navigation box</h2>
+<p>To ensure the user always gets feedback on the current selections on all sheets throughout the whole application by providing navigation tools to browse and clear selections.</p>
+<ul>
+<li>From the layout menu select New Sheet Object and then Current Selections Box. Click Ok.</li>
+<li>Place the box above the other list boxes in the left.</li>
+<li>Define the exact position and size to be X=10 Y=50 Width=200 and Height=110</li>
+<li>Next we want to change the columns in the navigation box, we want to chance the width of the Values column.</li>
+<li>Right click the box and choose properties.</li>
+<li>On the General tab enusre that Use Column Labels is selected. click Ok</li>
+<li>The two columns are wider than the width of the box so it has a horizontal scroll bar. Scroll to the furthest right hand side, position your mouse just beside the right edge of the box at the level of label Values. The cursor should change to a double sided arrow (like when you change the width of a column in excel). Move the width to the left so that the scrollbar dissapears.</li>
+<li>Go back into properties and switch off Use Colum Labels</li>
+</ul>
+<p><img alt="" src="./img/23.png"></p>
+<h2>Navigation Buttons</h2>
+<p>Now we also want navigation buttons underneath the current selection box.</p>
+<h2>Back Button</h2>
+<ul>
+<li>Create a new sheet object of type Button</li>
+<li>Set the backgroun image in the general tab, select single image and choose the back_icon button you have saved.</li>
+<li>In the Actions tab click Add and under Action type choose Selection, and under Action, select Back. Click Ok twice.</li>
+</ul>
+<p>Repeat these steps to create a forward and clear selections buttons.</p>
+<p><img alt="" src="./img/24.png"></p>
+<h2>Search object</h2>
+<p>To provide search functionality anywhere in the application we want search objects for our fields.</p>
+<ul>
+<li>Create a new sheet object of type Search Object.</li>
+<li>In the general tab, under Search In, select Selected Fields, select the following fields:</li>
+<li>CategoryName</li>
+<li>CompanyName</li>
+<li>ContactName</li>
+<li>DivisionsName</li>
+<li>ProductName</li>
+<li>SalesPerson</li>
+<li>In the Presentation tab, under Visual Style/Appearance, choose Squared. Click OK.</li>
+<li>Place the search box as shown below:</li>
+</ul>
+<p><img alt="" src="./img/25.png"></p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="06">
+    <h1>Objects on multiple sheets</h1>
+<p>If you want the navigation objects you just created to appear on multiple sheets and to have the same layout properties, size and position we must link the objects.
+Linked objects are ones that share all properties and display state. When you change the properties of one, you can chose to apply the change in the other linked objects. Linked objects can be on the same sheet or different sheets.</p>
+<ul>
+<li>Prior to duplicating the objects you must lock the position and size of the objects in order to prevent the user from accidently moving them.</li>
+<li>Select All List boxes (Ctrl+A)</li>
+<li>In the Layout properties for the list boxes clear Allow Move/Size in the Options section. Cick OK.</li>
+<li>While they are still all selected click Copy (Ctrl+C)</li>
+<li>In the Dashboard sheet right click and choose Paste Sheet Object as Link</li>
+</ul>
+<p><img alt="" src="./img/26.png"></p>
+<ul>
+<li>Repeat this for the Product Details, SalesPerson Details and the Order Details sheets.</li>
+</ul>
+<p>Sometimes you may wish to resize an object after you have pasted them.</p>
+<ul>
+<li>Go to the Customer Details Sheet, right click on the search box and choose properties, in the layout tab  under options select Allow Move/Size. Click Ok.</li>
+<li>Resize the search box.</li>
+<li>Right click on the search box again and select Linked Objects, Adjust Position of Linked Objects. Then go back into properties to switch off the Allow Move/Size option.</li>
+</ul>
+<h2>Deleting objects</h2>
+<ul>
+<li>On the Dashboard sheet, select Customer, Country, Product and Sales Person list boxes.</li>
+<li>Right click on one of the boxes, and select Remove. You will be presented with a warning message. Click Delete Selected.</li>
+</ul>
+<h2>Multi boxes</h2>
+<p>List boxes are versatile boxes that allow the user to make selections and give immediate feedback on how the data is connected. However a drawback is that they require a lot of screen space. Too many may limit your space for charts and tables. The multi box is a sheet object that shows several field simultaneously in a very compact way.</p>
+<ul>
+<li>On the Sales Person Details sheet right click the Sales Person list box and select Remove, deleted selected.</li>
+<li>Create a new sheet object type Multi Box.</li>
+<li>In the general tab under Available fields select SalesPerson, ReportsTo, and OfficeCity fields. Click Add.</li>
+<li>Choose the SalesPerson field in the right hand list and below set the label to be Sales Person, do  the same for OfficeCity. click OK.</li>
+<li>Place the multi box below the product list box, make sure it is aligned.</li>
+</ul>
+<p><img alt="" src="./img/27.png"></p>
+<p>Explore the multi box behaviour.
+- Select Lennart Skoglund in the Sales Person Field. It shows that Lennart works in the Nice office and reports to Helena DuFrojd.
+- Now you want to see who else reports to Helena.
+- Select Helena in the Reports To field, Click Lennart to remove the selection in Sales Person.
+- Clearly there is a drawback to multi boxes, however they do offer an alternative to list boxes.</p>
+  </div>
+<script>
+$('.ui.menu .item')
+  .tab({
+    history: true,
+    historyType: 'hash'
+  })
+;
+</script>
+   </div>
+
+
+
+  <br><br>
+  <div class="ui bottom fixed borderless menu">
+    <div class="ui small item">
+    <p id="footertext">
+    Prepared by  Dr. Brenda Mullally (bmullally@wit.ie). Except where otherwise noted, this content is licensed under a
+     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
+     </a>
+     </p>
+    </div>
+  </div>    <script>
+
+$(document).ready(function()
+{
+  $("img").addClass ("ui image");
+
+  var images = $(".lab img");
+  jQuery.each(images, function(i)  {
+    if((images[i].alt).length > 0)
+    {
+      var div_img = $(document.createElement("div")).addClass("ui segment");
+      $(images[i]).wrap(div_img);
+      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
+      div_label.append(images[i].alt);
+      $(div_label).insertBefore(images[i]);
+    }
+  });
+})    </script>
+
+  </body>
+ </html>
