@@ -1,0 +1,444 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/solarized_light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+      <style>
+
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.credits
+{
+  min-height:20px;
+}
+    </style>
+
+  </head>
+
+  <body>
+
+  <div class="ui container">
+<style>
+
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom: thin solid black;
+}
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+</style>
+
+<div class="ui fixed top pointing inverted menu labmenu">
+  <header class="header item">
+    <a href="../index.html">
+      <i class="sitemap icon"></i>
+      QlikView
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    <a class="active item" data-tab="Lab-08">
+        Lab-08
+    </a>
+      <a class="item" data-tab="01">
+        01
+      </a>
+      <a class="item" data-tab="02">
+        02
+      </a>
+      <a class="item" data-tab="03">
+        03
+      </a>
+      <a class="item" data-tab="04">
+        04
+      </a>
+      <a class="item" data-tab="05">
+        05
+      </a>
+      <a class="item" data-tab="06">
+        06
+      </a>
+      <a class="item" data-tab="07">
+        07
+      </a>
+    </div>
+</div>
+
+<br><br>
+
+  <div  class="ui tab segment lab" data-tab="Lab-08">
+    <h1>Objectives</h1>
+<p>In this lab you will insert many different types of charts into your application.</p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="01">
+    <h1>Dimensions and Expressions</h1>
+<p>In order to create a chart in QlikView you need to understand what dimensions and expressions are.</p>
+<p>When you make a chart, start by asking yourself "What do I want to show?" The answer is usually Sales, Quantity, or some other number. This is your expresssion, or more correctly, your measure. 
+Next you should ask, how many times should this be calculated? Per what do I want to show this meausre? The answer could be per month, per customer, per supplier. This is your dimension.</p>
+<p>An expression is simply a calculation that can be made over multiple records in your data set. The calculation returns one single value that summarises all relevant records. This is an aggreation, for example sum() count() avg() max() min().</p>
+<p>Dimensions are descriptive attributes for example customer, product, location, supplier, activity, time, colour, size etc. The dimension is like the loop variable in a For loop, the calculation is done once per dimensional value.  So the dimension determines how many rows, bars, points, or slices on a chart. The measure/expression is what is calculated in the loop.</p>
+<h2>Building your first chart</h2>
+<p>Open the ABC Sales application you have been working on. 
+On the product details sheet you will design a chart that enables the user to compare the SAles of the product categories. There is no need to display the actual numbers, but it is important to provide an overview of the categories and how they perform.</p>
+<ul>
+<li>In the Tools menu, select Quick Chart Wizard.</li>
+<li>The Wizard dialog displays, click Next.</li>
+<li>Step 1: Select chart type, select Bar Chart.</li>
+<li>Click Next, Step 2: Define Dimension displays.</li>
+<li>Under First Dimension, select CategoryName</li>
+<li>Click Next, Step 3: Defin Expression displays</li>
+<li>Ensure that Sum is selected. For of, select LinesSalesAmount</li>
+</ul>
+<p><img alt="" src="./img/01.png"></p>
+<ul>
+<li>Click Next, Step 4: Chart format displays, select Style, Orientation, and Mode as shown below:</li>
+</ul>
+<p><img alt="" src="./img/02.png"></p>
+<ul>
+<li>Click Finish.</li>
+</ul>
+<p><img alt="" src="./img/03.png"></p>
+<ul>
+<li>Right click on the chart and select properties.</li>
+<li>Click in the window title field and type Sales by Category.</li>
+<li>Clear Show Title in Chart.</li>
+<li>Click the Dimensions tab.</li>
+<li>Under Settings for Selected Dimension, clear Label.</li>
+<li>On the Expressions tab, type Sales in the Label field that is associated with the Sum(LineSalesAmount) definition.</li>
+<li>Click the Sort tab.</li>
+<li>Select Y-value descending.</li>
+<li>Click the style tab and choose horizontal orientation.</li>
+<li>Click the number tab.</li>
+<li>Select Sales and under Number Format Settings, select Integer.</li>
+<li>Configure the Symbol, Thousand Symbol and Million Symbol as shown below:</li>
+</ul>
+<p><img alt="" src="./img/04.png"></p>
+<ul>
+<li>Click the captions tab, under special icons, clear all items, except Menu.</li>
+<li>Clear Allow Minimize and Allow Maximise.</li>
+<li>Click OK.</li>
+</ul>
+<p><img alt="" src="./img/05.png"></p>
+<p>You have not made any selections, the chart shows the Sales aggregated over all the data. As soon as you make any selection in the chart or other fields, the chart is aggregated over the new set of selections. This single chart in combination iwth the calendar already enables you to answer many relevant business questions.</p>
+<p>Assumethat your users want to compare the monthly Sales of Q1 2013 with Q1 2014. For that, you can use a standard QlikView function, Set Reference.</p>
+<ul>
+<li>First select Year 2013 and Q1.</li>
+<li>Right click the chart, and select Set Reference. The bar's change colour to a lighter blue.</li>
+<li>Select yeaar 2014 and keep Q1 selected.</li>
+<li>A darker blue set of bars represent 2014 Q1.</li>
+<li>Right click the chart and clear reference, and then clear all selections.</li>
+</ul>
+<p>There are several ways to make selections in charts.</p>
+<ul>
+<li>press and hold the left mouse button and drag over five bars in the Sales by Category chart.</li>
+<li>To narrow down the selection, drag over one or a few of the remaining bars.</li>
+<li>Right click the chart and choose Clear All Selections, or click the Clear button on the menu bar.</li>
+<li>Press and hold the Ctrl key and click Swimwear, and then click Women's clothes.</li>
+</ul>
+  </div>
+  <div  class="ui tab segment lab" data-tab="02">
+    <h1>Pie Charts</h1>
+<p>According to the business plan the CEO needs to see the contribution of Sales by division. Instead of absolute numbers, the ratio between the division has to be displayed as percentages. </p>
+<ul>
+<li>Open the Dashboard sheet. Right Click and select New Sheet Object and then choose Chart.</li>
+<li>For the window title type Sales by Division, clear show title in chart, for chart type, select the pie chart and click next.</li>
+<li>For dimension, in the Available Fields/Groups, select DivisionName, click Add, clear label, click next. The expressions dialog box opens.</li>
+<li>For expression, select Sum in the Aggregation drop down list, select LineSalesAmount in the field drop down list, click paste, click ok, the dialog box closes.</li>
+<li>In Expressions, for Label type Sales and tick the Relative checkbox. This option allows you to diplay the relative values of the calculated expression for each dimension value instead of their absolutes.</li>
+<li>Click Next and Next again. The Sort dialog displays.</li>
+<li>Keep the sort default settings, click next.</li>
+<li>Style: choose as below:</li>
+</ul>
+<p><img alt="" src="./img/06.png"></p>
+<ul>
+<li>Click Next, in the presentation section ensure that show numbers in legend is selected, click Next.</li>
+<li>Keep the default colours settings, click next.</li>
+<li>In numbers notice that the Show in Percent (%) option is already checked. This happens by default when you select Relative in the Expression tab. Set the number format settings to Fixed to 2 decimals. Click Next.</li>
+<li>Keep the font settings, click Next.</li>
+<li>Keep the layout settings, click Next.</li>
+<li>Caption: under special icons clear all settings except menu, clear allow minimise and maximise. click finish.</li>
+</ul>
+<p><img alt="" src="./img/07.png"></p>
+<p>When you press CTRL+Shift on the keyboard and at the same time click in the chart, you notice red lines that indicate the borders of hte chart components. You can choose to resize and move these components.</p>
+<p><img alt="" src="./img/08.png"></p>
+<p>Use the Reset user sizing and Reset user docking buttons on the General tab in properties for the chart if you want to reset to the default size and position.</p>
+<p><img alt="" src="./img/09.png"></p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="03">
+    <h1>Tips for Data Visualisation:</h1>
+<h2>Prioritise the data.</h2>
+<p>Don't use effects without good reason (e.g. for emphasis). Usually you work within a limited screen area and every pixel of your application should be there for a reason. For example do you need a caption saying "Year" when you are presenting a list of 2012 2013 2014 etc?</p>
+<h2>Comparison.</h2>
+<p>One of the most effective visualisations you can choose for showing comparison is the bar chart. When comparing a set of items side by side to show quantitative behaviours use bar charts. When there are too many bars, labeling becomes problematic. It also implies the data is discrete, if your data continually changes over time use line graph instead. Avoid comparison of different units ($ and Qty) on the same scale. 3D bar charts are not intutive and lead the user to believe another dimension is involved.</p>
+<p>Comparing different measurements. QlikView combo chart allows you to define a visualization style for each measure and you can use two axes with their own separate scale. (we did this in excel in a previous lab).</p>
+<h2>Tellis Charts</h2>
+<p>A trellis chart is a grid of small charts, a repetition of a chart across a grid, usually at least two dimensions are used, one for the grid variable (e.g. Sales area) and one for the x-axis within each small chart (e.g year). You can analyse the metrics within each chart and look at the bigger picture at the same time and identify any unusual behaviour in the variables. The y-axis is shared so you can compare the measures.</p>
+<h2>Sorting</h2>
+<p>Sorting is a special type of comparision. You can choose to define the primary sort order in the chart properties. Dimension limits can be used to limit the number of values shown useful for Top 5 or Bottom 5 performers.</p>
+<h2>Movements and Trends</h2>
+<p>In the majority of applications you need to anlayze your data over some sort of time dimension. Trends can be displayed effectively in a line chart. Ensure that a relation between the dimensions values exist and that they are in sequence and have the same interval between the data points. Eg sales and profits over months in a year.</p>
+<h2>Share and distribution</h2>
+<p>Pie charts are popular visualisations for displaying visual distribution of measurements and are used very frequently. Because the human mind has difficulty comparing areas (in this case the size of hte slices of hte pie) it is not recommended that you show a lot of data categories within the pie chart. It is also hard to apply colours that are far apart in hue from each other to clearly differentiate between the pie slices.
+Where the dimension values to be compared are less than seven a pie chart is suitable. It is also good practice to combine small slices into "others".</p>
+<h2>Correlation</h2>
+<p>Another key part of analysis is to discover if there is a correlation between distinct measures. The scatter chart is the perfect visualisation if you want to display correlation. Also a line chart with separate lines allows you to analyse correlation over time.</p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="04">
+    <h1>Dimension Limits</h1>
+<p>Create a new chart that shows the Top and Bottom sellers in terms of products.</p>
+<ul>
+<li>Hold the Ctrl key and drag a copy of the Sales by Category chart on the Product details sheet.</li>
+<li>Press the Alt key and drag the cloned chart to the side.</li>
+<li>Change the dimension to Products, keep the expression, rename the title to Top 5 Products.</li>
+<li>On the Dimension Limits tab select Restrict which values are... select show only 5 largest values, clear Show Others.</li>
+<li>You can implement the top 5 in another way, in the presentation tab in properties under Chart Scrolling, select Enable X-Axis Scrollbar and for When Number of Item Exceeds, type 5.</li>
+<li>Now also create another chart that displays the bottom 5 products.</li>
+<li>To show those products in the Bottom 5 that have not sold at all, go into the presentation tab in properities and untick Supress Zero-Values.</li>
+</ul>
+<p><img alt="" src="./img/10.png"></p>
+<h2>Add a second dimension to a chart</h2>
+<p>So far the charts have been one dimensional, now you need to show sales by category and quarter. You could choose to create another chart, but because you want to limit the amount of objects, you modify the Sales by Category chart.</p>
+<ul>
+<li>On the products details sheet, go to the properties fo rhte chart.</li>
+<li>In dimensions choose Quarter and Add. Ensure that Quarter is the second dimension. Use demote and promote if needed. Clear the label for quarter.</li>
+<li>In style under subtype choose stacked.</li>
+<li>In presentation, ensure that the show legend is selected, click the settings button, select reverse order, click ok.</li>
+<li>In colours select persistent colours</li>
+<li>In font select 8 click ok.</li>
+</ul>
+<p><img alt="" src="./img/11a.png"></p>
+<p>Next we want to move the legend to a horizontal position.</p>
+<ul>
+<li>Press Ctrl+Shift and click the chart, place the pointer over the legend and while pressing Ctrl+Shift, hold the left mouse button and drag the pointer to the left bottom corner position. Observe that the orientation of the legend changes to horizontal.</li>
+</ul>
+<p><img alt="" src="./img/11.png"></p>
+<ul>
+<li>Size and arrange the Sales by Category, Top 5 Products, and Bottom 5 Products as shown below:</li>
+</ul>
+<p><img alt="" src="./img/12.png"></p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="05">
+    <h1>Order Trend</h1>
+<p>The CEO needs to see the trend of orders by month and wants to compare 2013 with 2012. Monitoring the order trend is key to the copany because the company experieinced a significant decrease of orders in 2013.</p>
+<p>The number of orders measure is defined as count(distinct OrderId). Lets look at why this is the case.
+From the file menu choose table viewer, right click the facts table and then select preview. The facts table contains rows for every order line. Therefore the orderID is repeated for each order line. If we need to calculate the number of orders then we want to count distinct orderId's.</p>
+<ul>
+<li>On the Dashboard sheet, create a new chart object. Name it Order Trend and do not show the title in the Chart, choose a line chart and click next.</li>
+<li>In dimensions select Month and label it. Click Next.</li>
+<li>In the fields tab, choose Total count and Distinct for Aggregation, for field choose OrderID click paste and Ok.</li>
+<li>Label it #Orders and in display options, for symbol select Auto and for Line, Normal. click next.</li>
+<li>Sort by numeric value Month and clear any other sort settings. click next.</li>
+<li>Ensure that plot area background style is set to minimal click next, next again.</li>
+<li>Under expression axeis (Axes tab) select Show Grid.</li>
+<li>click finish.</li>
+<li>place the chart as shown below:</li>
+</ul>
+<p><img alt="" src="./img/13.png"></p>
+<h2>Different measures in a single chart</h2>
+<p>The CEO wants to analyse Sales, Margin, and Margin% by month in a single chart and compare these figures with the order trend.
+So far your charts have used one or two dimensions. Now we need to add more expressions to a chart.</p>
+<ul>
+<li>On the Dashboard sheet, create a new chart object name it Sales Trend, don't show the title, choose a combo chart add the dimension Month and clear the label.</li>
+<li>Add the expression sum of LineSalesAmount label it Sales</li>
+<li>Add the expression sum of Margin label it Margin, in display options ensure that only Bar is selected.</li>
+<li>Add the expression  sum of Margin divided by sum of LineSalesAmount, in display options ensure that only line is selected.</li>
+<li>Select Values on Data points. Click Next</li>
+<li>Choose Month and sort by Numeric and Ascending, click next.</li>
+<li>Choose vertical orientation, and minimal plot area background style. click next.</li>
+<li>Leave the default settings for presentation, click next.</li>
+<li>Under Expression Axes select Sales and choose position to be left bottom, for primary dimension labels choose diagonal.</li>
+<li>Under Expression Axes select Margin and choose position to be left bottom.</li>
+<li>Under Expression Axes select Margin% and choose position to be right top. Clck next and next again.</li>
+<li>For each of Sales and Margin choose number format to be integer.</li>
+<li>For symbol type $, for Thousand type K$, for Million type M$</li>
+<li>For Margin% choose number format to be integer and show in percent(%).</li>
+<li>Click Finish</li>
+</ul>
+<p><img alt="" src="./img/14.png"></p>
+<p>Before continuing, arrange the objects on the dashboard so they are aligned properly and they fit to screen size 1024*768 pixels.
+In the layout properties reduce the border width, and remove any special icons in the caption except menu.</p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="06">
+    <h1>Scatter Chart</h1>
+<p>CMO needs to analyze the correlation between the number of products a customer has ordered and its sales. Extending the number of products to existing customer is one of the goals for 2014. For that, the CMO has to identify customers who purchased a low number of products but with high sales.</p>
+<p>The scatter chart differs from the bar, line, and combo chart because the dimension are shown as dots. The positions of the X and Y values are defined by the measures. In your chart, each customer is represented by a dot.</p>
+<ul>
+<li>On the Customer details sheet add a new chart object. Give it the title #Products versus Sales and Margin. Clear the show title. choose scatter chart as the chart type.</li>
+<li>Click next, add the dimension CompanyName, label it Customer, click next.</li>
+<li>On the expressions page for X, select LineSalesAmount, give it the label Sales, for Y, select RecNo_Products, and then type #Products for the label. Ensure the the Z Bubble Chart is cleared.</li>
+<li>Click Next, and next again.</li>
+<li>In Style, under Look, select :</li>
+</ul>
+<p><img alt="" src="./img/15.png"></p>
+<ul>
+<li>Ensure that under plot area background style, Minimal is selected. Click next.</li>
+<li>In presentation select only symbols, clear autosize symbols, and set the symbol size to 6pt. click Next and next again.</li>
+<li>In colours select persistent colours, click next.</li>
+<li>In numbers in the expressions box select Sales and #Products, and under Number Format settings, select integer. Click Finish.</li>
+</ul>
+<p><img alt="" src="./img/16.png"></p>
+<h2>Group by a second dimension</h2>
+<p>The CMO is also interested in seeing the customers grouped by division.</p>
+<ul>
+<li>Edit the dimension properties of the scatter chart. Add DivisionName and give it the label Division, select suppress when value is Null. Click Ok.</li>
+<li>Add a trend line showing the average number of products.</li>
+<li>On the expressions tab select Advanced mode, select #Products expression and hten under Trendline, select Average. Click Ok.</li>
+</ul>
+<p><img alt="" src="./img/17.png"></p>
+<h2>Add a third expression</h2>
+<p>Finally add the third expression that defines the size of the dots. Use Margin as the third expression.</p>
+<ul>
+<li>In the expression properties add sum(Margin), click ok and label it Margin.</li>
+<li>In the presentation tab set the Max buble size to 10pt click ok.</li>
+</ul>
+<p><img alt="" src="./img/18.png"></p>
+  </div>
+  <div  class="ui tab segment lab" data-tab="07">
+    <h1>Guage Chart</h1>
+<p>The guage chart has been in the BI dashboard industry for a long time and it is a very popular chart type. their general purpose is to determine the range of a given value. In a business dashboard it only works effectively in attracting the user's attention and doesn't work so well in getting hte point accross. A linear guage uses the space more effectively, and reducing the chart decoration makes the chart more intuitive. </p>
+<p>The CEO needs to monitor the Margin% for the current year to date. Create a chart that displays the KPI Margin Percent based on the selection status. The chart must display the Margin Percentage, include segments for the target Margin Percentage, and clearly show which values fall above or below that point.</p>
+<p>These are the Margin% KPI's target values:</p>
+<p>Poor performance: lower bound = up to 10%
+Mediocre performance: Mid bound = up to 15%
+Good performance: Upper bound = over 15%</p>
+<ul>
+<li>Create a new chart object on the dashboard sheet and choose gauge chart, click Next, click next again.</li>
+<li>Create the expression Sum(Margin)/Sum(LineSalesAmount), click ok, for the label Margin%, click next and next again.</li>
+<li>Select look and orientation as below:</li>
+</ul>
+<p><img alt="" src="./img/19.png"></p>
+<ul>
+<li>Click next, on presentation clear autowidth segments, for Max type 0.5, under indicator, Mode select Fill to value.</li>
+<li>Under show scale, set Major Units to 6. Clear Show Labels on Every, select Hide Segment Boundaries, select Hide Guage Outlines.</li>
+<li>Define the segments:</li>
+<li>Segment 1: Poor performance: lower bound = up to 10%</li>
+<li>Segment 2: Mediocre performance: Mid bound = up to 15%</li>
+<li>Segment 3: Good performance: Upper bound = over 15% </li>
+<li>A segments width is defined by its lower bound and the lower bound of the next segment. Segment 1 lower bound = 0, segment 2 lower bound = 0.10, segment 3 lower bound = 0.15, min value = 0 max value = 0.5</li>
+<li>For segment 1 select a lower bound colour, by clicking the colour tile and then under base colour click the colour tile and choose red. Click Ok twice.</li>
+<li>set segment 2 lower bound colour to yellow. Create a new segment for segment 3 by clicking segments setup and Add, colour this a new greem colour.</li>
+<li>Under reference lines select add, the reference lines dialog opens, for label type Goal.  for Expression type 0.2 click ok.</li>
+<li>Under text in chart, select Add, under text, type =Num(Sum(Margin)/Sum(LineSalesAMount),'##.##%'). click on Font, select Bold and size 11. click ok. click ok again.</li>
+<li>Click next and next again.</li>
+<li>In colours set transparency to 100%, click next.</li>
+<li>In numbers set Margin% to Fixed to 2 decimal places and display as percent.</li>
+<li>Click next until you come to the caption tab, clear show caption, click finish.</li>
+</ul>
+<p><img alt="" src="./img/20.png"></p>
+<ul>
+<li>Press Ctrl+Shift and use your mouse to resize and move the guage for best diplay and fit.</li>
+</ul>
+<p><img alt="" src="./img/21.png"></p>
+<h2>Create a linear guage with dynamic border bounds. In this guage, two segments are sufficient, one for poor (below 15%) and the other for good performance.</h2>
+<ul>
+<li>On the dashboard sheet create a new chart object, select guage, clear title.</li>
+<li>Edit an expression as 1, click ok.</li>
+<li>In style select look and orientation as before. </li>
+<li>In presentation clear autowidth segments, for Max type 0.5</li>
+<li>For segment 1 click the colour tile and under base colour select calculated, edit an expression type =if(Sum(Margin)/Sum(LineSalesAmount)&gt;=0.15, Green(), LightRed()) Click ok.</li>
+<li>For segment 2 under lower bound, click the ellipsis and edit an expression, click the colour tile under base colour choose fixed and select a light grey colour.</li>
+<li>Under indicator, Mode select No Indicator.</li>
+<li>Clear show scale, clear show labels on every, select hide segment boundaries, select hide gauge outlines.</li>
+<li>Under Text in chart, select add, under text type =Num(Sum(Margin)/Sum(LineSalesAmount),'##.##%').</li>
+<li>Click font, choose bold and size 11.</li>
+<li>In colours set transparency to 100%</li>
+<li>In caption clear show caption.</li>
+<li>Click Finish.</li>
+</ul>
+<p><img alt="" src="./img/22.png"></p>
+  </div>
+<script>
+$('.ui.menu .item')
+  .tab({
+    history: true,
+    historyType: 'hash'
+  })
+;
+</script>
+   </div>
+
+
+
+  <br><br>
+  <div class="ui bottom fixed borderless menu">
+    <div class="ui small item">
+    <p id="footertext">
+    Prepared by  Dr. Brenda Mullally (bmullally@wit.ie). Except where otherwise noted, this content is licensed under a
+     <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+       target="_blank">Creative Commons Attribution-NonCommercial 4.0 License
+     </a>
+     </p>
+    </div>
+  </div>    <script>
+
+$(document).ready(function()
+{
+  $("img").addClass ("ui image");
+
+  var images = $(".lab img");
+  jQuery.each(images, function(i)  {
+    if((images[i].alt).length > 0)
+    {
+      var div_img = $(document.createElement("div")).addClass("ui segment");
+      $(images[i]).wrap(div_img);
+      var div_label = $(document.createElement("div")).addClass("ui ribbon teal top attached label");
+      div_label.append(images[i].alt);
+      $(div_label).insertBefore(images[i]);
+    }
+  });
+})    </script>
+
+  </body>
+ </html>
