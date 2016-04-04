@@ -388,7 +388,7 @@ Good performance: Upper bound = over 15%</p>
 <li>In style select look and orientation as before. </li>
 <li>In presentation clear autowidth segments, for Max type 0.5</li>
 <li>For segment 1 click the colour tile and under base colour select calculated, edit an expression type =if(Sum(Margin)/Sum(LineSalesAmount)&gt;=0.15, Green(), LightRed()) Click ok.</li>
-<li>For segment 2 under lower bound, click the ellipsis and edit an expression, click the colour tile under base colour choose fixed and select a light grey colour.</li>
+<li>For segment 2 under lower bound, click the ellipsis and edit an expression type Sum(Margin)/Sum(LineSalesAmount) click the colour tile under base colour choose fixed and select a light grey colour.</li>
 <li>Under indicator, Mode select No Indicator.</li>
 <li>Clear show scale, clear show labels on every, select hide segment boundaries, select hide gauge outlines.</li>
 <li>Under Text in chart, select add, under text type =Num(Sum(Margin)/Sum(LineSalesAmount),'##.##%').</li>
@@ -397,6 +397,9 @@ Good performance: Upper bound = over 15%</p>
 <li>In caption clear show caption.</li>
 <li>Click Finish.</li>
 </ul>
+<p>This creates a guage that is generated using expressions to be shown as colour bars. 
+The first segment represtents any value from 0.0 lower bound to the Sum(Margin)/Sum(LineSalesAmount), it is coloured red if less than 15% and green otherwise.
+The second segment represents the grey part of the bar and it has a lower bound equal to the Sum(Margin)/Sum(LineSalesAmount) so the grey only shows from that point up to the max of .5 or 50%</p>
 <p><img alt="" src="./img/22.png"></p>
   </div>
 <script>
