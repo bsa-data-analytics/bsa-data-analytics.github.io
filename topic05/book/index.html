@@ -125,20 +125,18 @@ h3
   <div  class="ui tab segment lab" data-tab="01">
     <h1>Dimensions and Expressions</h1>
 <p>In order to create a chart in QlikView you need to understand what dimensions and expressions are.</p>
-<p>When you make a chart, start by asking yourself "What do I want to show?" The answer is usually Sales, Quantity, or some other number. This is your expresssion, or more correctly, your measure. 
-Next you should ask, how many times should this be calculated? Per what do I want to show this meausre? The answer could be per month, per customer, per supplier. This is your dimension.</p>
+<p>When you make a chart, start by asking yourself "What do I want to show?" The answer is usually Sales, Quantity, or some other number. This is your expresssion, or more correctly, your measure. Next you should ask, how many times should this be calculated? Per what do I want to show this meausre? The answer could be per month, per customer, per supplier. This is your dimension.</p>
 <p>An expression is simply a calculation that can be made over multiple records in your data set. The calculation returns one single value that summarises all relevant records. This is an aggreation, for example sum() count() avg() max() min().</p>
 <p>Dimensions are descriptive attributes for example customer, product, location, supplier, activity, time, colour, size etc. The dimension is like the loop variable in a For loop, the calculation is done once per dimensional value.  So the dimension determines how many rows, bars, points, or slices on a chart. The measure/expression is what is calculated in the loop.</p>
 <h2>Building your first chart</h2>
-<p>Open the ABC Sales application you have been working on. 
-On the product details sheet you will design a chart that enables the user to compare the SAles of the product categories. There is no need to display the actual numbers, but it is important to provide an overview of the categories and how they perform.</p>
+<p>Open the ABC Sales application you have been working on. On the product details sheet you will design a chart that enables the user to compare the Sales of the product categories. There is no need to display the actual numbers, but it is important to provide an overview of the categories and how they perform.</p>
 <ul>
 <li>In the Tools menu, select Quick Chart Wizard.</li>
 <li>The Wizard dialog displays, click Next.</li>
 <li>Step 1: Select chart type, select Bar Chart.</li>
 <li>Click Next, Step 2: Define Dimension displays.</li>
 <li>Under First Dimension, select CategoryName</li>
-<li>Click Next, Step 3: Defin Expression displays</li>
+<li>Click Next, Step 3: Define Expression displays</li>
 <li>Ensure that Sum is selected. For of, select LinesSalesAmount</li>
 </ul>
 <p><img alt="" src="./img/01.png"></p>
@@ -166,23 +164,24 @@ On the product details sheet you will design a chart that enables the user to co
 </ul>
 <p><img alt="" src="./img/04.png"></p>
 <ul>
-<li>Click the captions tab, under special icons, clear all items, except Menu.</li>
+<li>Click the captions tab, under special 
+icons, clear all items, except Menu.</li>
 <li>Clear Allow Minimize and Allow Maximise.</li>
 <li>Click OK.</li>
 </ul>
 <p><img alt="" src="./img/05.png"></p>
 <p>You have not made any selections, the chart shows the Sales aggregated over all the data. As soon as you make any selection in the chart or other fields, the chart is aggregated over the new set of selections. This single chart in combination iwth the calendar already enables you to answer many relevant business questions.</p>
-<p>Assumethat your users want to compare the monthly Sales of Q1 2013 with Q1 2014. For that, you can use a standard QlikView function, Set Reference.</p>
+<p>Assume that your users want to compare the monthly Sales of Q1 2013 with Q1 2014. For that, you can use a standard QlikView function, Set Reference.</p>
 <ul>
 <li>First select Year 2013 and Q1.</li>
 <li>Right click the chart, and select Set Reference. The bar's change colour to a lighter blue.</li>
-<li>Select yeaar 2014 and keep Q1 selected.</li>
+<li>Select year 2014 and keep Q1 selected.</li>
 <li>A darker blue set of bars represent 2014 Q1.</li>
 <li>Right click the chart and clear reference, and then clear all selections.</li>
 </ul>
 <p>There are several ways to make selections in charts.</p>
 <ul>
-<li>press and hold the left mouse button and drag over five bars in the Sales by Category chart.</li>
+<li>Press and hold the left mouse button and drag over five bars in the Sales by Category chart.</li>
 <li>To narrow down the selection, drag over one or a few of the remaining bars.</li>
 <li>Right click the chart and choose Clear All Selections, or click the Clear button on the menu bar.</li>
 <li>Press and hold the Ctrl key and click Swimwear, and then click Women's clothes.</li>
@@ -334,7 +333,7 @@ In the layout properties reduce the border width, and remove any special icons i
 <ul>
 <li>Edit the dimension properties of the scatter chart. Add DivisionName and give it the label Division, select suppress when value is Null. Click Ok.</li>
 <li>Add a trend line showing the average number of products.</li>
-<li>On the expressions tab select Advanced mode, select #Products expression and hten under Trendline, select Average. Click Ok.</li>
+<li>On the expressions tab select Advanced mode, select #Products expression and then under Trendline, select Average. Click Ok.</li>
 </ul>
 <p><img alt="" src="./img/17.png"></p>
 <h2>Add a third expression</h2>
@@ -370,7 +369,7 @@ Good performance: Upper bound = over 15%</p>
 <li>For segment 1 select a lower bound colour, by clicking the colour tile and then under base colour click the colour tile and choose red. Click Ok twice.</li>
 <li>set segment 2 lower bound colour to yellow. Create a new segment for segment 3 by clicking segments setup and Add, colour this a new greem colour.</li>
 <li>Under reference lines select add, the reference lines dialog opens, for label type Goal.  for Expression type 0.2 click ok.</li>
-<li>Under text in chart, select Add, under text, type =Num(Sum(Margin)/Sum(LineSalesAMount),'##.##%'). click on Font, select Bold and size 11. click ok. click ok again.</li>
+<li>Under text in chart, select Add, under text, type =Num(Sum(Margin)/Sum(LineSalesAmount),'##.##%'). click on Font, select Bold and size 11. click ok. click ok again.</li>
 <li>Click next and next again.</li>
 <li>In colours set transparency to 100%, click next.</li>
 <li>In numbers set Margin% to Fixed to 2 decimal places and display as percent.</li>
@@ -384,6 +383,7 @@ Good performance: Upper bound = over 15%</p>
 <h2>Create a linear guage with dynamic border bounds. In this guage, two segments are sufficient, one for poor (below 15%) and the other for good performance.</h2>
 <ul>
 <li>On the dashboard sheet create a new chart object, select guage, clear title.</li>
+<li>No dimensions are needed.</li>
 <li>Edit an expression as 1, click ok.</li>
 <li>In style select look and orientation as before. </li>
 <li>In presentation clear autowidth segments, for Max type 0.5</li>
