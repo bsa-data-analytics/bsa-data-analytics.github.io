@@ -1,1 +1,0 @@
-#Ethical Decision Making in Business
