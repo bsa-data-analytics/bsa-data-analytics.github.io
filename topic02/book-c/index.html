@@ -1,0 +1,263 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/solarized-light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+     
+
+     <style>
+       
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+
+
+     </style>
+
+   </head>
+
+  <body>
+    
+
+<style>
+  
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom: thin solid black;
+}
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+
+
+</style>
+
+<div class="ui fixed top pointing inverted menu labmenu">
+  <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
+    <a href="../index.html">
+      Data Discovery using Excel
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    
+    <a class="item" data-tab="Lab-05">
+      Lab-05
+    </a>
+    
+    <a class="item" data-tab="01">
+      01
+    </a>
+    
+    <a class="item" data-tab="02">
+      02
+    </a>
+    
+    <a class="item" data-tab="Exercises">
+      Exercises
+    </a>
+    
+    <a class="item" href="../../index.html">
+      <i class="home icon"></i>
+    </a>
+  </div>
+</div>
+
+<div class="ui segment pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    
+      
+        <a class="item" href="../../topic01/book/index.html">
+          Lab-01
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic01/book-a/index.html">
+          Lab-02
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic02/book/index.html">
+          Lab-03
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic02/book-b/index.html">
+          Lab-04
+        </a>
+      
+    
+      
+        <a class="active item" href="../../topic02/book-c/index.html">
+          Lab-05
+        </a>
+      
+    
+  </div>
+  <div class="pusher">
+    <div class="ui basic segment">
+      <br>
+      
+      <div  class="ui tab segment lab" data-tab="Lab-05">
+        <h1>Objectives</h1>
+<p>Excel provides a powerful tool for distilling a complex data set into meaningful information: PivotTables.</p>
+<p>Sorting of data in Excel</p>
+<p>Solver Plugin</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="01">
+        <h1>PivotTables</h1>
+<p>PivotTables allow you to create custom summaries and charts of key information in the data. To apply pivottables you need a data set with column labels in the first row.</p>
+<p>The data set <a href="./archives/accounting.xlsx">Accounting Professionals</a> provides the results of a survey of 27 employees in a tax division of a Fortune 100 company. </p>
+<p>Select any cell in the data set and choose Insert PivotTable from the Insert tab and follow the steps of the wizard.</p>
+<p>Excel creates a new worksheet with a pivotTable as shown below:</p>
+<p><img src="./img/01.png" alt=""></p>
+<p>You should first decide what types of tables you wish to create. For example in the accounting data set, suppose you want to count the average number of years of service for males and females with and without a graduate degree. If you drag the variable Gender from the field list to the row labels area, the variable graduate degree? into the column labels area and the variable years of service into the values area, then you have created the PivotTable.</p>
+<p><img src="./img/02.png" alt=""></p>
+<p>However, the sum of years is probably not what you would want.</p>
+<p>In the options tab under Pivot Table Tools in the menu bar, click on the Active Field group and choose Value Field Settings. You will be able to change the summarisation method in the PivotTable in the dialog. Selecting the Average results in the PivotTable shown below. We see that the average number of years of service is not much different for holders of graduate degrees, but that females have much fewer years of service than males.</p>
+<p><img src="./img/03.png" alt=""></p>
+<p>The beauty of pivotTables is that if you wish to change the analysis, you can simply uncheck the boxes in the field list or drag the variable names to different field areas.
+You may easily add multiple variables in the fields to create different views of the data.</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="02">
+        <h1>Sorting in Excel</h1>
+<p>Open the following excel file: <a href="./archives/sorting-data.xlsx">Sorting-data</a></p>
+<p>It contains the months and the percentage growth or decline of stocks. What we would like to do is look at those months when the S&amp;P Index performed best, and see whether those were also months where Duke Energy stock performed best. We will sort the data in descending order.</p>
+<p>We want to preserve the ordered pairs of a particular month and a particular S&amp;P index return, and then also the particular S&amp;P return and the Duke Energy stock return. If you select column B and choose Z-A sorting from the Data tab Excel will alert you that if I only sort by one column it would not be useful so you read the sort warning and tell it to expand the selection. This means the other columns touching column B will also be included in the sort.</p>
+<p>So it displays at the top the best performing months for the S&amp;P index and you can see quickly that there is not a strong association (as discovered in the previous labs for correlation etc). You can see in April 2009 (months are in US format of mm/dd/yy) when the S&amp;P index performed one of its best months over the 14 year period that Duke Energy stock was down. In April 2003 there was a good return in S&amp;P and excellent in Duke Energy.</p>
+<p>Do the same exercise for Ascending sort order. There does appear to be a stronger association on the downside, when S&amp;P index is down Duke Energy also tends to be down.
+If you repeat the exercise using column C we can see that for descending order so when Duke Energy was performing at its best only half of those 8 months showed positive returns for the S&amp;P. 
+Ascending order based on Duke Energy we can see that again a closer relationship exists when Duke Energy is down S&amp;P is also down but at a fraction of the rate.</p>
+<p>What this may tell us is that when the S&amp;P index is down a little and perhaps some bad news about Duke Engergy is announced then the market reacts to Duke Energy news much more than it does to S&amp;P as a whole.</p>
+<p>Restore the data to its orginal order do that using the date column.</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="Exercises">
+        <h1>Exercises</h1>
+<p>Create PivotTables to find the average number of years of undergraduate study for each age group with and whithout a CPA and the number of employees in each age group with and without a CPA in the Excel file Accounting Professionals.</p>
+<p>Create a PivotTable showing the count of the number of employees by age group.</p>
+<p><img src="./img/04.png" alt=""></p>
+<p>PivotTables also provide an easy method of constructing cross-tabulations for categorical data. 
+Extend the one above, drag the field Graduate Degree? into the column label box in the field list. This PivotTable is a cross-tabulation of the number of employees in each age group who do or do not posses a graduate degree.</p>
+<p><img src="./img/05.png" alt=""></p>
+<p>Open the file <a href="./archives/BicycleForPivot.xls">Bicycle Pivot</a>. Create a PivotTable to determine the total revenue for material groups in each sales organisaiton.</p>
+<p>Experiment with adding filters to the pivotTable, such as Distribution Channel. You can also drill down into the data by right clicking on the category Mountain bike, choose Expand/Collapse and then Expand, then choose the detail you want to see, in this case Material.
+Remove the drill down by unticking the Material field in the field list.</p>
+<p>Try restricting to the first quarter of 2007. Add the field Date, and then right click on one of the dates displayed, choose Group, and add Months, and Years to the groups. At the top of the PivotTable then click on the dropdown box for Years and tick 2007, click on the dropdown box for Months and choose the first quarter (Jan, Feb, Mar). You can then drag the years and month up to the filter area.</p>
+
+      </div>
+     
+    </div>
+  </div>
+</div>
+  <div class="ui bottom fixed borderless right menu">
+    <div class="ui right tiny menu">
+      <div class="ui mini message segment">
+        Dr. Brenda Mullally (bmullally@wit.ie).
+        <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+            target="_blank">Creative Commons License
+        </a>
+      </div>
+    </div>
+  </div>
+
+    <footer>
+
+    </footer>
+    <script>
+      $(document).ready(function () {
+  $('img').addClass('ui image');
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function (i) {
+    if (($images[i].alt).length > 0) {
+      const divImg = $(document.createElement('div')).addClass('ui basic segment');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass('ui blue ribbon label');
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.embed').embed();
+
+  $('.ui.menu .item')
+      .tab({
+        history: true,
+        historyType: 'hash',
+      });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+      .sidebar({ context: $('.pushable') })
+      .sidebar('setting', 'transition', 'slide out')
+      .sidebar('attach events', '#toc');
+});
+
+    </script>
+  </body>
+
+ </html>
