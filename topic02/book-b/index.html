@@ -248,16 +248,25 @@ Make sure you check the Chart output box.</p>
 <p>To find the slope of the line we use the slope function.</p>
 <pre><code>
     =slope(E4:E178,D4:D178)</code></pre>
+<<<<<<< HEAD
 <p><img src="./img/42.png" alt=""></p>
 <p>Next we would like to know on average did Duke Energy stock out perform the S&amp;P index. One way to discover this is what would be the return from Duke Energy if the S&amp;P index returns zero? For this we use the Y-intercept function.</p>
 <pre><code>
 =intercept(E4:E178,D4:D178)</code></pre>
 <p><img src="./img/43.png" alt=""></p>
+=======
+<p><img src="./img/01.png" alt=""></p>
+<p>Next we would like to know on average did Duke Energy stock out perform the S&amp;P index. One way to discover this is what would be the return from Duke Energy if the S&amp;P index returns zero? For this we use the Y-intercept function.</p>
+<pre><code>
+=intercept(E4:E178,D4:D178)</code></pre>
+<p><img src="./img/02.png" alt=""></p>
+>>>>>>> 6767e6d0b3c70f8682ef660d0cdcb0e4b7e3f704
 <p>The outcome is slightly positive which tells us over the 14 years Duke Energy on average would return half a percent if the S&amp;P returned zero.</p>
 <p>The descriptive statistics of min, max, mean and stardard deviation tell us these values move differently. But how differently? Are they always up together or down together, does Duke Energy always move up more independently?</p>
 <p>For this we use the correl function.</p>
 <pre><code>
 =correl(E4:E178,D4:D178)</code></pre>
+<<<<<<< HEAD
 <p><img src="./img/44.png" alt=""></p>
 <p>We can see it is positive but not strong. This tells us the Duke Energy stock goes it&#39;s own way independently of the market. It can be interpreted as a good thing as it is beneficial to have assets that are not highly correlated to each other.</p>
 <p>The correlation between the SP500 and Duke Energy Stock shows there is a relationship that is significant but not overwhelming. There&#39;s a lot of independent movement too. This tells us that Duke Energy goes its own way, it is often down when the overall stock market is up and and it goes up when the overall stock market is down.
@@ -265,12 +274,35 @@ For a well performing stock this is a desirable characteristic as it allows grea
 <p>Correlation is a measure of a linear relationship between two variables, X and Y, and is measured by the correlation coefficient. The correlation coefficient is between -1 and +1
 A correlation of 0 indicates that two variables have no linear relationship to each other. Thus, if one changes, we cannot resonably predict what the other variable might do. A positive correlation coefficient indicates a linear relationship for which one variable increases as the other also increases. A negative correlation coefficient indicates a linear relationship for one variable that increases while the other decreases.</p>
 <p>You can also calculate the R-Squared value for the relationship between the S&amp;P 500 and Duke Energy by using the RSQ() formula. Again enter the known y&#39;s as Duke Energy.  R Squared is a statistical measure of how close the data are to the fitted regression line. It is also known as the coefficient of determination. </p>
+=======
+<p><img src="./img/03.png" alt=""></p>
+<p>We can see it is positive but not strong. This tells us the Duke Energy stock goes it&#39;s own way independently of the market. It can be interpreted as a good thing as it is beneficial to have assets that are not highly correlated to each other.</p>
+<p>The Excel file <a href="./archives/colleges_universities.xlsx">Colleges and Universities</a> contains data from 49 top liberal arts and research universities across the United States. Several questions might be asked about statistical relationships among these variables:</p>
+<ul>
+<li>Does a higher percentage of students in the top 10% or their high school class suggest a higher graduation rate?</li>
+<li>Is acceptance rate related to the amount spent per student?</li>
+<li>Do schools with lower acceptance rates tend to accept students with higher SAT scores?</li>
+</ul>
+<p>These questions can be addressed by computing the correlation between the variables.</p>
+<p>Correlation is a measure of a linear relationship between two variables, X and Y, and is measured by the correlation coefficient. The correlation coefficient is between -1 and +1
+A correlation of 0 indicates that two variables have no linear relationship to each other. Thus, if one changes, we cannot resonably predict what the other variable might do. A positive correlation coefficient indicates a linear relationship for which one variable increases as the other also increases. A negative correlation coefficient indicates a linear relationship for one variable that increases while the other decreases.</p>
+<p>Excel&#39;s CORREL function computes the correlation coefficient of two data arrays, and the data analysis correlation tool computes correlation coefficients for more than two arrays.</p>
+<p>The correlation matrix for the data in Colleges and Universities is shown below:</p>
+<p><img src="./img/38.png" alt=""></p>
+<p>None of the correlations are very high; however, we see a moderate positive correlation between the graduate rate and SAT score (0.56414), this indicates that schools with higher SATs have higher graduation rates.
+We also see a negative correlation between acceptance rate and graduation rate (-0.55037751), indicating that schools with lower acceptance rates have higher graduation rates.</p>
+<p>Open the <a href="./archives/major_league_baseball.xlsx">major league basball</a> and calculate the correlations between some pairs of numerical variables. Do the results make sense?</p>
+<p>Calculate the correlation between the SP500 and Duke Energy Stock. It should show there is a relationship that is significant but not overwhelming. There&#39;s a lot of independent movement too. This tells us that Duke Energy goes its own way, it is often down when the overall stock market is up and and it goes up when the overall stock market is down.
+For a well performing stock this is a desirable characteristic as it allows greater diversification by having assets that are not highly correlated to the stock market as a whole.
+You can also calculate the R-Squared value for the relationship between the S&amp;P 500 and Duke Energy by using the RSQ() formula. Again enter the known y&#39;s as Duke Energy.  R Squared is a statistical measure of how close the data are to the fitted regression line. It is also known as the coefficient of determination. </p>
+>>>>>>> 6767e6d0b3c70f8682ef660d0cdcb0e4b7e3f704
 <p>R-squared is always between 0 and 100%:</p>
 <ul>
 <li>0% indicates that the model explains none of the variability of the response data around its mean.</li>
 <li>100% indicates that the model explains all the variability of the response data around its mean.</li>
 <li>In general, the higher the R-squared, the better the model fits your data</li>
 </ul>
+<<<<<<< HEAD
 <p><img src="./img/47.png" alt=""></p>
 <p>The R-squared for S&amp;P 500 and Duke Energy shows the relationship between the stocks explains only 11% of the variability around the mean.</p>
 <h2>Scatter charts</h2>
@@ -294,6 +326,18 @@ The correlation matrix for the data in Colleges and Universities is shown below:
 <p>None of the correlations are very high; however, we see a moderate positive correlation between the graduate rate and SAT score (0.56414), this indicates that schools with higher SATs have higher graduation rates.
 We also see a negative correlation between acceptance rate and graduation rate (-0.55037751), indicating that schools with lower acceptance rates have higher graduation rates.</p>
 <p>Open the <a href="./archives/major_league_baseball.xlsx">major league basball</a> and calculate the correlations between some pairs of numerical variables. Do the results make sense?</p>
+=======
+<h2>Scatter charts</h2>
+<p>Select both columns D and E. Then go to the Insert Tab and from the charts section choose Scatter. In a scatter chart each dot represents one month&#39;s activiity. the x axis represents the returns of S&amp;P 500, and the y axis represents the returns of Duke Energy Stock.</p>
+<p><img src="./img/04.png" alt=""></p>
+<p>A scatter plot chart is created for the data showing some association but not a high amount of association (you will cover more on association in lab4)</p>
+<p><img src="./img/05.png" alt=""></p>
+<p>We can add descriptive statistics by choosing trendline linear from the charts design tab.</p>
+<p><img src="./img/06.png" alt=""></p>
+<p>A dotted line will appear. Now go back to the trendline menu and choose options, next check the box to display the equation on the chart and check the box to display the R-Squared value on the chart.</p>
+<p><img src="./img/07.png" alt=""></p>
+<p>The equation may be a little small (you can click on the equation and move it to a better position on the chart if it is difficult to read) but if you can see it, it states Y=0.4863x + 0.0051. This means the slope is 0.4863 which is what we found before. The y-intercept is 0.0051 as we found before.</p>
+>>>>>>> 6767e6d0b3c70f8682ef660d0cdcb0e4b7e3f704
 
       </div>
      
