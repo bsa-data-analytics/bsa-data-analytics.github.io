@@ -183,9 +183,10 @@ You may easily add multiple variables in the fields to create different views of
 Extend the one above, drag the field Graduate Degree? into the column label box in the field list. This PivotTable is a cross-tabulation of the number of employees in each age group who do or do not posses a graduate degree.</p>
 <p><img src="./img/14.png" alt=""></p>
 <p>Open the file <a href="./archives/BicycleForPivot.xlsx">Bicycle Pivot</a>. Create a PivotTable to determine the total revenue for material groups in each sales organisaiton.</p>
-<p>Experiment with adding filters to the pivotTable, such as Distribution Channel. You can also drill down into the data by right clicking on the category Mountain bike, choose Expand/Collapse and then Expand, then choose the detail you want to see, in this case Material.
+<p>Experiment with adding filters to the pivotTable, such as Distribution Channel. </p>
+<p>You can also drill down into the data by right clicking on the category Mountain bike, choose Expand/Collapse and then Expand, then choose the detail you want to see, in this case Material.
 Remove the drill down by removing the Material field in the field list for rows.</p>
-<p>Try restricting to the first quarter of 2007. Add the field Date, and then right click on one of the dates displayed, choose Group, and add Months, and Years to the groups. At the top of the PivotTable then click on the dropdown box for Years and tick 2007, click on the dropdown box for Months and choose the first quarter (Jan, Feb, Mar). You can then drag the years and month up to the filter area.</p>
+<p>Try restricting to the first quarter of 2007. To do this we add the field Date to the rows section, and then right click on one of the dates displayed, choose Group, and add Quarters, and Years to the groups.Then move the Years and Date fields that appear in the rows section to the filter section. Then click on the dropdown box for Years and tick 2007, click on the dropdown box for Date and choose the first quarter. </p>
 <p><img src="./img/15.png" alt=""></p>
 
       </div>
@@ -195,7 +196,7 @@ Remove the drill down by removing the Material field in the field list for rows.
 <p>Open the following excel file: <a href="./archives/sorting_data.xlsx">Sorting-data</a></p>
 <p>It contains the months and the percentage growth or decline of stocks. What we would like to do is look at those months when the S&amp;P Index performed best, and see whether those were also months where Duke Energy stock performed best. We will sort the data in descending order.</p>
 <p>We want to preserve the ordered pairs of a particular month and a particular S&amp;P index return, and then also the particular S&amp;P return and the Duke Energy stock return. If you select column B and choose Z-A sorting from the Data tab Excel will alert you that if I only sort by one column it would not be useful so you read the sort warning and tell it to expand the selection. This means the other columns touching column B will also be included in the sort.</p>
-<p>So it displays at the top the best performing months for the S&amp;P index and you can see quickly that there is not a strong association (as discovered in the previous labs for correlation etc). You can see in April 2009 (months are in US format of mm/dd/yy) when the S&amp;P index performed one of its best months over the 14 year period that Duke Energy stock was down. In April 2003 there was a good return in S&amp;P and excellent in Duke Energy.</p>
+<p>So it displays at the top the best performing months for the S&amp;P index and you can see quickly that there is not a strong association (as discovered in the previous labs for correlation etc). You can see in April 2013 (months are in US format of mm/dd/yy) when the S&amp;P index performed one of its best months over the years that Duke Energy stock was down. In Arpil 2007 there was a good return in S&amp;P and excellent in Duke Energy.</p>
 <p>Do the same exercise for Ascending sort order. There does appear to be a stronger association on the downside, when S&amp;P index is down Duke Energy also tends to be down.
 If you repeat the exercise using column C we can see that for descending order so when Duke Energy was performing at its best only half of those 8 months showed positive returns for the S&amp;P. 
 Ascending order based on Duke Energy we can see that again a closer relationship exists when Duke Energy is down S&amp;P is also down but at a fraction of the rate.</p>
@@ -207,7 +208,7 @@ Ascending order based on Duke Energy we can see that again a closer relationship
       <div  class="ui tab segment lab" data-tab="03">
         <p>Solver Plug In</p>
 <p>One of the most powerful tools that can be used with Excel, the Solver Plugin. It is useful when you have a function or a series of functions and you want to know what value to put in for X so that F(x) equals a certain kind of Y. We have three different choices for our Y, we can choose a certain target value, or we can choose a maximum or a minimum. We can also place constraints on our X for example that it must be a positive value or it needs to be zero, or one, and so on.</p>
-<p>Open the <a href="./archives/Solver-Add-In.xlsx">Solver fiile</a> we have a function where we have a discrete annual interest rate. We want to know what the discrete annual interest rate is with an initial balance of €1000, and results in €5000 after 10 years? The interest rate is the unknown which gives us a value of $5000.</p>
+<p>Open the <a href="./archives/Solver-Add-In.xlsx">Solver fiile</a> and use the first tab called Basic Solver - Template. We have a function where we have a discrete annual interest rate. We want to know what the discrete annual interest rate is with an initial balance of €1000, and results in €5000 after 10 years? The interest rate is the unknown which gives us a value of $5000.</p>
 <p>If the solver plugin is installed you will see it on the Data tab at the far right.</p>
 <p><img src="./img/06.png" alt=""></p>
 <p>If it is not installed, from the File menu choose Options. In the Excel Options window choose Add-ins from the left side menu.</p>
@@ -218,7 +219,7 @@ Ascending order based on Duke Energy we can see that again a closer relationship
 <p>Click on the Solver option now. For this model we are building our objective is that the cell B17 is to have the value 5000 contained in it. This is to be acheived by changing variable cell C4.</p>
 <p><img src="./img/07.png" alt=""></p>
 <p>Click Solve. Excel carries out the function and delivers the result of 17.46% in cell B17. The values in column B for each year also changed to reflect the new interest rate resulting in 5000 at year 10.</p>
-<p>We don&#39;t want to save the result so choose restore original values.</p>
+<p>We don&#39;t want to save the result so restore the original value of 10% for the interest.</p>
 <p><img src="./img/08.png" alt=""></p>
 <p>Next we want to solve where we want to keep our interest rate at 10% and change the initial balance in order to achieve the result of 5000 in 10 years. Use Solver again to calculate the initial balance (the changing variable is now B7).</p>
 <p>What if we have a more challenging problem, we would like to know how many years will 1,000 at 10% interest take to get to 5,000?
@@ -231,8 +232,10 @@ We can&#39;t do this using our current functions as each year calculates the bal
 =B7*(1+C4)^10</code></pre>
 <p><img src="./img/09.png" alt=""></p>
 <p>Now if we didn&#39;t want to state the 10 in the formula and use another cell so that it could be adjusted we can do that too. </p>
+<pre><code>
+=B7*(1+C4)^E7</code></pre>
 <p><img src="./img/10.png" alt=""></p>
-<p>Next we use Solver again our objective is for cell E9 to have the value 5000 and we want soler to change cell E7 in order to figure out the solution.</p>
+<p>Next we use Solver again our objective is for cell E9 to have the value 5000 and we want solver to change cell E7 (number of years) in order to figure out the solution.</p>
 <p><img src="./img/11.png" alt=""></p>
 <p>Solver works out that it would take 16.88 years to reach 5000 at a 10% interest rate.</p>
 <p><img src="./img/12.png" alt=""></p>
