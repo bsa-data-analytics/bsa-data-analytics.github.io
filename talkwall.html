@@ -1,0 +1,451 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/solarized-light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+     
+
+     <style>
+       
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+
+
+     </style>
+
+   </head>
+
+  <body>
+    
+
+
+  
+
+
+
+
+
+<header class="ui middle aligned center aligned stackable grid segment">
+
+  <a class="ui blue left corner label">
+  <div id="showTOC" class="popup" data-content="Reveal TOC">
+    <i id="toc" class="sitemap big  icon"></i>
+  </div>
+</a>
+
+  <div class="seven wide center aligned column">
+    <h2 class="headder"> Data Analytics</h2>
+    <p> All Slides in the Course </p>
+  </div>
+
+  
+<div class="two wide column sitemap">
+  <div class="popup" data-content="To the top level Topics for this Module...">
+    <a href="index.html"> <i class="huge home icon"></i> Module </a>
+  </div>
+</div>
+
+  
+<div class="four wide column">
+  <div class="ui center aligned mini message segment">
+    Dr. Brenda Mullally (bmullally@wit.ie).
+    <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+        target="_blank">Creative Commons License
+    </a>
+  </div>
+</div>
+
+  
+<div class="ui two wide right aligned column">
+  <div class="ui left aligned middle aligned very basic grid">
+    <div class="row">
+      <div class="popup" data-content="All Slides in Course">
+        <a href="talkwall.html"> <i class="large film icon"></i> All Slides </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="popup" data-content="All Labs in Course">
+        <a href="labwall.html"> <i class="large lab icon"></i> All Labs </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</header>
+
+
+
+<div class="ui bottom attached segment pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    
+    <a class="item" href="topic01/talk-1/1_DA_Intro.pdf">
+      Data analytics
+    </a>
+    
+    <a class="item" href="topic01/talk-2/london_sailors.pdf">
+      Case study 
+    </a>
+    
+    <a class="item" href="topic01/talk-3/trends2016.pdf">
+      Top trends
+    </a>
+    
+    <a class="item" href="topic02/talk-1/dataDiscovery.pdf">
+      Introduction to the first step in any data project, the data discovery stage.
+    </a>
+    
+    <a class="item" href="topic02/talk-2/dataDiscoveryIIs.pdf">
+      Measures of variability include standard deviation for the sample and for the population. Measures of shape indicate the symmetry of a histogram. 
+    </a>
+    
+    <a class="item" href="topic02/talk-3/dataDiscoveryIII.pdf">
+      Outliers are an important part of data analytics that must be dealt with.
+    </a>
+    
+    <a class="item" href="topic02/talk-4/dataDiscoveryIV.pdf">
+      Pivot tables are a very useful tool for the analysis and display of data
+    </a>
+    
+    <a class="item" href="topic03/talk-1/InfoInsights1.pdf">
+      Advanced Data Analtyics
+    </a>
+    
+    <a class="item" href="topic03/talk-2/BigData2015.pdf">
+      Advanced Analytics - Big Data
+    </a>
+    
+    <a class="item" href="topic04/talk-1/visualisation.pdf">
+      Data Visualisation & Information Visualisation
+    </a>
+    
+    <a class="item" href="topic04/talk-2/How_to_Design_Charts_and_Graphs.pdf">
+      Design Tips for charts and graphs
+    </a>
+    
+    <a class="item" href="topic04/talk-3/Visualisations.pdf">
+      Best Visualisation Examples 2015
+    </a>
+    
+    <a class="item" href="topic04/talk-4/BPM.pdf">
+      Business Performance Management
+    </a>
+    
+  </div>
+  <div class="pusher">
+    <div class="ui basic segment">
+      <div class="ui four doubling stackable cards">
+        
+        
+  <a class="ui raised link card" href="topic01/talk-1/1_DA_Intro.pdf">
+    <div class="content">
+        <div class="right floated meta"> <i class="film large icon"></i></div>
+        <div class="header"> Data analytics </div>
+    </div>
+    <div class="image">
+      <img class="ui bordered rounded image" src="topic01/talk-1/1_DA_Intro.jpg">
+    </div>
+    <div class="content">
+      <div class="description">
+         <p>Data Analytics is the science of examining raw data with the purpose of drawing conclusions about that information. Data analytics is used in many industries to allow companies and organization to make better business decisions and in the sciences to verify or disprove existing models or theories. </p>
+
+      </div>
+    </div>
+    
+  </a>
+
+        
+        
+  <a class="ui raised link card" href="topic01/talk-2/london_sailors.pdf">
+    <div class="content">
+        <div class="right floated meta"> <i class="film large icon"></i></div>
+        <div class="header"> Case study  </div>
+    </div>
+    <div class="image">
+      <img class="ui bordered rounded image" src="topic01/talk-2/london_sailors.jpg">
+    </div>
+    <div class="content">
+      <div class="description">
+         <p>This case study introduces the use of analytics by the British Sailing team for the olympics.</p>
+
+      </div>
+    </div>
+    
+  </a>
+
+        
+        
+  <a class="ui raised link card" href="topic01/talk-3/trends2016.pdf">
+    <div class="content">
+        <div class="right floated meta"> <i class="film large icon"></i></div>
+        <div class="header"> Top trends </div>
+    </div>
+    <div class="image">
+      <img class="ui bordered rounded image" src="topic01/talk-3/trends2016.jpg">
+    </div>
+    <div class="content">
+      <div class="description">
+         <p>Top trends in BI according to Tableau, a leader in Business Intelligence software.</p>
+
+      </div>
+    </div>
+    
+  </a>
+
+        
+        
+  <a class="ui raised link card" href="topic02/talk-1/dataDiscovery.pdf">
+    <div class="content">
+        <div class="right floated meta"> <i class="film large icon"></i></div>
+        <div class="header"> Introduction to the first step in any data project, the data discovery stage. </div>
+    </div>
+    <div class="image">
+      <img class="ui bordered rounded image" src="topic02/talk-1/dataDiscovery.jpg">
+    </div>
+    <div class="content">
+      <div class="description">
+         
+      </div>
+    </div>
+    
+  </a>
+
+        
+        
+  <a class="ui raised link card" href="topic02/talk-2/dataDiscoveryIIs.pdf">
+    <div class="content">
+        <div class="right floated meta"> <i class="film large icon"></i></div>
+        <div class="header"> Measures of variability include standard deviation for the sample and for the population. Measures of shape indicate the symmetry of a histogram.  </div>
+    </div>
+    <div class="image">
+      <img class="ui bordered rounded image" src="topic02/talk-2/dataDiscoveryIIs.jpg">
+    </div>
+    <div class="content">
+      <div class="description">
+         
+      </div>
+    </div>
+    
+  </a>
+
+        
+        
+  <a class="ui raised link card" href="topic02/talk-3/dataDiscoveryIII.pdf">
+    <div class="content">
+        <div class="right floated meta"> <i class="film large icon"></i></div>
+        <div class="header"> Outliers are an important part of data analytics that must be dealt with. </div>
+    </div>
+    <div class="image">
+      <img class="ui bordered rounded image" src="topic02/talk-3/dataDiscoveryIII.jpg">
+    </div>
+    <div class="content">
+      <div class="description">
+         
+      </div>
+    </div>
+    
+  </a>
+
+        
+        
+  <a class="ui raised link card" href="topic02/talk-4/dataDiscoveryIV.pdf">
+    <div class="content">
+        <div class="right floated meta"> <i class="film large icon"></i></div>
+        <div class="header"> Pivot tables are a very useful tool for the analysis and display of data </div>
+    </div>
+    <div class="image">
+      <img class="ui bordered rounded image" src="topic02/talk-4/dataDiscoveryIV.jpg">
+    </div>
+    <div class="content">
+      <div class="description">
+         
+      </div>
+    </div>
+    
+  </a>
+
+        
+        
+  <a class="ui raised link card" href="topic03/talk-1/InfoInsights1.pdf">
+    <div class="content">
+        <div class="right floated meta"> <i class="film large icon"></i></div>
+        <div class="header"> Advanced Data Analtyics </div>
+    </div>
+    <div class="image">
+      <img class="ui bordered rounded image" src="topic03/talk-1/InfoInsights1.jpg">
+    </div>
+    <div class="content">
+      <div class="description">
+         
+      </div>
+    </div>
+    
+  </a>
+
+        
+        
+  <a class="ui raised link card" href="topic03/talk-2/BigData2015.pdf">
+    <div class="content">
+        <div class="right floated meta"> <i class="film large icon"></i></div>
+        <div class="header"> Advanced Analytics - Big Data </div>
+    </div>
+    <div class="image">
+      <img class="ui bordered rounded image" src="topic03/talk-2/BigData2015.jpg">
+    </div>
+    <div class="content">
+      <div class="description">
+         
+      </div>
+    </div>
+    
+  </a>
+
+        
+        
+  <a class="ui raised link card" href="topic04/talk-1/visualisation.pdf">
+    <div class="content">
+        <div class="right floated meta"> <i class="film large icon"></i></div>
+        <div class="header"> Data Visualisation & Information Visualisation </div>
+    </div>
+    <div class="image">
+      <img class="ui bordered rounded image" src="topic04/talk-1/visualisation.jpg">
+    </div>
+    <div class="content">
+      <div class="description">
+         
+      </div>
+    </div>
+    
+  </a>
+
+        
+        
+  <a class="ui raised link card" href="topic04/talk-2/How_to_Design_Charts_and_Graphs.pdf">
+    <div class="content">
+        <div class="right floated meta"> <i class="film large icon"></i></div>
+        <div class="header"> Design Tips for charts and graphs </div>
+    </div>
+    <div class="image">
+      <img class="ui bordered rounded image" src="topic04/talk-2/How_to_Design_Charts_and_Graphs.jpg">
+    </div>
+    <div class="content">
+      <div class="description">
+         
+      </div>
+    </div>
+    
+  </a>
+
+        
+        
+  <a class="ui raised link card" href="topic04/talk-3/Visualisations.pdf">
+    <div class="content">
+        <div class="right floated meta"> <i class="film large icon"></i></div>
+        <div class="header"> Best Visualisation Examples 2015 </div>
+    </div>
+    <div class="image">
+      <img class="ui bordered rounded image" src="topic04/talk-3/Visualisations.jpg">
+    </div>
+    <div class="content">
+      <div class="description">
+         
+      </div>
+    </div>
+    
+  </a>
+
+        
+        
+  <a class="ui raised link card" href="topic04/talk-4/BPM.pdf">
+    <div class="content">
+        <div class="right floated meta"> <i class="film large icon"></i></div>
+        <div class="header"> Business Performance Management </div>
+    </div>
+    <div class="image">
+      <img class="ui bordered rounded image" src="topic04/talk-4/BPM.jpg">
+    </div>
+    <div class="content">
+      <div class="description">
+         
+      </div>
+    </div>
+    
+  </a>
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <footer>
+
+    </footer>
+    <script>
+      $(document).ready(function () {
+  $('img').addClass('ui image');
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function (i) {
+    if (($images[i].alt).length > 0) {
+      const divImg = $(document.createElement('div')).addClass('ui basic segment');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass('ui blue ribbon label');
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.embed').embed();
+
+  $('.ui.menu .item')
+      .tab({
+        history: true,
+        historyType: 'hash',
+      });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+      .sidebar({ context: $('.pushable') })
+      .sidebar('setting', 'transition', 'slide out')
+      .sidebar('attach events', '#toc');
+});
+
+    </script>
+  </body>
+
+ </html>
