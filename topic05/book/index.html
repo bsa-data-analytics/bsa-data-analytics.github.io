@@ -94,8 +94,8 @@ h3
   </header>
   <div class="right tab-menu menu">
     
-    <a class="item" data-tab="Lab-08">
-      Lab-08
+    <a class="item" data-tab="Lab-09">
+      Lab-09
     </a>
     
     <a class="item" data-tab="01">
@@ -120,10 +120,6 @@ h3
     
     <a class="item" data-tab="06">
       06
-    </a>
-    
-    <a class="item" data-tab="07">
-      07
     </a>
     
     <a class="item" href="../../index.html">
@@ -178,13 +174,13 @@ h3
       
     
       
-        <a class="active item" href="../../topic05/book/index.html">
+        <a class="item" href="../../topic04/book-a/index.html">
           Lab-08
         </a>
       
     
       
-        <a class="item" href="../../topic05/book-a/index.html">
+        <a class="active item" href="../../topic05/book/index.html">
           Lab-09
         </a>
       
@@ -194,305 +190,219 @@ h3
     <div class="ui basic segment">
       <br>
       
-      <div  class="ui tab segment lab" data-tab="Lab-08">
+      <div  class="ui tab segment lab" data-tab="Lab-09">
         <h1>Objectives</h1>
-<p>In this lab you will insert many different types of charts into your application.</p>
+<p>In this lab you will develop several different types of groups and investigate table design.</p>
 
       </div>
      
       <div  class="ui tab segment lab" data-tab="01">
-        <h1>Dimensions and Expressions</h1>
-<p>In order to create a chart in QlikView you need to understand what dimensions and expressions are.</p>
-<p>When you make a chart, start by asking yourself &quot;What do I want to show?&quot; The answer is usually Sales, Quantity, or some other number. This is your expresssion, or more correctly, your measure. Next you should ask, how many times should this be calculated? Per what do I want to show this meausre? The answer could be per month, per customer, per supplier. This is your dimension.</p>
-<p>An expression is simply a calculation that can be made over multiple records in your data set. The calculation returns one single value that summarises all relevant records. This is an aggreation, for example sum() count() avg() max() min().</p>
-<p>Dimensions are descriptive attributes for example customer, product, location, supplier, activity, time, colour, size etc. The dimension is like the loop variable in a For loop, the calculation is done once per dimensional value.  So the dimension determines how many rows, bars, points, or slices on a chart. The measure/expression is what is calculated in the loop.</p>
-<h2>Building your first chart</h2>
-<p>Open the ABC Sales application you have been working on. On the product details sheet you will design a chart that enables the user to compare the Sales of the product categories. There is no need to display the actual numbers, but it is important to provide an overview of the categories and how they perform.</p>
-<ul>
-<li>In the Tools menu, select Quick Chart Wizard.</li>
-<li>The Wizard dialog displays, click Next.</li>
-<li>Step 1: Select chart type, select Bar Chart.</li>
-<li>Click Next, Step 2: Define Dimension displays.</li>
-<li>Under First Dimension, select CategoryName</li>
-<li>Click Next, Step 3: Define Expression displays</li>
-<li>Ensure that Sum is selected. For of, select LinesSalesAmount</li>
-</ul>
+        <h1>Groups</h1>
+<h2>Dimension Groups</h2>
+<p>You can create drill down or cyclic field groups to be used as dimensions.
+A list shows all groups in the document. An icon to the left of each group name indicates whether it is a drill down group or a cyclic group. You can select a group by clicking in the list. The selected groups are shown in the Used Fields area.</p>
 <p><img src="./img/01.png" alt=""></p>
+<h2>Drill-Down groups</h2>
+<p>When several fields form a natural hierarchy, it makes sense to create a drill-down group. Typical examples of hierarchic groups are:</p>
 <ul>
-<li>Click Next, Step 4: Chart format displays, select Style, Orientation, and Mode as shown below:</li>
+<li>Time: Year, Quarter, Month</li>
+<li>Geography: Continent, Country, State, City</li>
 </ul>
-<p><img src="./img/02.png" alt=""></p>
-<ul>
-<li>Click Finish.</li>
-</ul>
-<p><img src="./img/03.png" alt=""></p>
-<ul>
-<li>Right click on the chart and select properties.</li>
-<li>Click in the window title field and type Sales by Category.</li>
-<li>Clear Show Title in Chart.</li>
-<li>Click the Dimensions tab.</li>
-<li>Under Settings for Selected Dimension, clear Label.</li>
-<li>On the Expressions tab, type Sales in the Label field that is associated with the Sum(LineSalesAmount) definition.</li>
-<li>Click the Sort tab.</li>
-<li>Select Y-value descending.</li>
-<li>Click the style tab and choose horizontal orientation.</li>
-<li>Click the number tab.</li>
-<li>Select Sales and under Number Format Settings, select Integer.</li>
-<li>Configure the Symbol, Thousand Symbol and Million Symbol as shown below:</li>
-</ul>
-<p><img src="./img/04.png" alt=""></p>
-<ul>
-<li>Click the captions tab, under special 
-icons, clear all items, except Menu.</li>
-<li>Clear Allow Minimize and Allow Maximise.</li>
-<li>Click OK.</li>
-</ul>
-<p><img src="./img/05.png" alt=""></p>
-<p>You have not made any selections, the chart shows the Sales aggregated over all the data. As soon as you make any selection in the chart or other fields, the chart is aggregated over the new set of selections. This single chart in combination iwth the calendar already enables you to answer many relevant business questions.</p>
-<p>Assume that your users want to compare the monthly Sales of Q1 2013 with Q1 2014. For that, you can use a standard QlikView function, Set Reference.</p>
-<ul>
-<li>First select Year 2013 and Q1.</li>
-<li>Right click the chart, and select Set Reference. The bar&#39;s change colour to a lighter blue.</li>
-<li>Select year 2014 and keep Q1 selected.</li>
-<li>A darker blue set of bars represent 2014 Q1.</li>
-<li>Right click the chart and clear reference, and then clear all selections.</li>
-</ul>
-<p>There are several ways to make selections in charts.</p>
-<ul>
-<li>Press and hold the left mouse button and drag over five bars in the Sales by Category chart.</li>
-<li>To narrow down the selection, drag over one or a few of the remaining bars.</li>
-<li>Right click the chart and choose Clear All Selections, or click the Clear button on the menu bar.</li>
-<li>Press and hold the Ctrl key and click Swimwear, and then click Women&#39;s clothes.</li>
-</ul>
+<p>When you use a drill-down group as a dimension in a chart, the chart uses the first field in the group&#39;s list of fields that has more than one possible value. If you make selections that cause the field to have only one possible value, the next field in the list is used instead, provided that it has more than one possible value. If no field in the list has more than one possible value, the last field is used anyway.</p>
+<p>For example Year is used as the chart dimension until a single year is selected. The chart would then show the Quarter&#39;s for that year, if a single quarter is selected the chart switches to Month.</p>
+<p>As selections disappear so that more than one field becomes available in the upper fields of the group&#39;s field list, the chart is automatically drilled back up. You can force a drill up by clicking on the drill-up icon in the chart.</p>
+<h2>Cyclic groups</h2>
+<p>Sometimes you may find it useful to group fields that do not form a natural hierarchy. You then enable the user to make quick changes to the data to be displayed in the chart or list box.</p>
+<p>You can group any fields together in a cyclic group. When a cyclic group is used as a chart dimension, the chart initially uses the first field in the list. You may then switch to another field by clicking the cycle icon in the chart. The fields are displayed in teh order in which they appear in the group&#39;s field list. When the last field in the list has been used, the turn goes back to the first field again. In this way the chart may cycle through the field indefinitely.</p>
+<h2>Fast Type Change</h2>
+<p>As a designer, you are often challenged by the limited screen area. Imagine having two different user types in your audience. One group, prefers visual charts and the other absolutely wants to see numbers, preferably in a table. you don&#39;t need to create two separate objects in order to serve both user types.</p>
+<p>The type of chart can be changed by user without going to the chart properties dialog, provided that the fast type change option has been selected on the general tab of the properties.</p>
+<p>An icon showing the next available chart type displays in the chart. When you left click the icon, the chart changes to the indicated type. When you right click the icon, you see a drow down menu with all the available types.</p>
+<p>You can choose the position of the fast type change icon. If you choose Caption, the icon displays in the chart caption, provided your caption is shown. If you choose In Chart, the icon displays inside the chart, provided that the chart is not a pivot table or straight table. </p>
 
       </div>
      
       <div  class="ui tab segment lab" data-tab="02">
-        <h1>Pie Charts</h1>
-<p>According to the business plan the CEO needs to see the contribution of Sales by division. Instead of absolute numbers, the ratio between the division has to be displayed as percentages. </p>
+        <h1>Groups and Fast Type Change Option</h1>
+<p>On the Dashboard sheet you want to show the Sales Trend as a table.</p>
 <ul>
-<li>Open the Dashboard sheet. Right Click and select New Sheet Object and then choose Chart.</li>
-<li>For the window title type Sales by Division, clear show title in chart, for chart type, select the pie chart and click next.</li>
-<li>For dimension, in the Available Fields/Groups, select DivisionName, click Add, clear label, click next. The expressions dialog box opens.</li>
-<li>For expression, select Sum in the Aggregation drop down list, select LineSalesAmount in the field drop down list, click paste, click ok, the dialog box closes.</li>
-<li>In Expressions, for Label type Sales and tick the Relative checkbox. This option allows you to diplay the relative values of the calculated expression for each dimension value instead of their absolutes.</li>
-<li>Click Next and Next again. The Sort dialog displays.</li>
-<li>Keep the sort default settings, click next.</li>
-<li>Style: choose as below:</li>
+<li>Go to properties of the sales trend on the dashboard sheet.</li>
+<li>In General choose Combo Chart and Straight Table in the allowed types area of Fast Type Change.</li>
 </ul>
-<p><img src="./img/06.png" alt=""></p>
+<p><img src="./img/02.png" alt=""></p>
 <ul>
-<li>Click Next, in the presentation section ensure that show numbers in legend is selected, click Next.</li>
-<li>Keep the default colours settings, click next.</li>
-<li>In numbers notice that the Show in Percent (%) option is already checked. This happens by default when you select Relative in the Expression tab. Set the number format settings to Fixed to 2 decimals. Click Next.</li>
-<li>Keep the font settings, click Next.</li>
-<li>Keep the layout settings, click Next.</li>
-<li>Caption: under special icons clear all settings except menu, clear allow minimise and maximise. click finish.</li>
+<li>click ok</li>
 </ul>
-<p><img src="./img/07.png" alt=""></p>
-<p>When you press CTRL+Shift on the keyboard and at the same time click in the chart, you notice red lines that indicate the borders of hte chart components. You can choose to resize and move these components.</p>
-<p><img src="./img/08.png" alt=""></p>
-<p>Use the Reset user sizing and Reset user docking buttons on the General tab in properties for the chart if you want to reset to the default size and position.</p>
-<p><img src="./img/09.png" alt=""></p>
+<p><img src="./img/03.png" alt=""></p>
+<h2>Drill down dimension group</h2>
+<p>Naming conventions:</p>
+<ul>
+<li>Cycle groups start with a <code>&lt;</code></li>
+<li>Drill down gropus start with a <code>&gt;</code></li>
+</ul>
+<p>Create a drill down for the Order Trend chart on the dashboard sheet. It should contain the fields Year, Quarter, and Month. Remove the Month dimension and use the new group dimension.</p>
+<ul>
+<li>In properties for the Order trend chart on the dashboard sheet go to the dimensions tab.</li>
+<li>Click Edit Groups, click new, for group name type <code>&gt;</code>TimeGroup.</li>
+<li>Select drill down group, in the available fields select Year, Quarter, and Month. Click Add.</li>
+<li>Click Ok, and then in the groups dialog, click ok again.</li>
+<li>In the dimensions dialog in the available fields/groups box remove Month and select <code>&gt;</code>TimeGroup, and click add. click Ok.</li>
+</ul>
+<p><img src="./img/04.png" alt=""></p>
+<h2>Creating an expressions group</h2>
+<p>The pie chart that represents Sales by Division, you now want to allow the user to view that pie chart for not only Sales but also Margin and number of orders. This requires writing two new expressions and group the three together.</p>
+<ul>
+<li>On the dashboard sheet go to properties for the pie chart and in the general tab change the title to Distribution by Division</li>
+<li>Select show title in Chart, In title settings choose Horizontal Alignment and select left.</li>
+<li>In Font sytle choose Bold size 10.</li>
+<li>Define an expression for Sales, label it Distribution - Sales.</li>
+<li>Add an expression Sum(Margin) label it Distribution - Margin</li>
+<li>Add an expression Sum(Margin)/Sum(LineSalesAmount), Label it Distribution - Margin%</li>
+<li>Now to group them together, click on Distribution - Margin and then click Group, then expand the group and drag and drop the remaining expression into the group.</li>
+<li>On the presentation tab under Text in Chart click Add, the Chart Text dialog opens, under Text, type Sales|Margin|Margin%</li>
+<li>Click Font, select size 8. Click ok.</li>
+<li>Arrange the chart components to look as below:</li>
+</ul>
+<p><img src="./img/05.png" alt=""></p>
 
       </div>
      
       <div  class="ui tab segment lab" data-tab="03">
-        <h1>Tips for Data Visualisation:</h1>
-<h2>Prioritise the data.</h2>
-<p>Don&#39;t use effects without good reason (e.g. for emphasis). Usually you work within a limited screen area and every pixel of your application should be there for a reason. For example do you need a caption saying &quot;Year&quot; when you are presenting a list of 2012 2013 2014 etc?</p>
-<h2>Comparison.</h2>
-<p>One of the most effective visualisations you can choose for showing comparison is the bar chart. When comparing a set of items side by side to show quantitative behaviours use bar charts. When there are too many bars, labeling becomes problematic. It also implies the data is discrete, if your data continually changes over time use line graph instead. Avoid comparison of different units ($ and Qty) on the same scale. 3D bar charts are not intutive and lead the user to believe another dimension is involved.</p>
-<p>Comparing different measurements. QlikView combo chart allows you to define a visualization style for each measure and you can use two axes with their own separate scale. (we did this in excel in a previous lab).</p>
-<h2>Tellis Charts</h2>
-<p>A trellis chart is a grid of small charts, a repetition of a chart across a grid, usually at least two dimensions are used, one for the grid variable (e.g. Sales area) and one for the x-axis within each small chart (e.g year). You can analyse the metrics within each chart and look at the bigger picture at the same time and identify any unusual behaviour in the variables. The y-axis is shared so you can compare the measures.</p>
-<h2>Sorting</h2>
-<p>Sorting is a special type of comparision. You can choose to define the primary sort order in the chart properties. Dimension limits can be used to limit the number of values shown useful for Top 5 or Bottom 5 performers.</p>
-<h2>Movements and Trends</h2>
-<p>In the majority of applications you need to anlayze your data over some sort of time dimension. Trends can be displayed effectively in a line chart. Ensure that a relation between the dimensions values exist and that they are in sequence and have the same interval between the data points. Eg sales and profits over months in a year.</p>
-<h2>Share and distribution</h2>
-<p>Pie charts are popular visualisations for displaying visual distribution of measurements and are used very frequently. Because the human mind has difficulty comparing areas (in this case the size of hte slices of hte pie) it is not recommended that you show a lot of data categories within the pie chart. It is also hard to apply colours that are far apart in hue from each other to clearly differentiate between the pie slices.
-Where the dimension values to be compared are less than seven a pie chart is suitable. It is also good practice to combine small slices into &quot;others&quot;.</p>
-<h2>Correlation</h2>
-<p>Another key part of analysis is to discover if there is a correlation between distinct measures. The scatter chart is the perfect visualisation if you want to display correlation. Also a line chart with separate lines allows you to analyse correlation over time.</p>
+        <h1>Containers</h1>
+<p>The container object server as a container for sheet objects. Small tabs or a drop down list enable the user to choose which object to show. The container object can thus be used instead of the more traditional Fast Type Change to toggle between object types. Also, the container object has the additional advantage that the objects in the container can use different dimensions an dexpressions.</p>
+<p>You can group objects in a container by function, context or both. Container objects give QlikView document designers a way to present multiple perspectives on a set of facts in a single space saving, easy to use object. Containers simplify the presentation and enhance the analysis of any set of document objects.</p>
+<p>You build containers by selecting from the list of available document objects. User sequence the list and also indicate their preference for object selection. Before you can place objects in a container, you have to first create them.</p>
+<p>There are two container types: Grid and Single Object. Grid allows you to place multiple objects in columns and rows. Single object allows you to display one object at a time.</p>
+<h2>Exercise:</h2>
+<p>There is not enough screen area to show all obects side by side on the sales person details sheet. You want to show the sales trend and order trend charts on the sales person details sheet.</p>
+<ul>
+<li>Create a new sheet object on the sales person sheet, it should be a container object.</li>
+<li>In general under existing objects, under Filter, select Charts, and then select the Sales Trend, and the Order Trend charts, and then click Add to add them to Objects Displayed in container.</li>
+<li>On the presentation tab for contianer type choose single object, under appearance select Tabs at Top. remove the caption and click ok.</li>
+<li>Place the conatiner as below:</li>
+</ul>
+<p><img src="./img/06.png" alt=""></p>
+<h2>Add a chart to the container</h2>
+<p>You want to add a new chart that does not exist in the layout to the container.</p>
+<ul>
+<li>Sales person average deal size chart</li>
+<li>In the Layout menu choose add sheet, call it Temp. </li>
+<li>On the Dashboard sheet right click the Sales Trend chart and select copy to clipboard, and then select object.</li>
+<li>Right click on the temp sheet and select paster sheet object.</li>
+<li>go to the properties of the chart and change the title to Sales Person Average Deal Size.</li>
+<li>On the dimension tab, remove moth, and add SalesPerson. clear label.</li>
+<li>Select Sales, Margin, and Margin % expressions and clear Enable.</li>
+<li>Create two expressions as below:<ul>
+<li>label: Avg Deal Size, Sum(LineSalesAmount)/Count(DISTINCT OrderID) display option: Bar</li>
+<li>label: #Customers, Sum(RecNo_Customers) display option: Symbol/Auto</li>
+</ul>
+</li>
+<li>On the presentation tab, under Line/Symbol Settings, set Symbol Size to 6pt.</li>
+<li>On the Axes tab, under Expresseion Axes, select #Customers. Under position, select Right(Top). Click Ok</li>
+<li>On the Sales Person Details sheet right click one of the tabs of the container object, and then select properties.</li>
+<li>On the general tab, seelct Sales person Average Deal Size chart and click Add. Click Ok.</li>
+</ul>
+<p><img src="./img/07.png" alt=""></p>
 
       </div>
      
       <div  class="ui tab segment lab" data-tab="04">
-        <h1>Dimension Limits</h1>
-<p>Create a new chart that shows the Top and Bottom sellers in terms of products.</p>
+        <h1>Table Design</h1>
+<p>Objectives:
+Learn when to use a table, explain how to select and sort values in tables, define the difference between a straight table, pivot table, and a table box. Explain how to enhance a table with mini charts and visual cues.</p>
+<p>A table box is a combination of list boxes. Insteade of placing each field in its own object sepearately, the table box combines them. the content of every row is logically connected. The columns may be fretched from different input tables, letting the user create tables from any possible combination of input tables. So when you want to present the conttents of several list boxes in one table, you need a table box.</p>
 <ul>
-<li>Hold the Ctrl key and drag a copy of the Sales by Category chart on the Product details sheet.</li>
-<li>Press the Alt key and drag the cloned chart to the side.</li>
-<li>Change the dimension to Products, keep the expression, rename the title to Top 5 Products.</li>
-<li>On the Dimension Limits tab select Restrict which values are... select show only 5 largest values, clear Show Others.</li>
-<li>You can implement the top 5 in another way, in the presentation tab in properties under Chart Scrolling, select Enable X-Axis Scrollbar and for When Number of Item Exceeds, type 5.</li>
-<li>Now also create another chart that displays the bottom 5 products.</li>
-<li>To show those products in the Bottom 5 that have not sold at all, go into the presentation tab in properities and untick Supress Zero-Values.</li>
+<li>create a Table box object on the order details sheet, Set the title to be Order Details, select Facts as the Table to show fields from and click Add all.</li>
+<li>Under fields displayed in table box, select %Key_Customers, %Key_Employees, %Key_Products, and RecNo_OrderDetails. click Remove.</li>
+<li>Under Show Fields from table, select All Tables. </li>
+<li>Under Available Fields, select SalesPerson, CompanyName, and ProductName. click Add</li>
+<li>On presentation tab, under fields, select OrderDate, ProductName, and SalesPerson, and then select Dropdown select. click ok</li>
+<li>You are going to use the OrderDate and Discount fields in other charts. To avoid defining settings each time the fields are used, you define the number format settings in the document properties.</li>
+<li>In the settings menu, select Document properties, select the number tab, under fields, select discount, and hten under Number Format Settings, select Integer and Show in Percent(%).</li>
+<li>Under fields, select OrderDate, adn then under Number Format Setting, select Date, click ok</li>
 </ul>
-<p><img src="./img/10.png" alt=""></p>
-<h2>Add a second dimension to a chart</h2>
-<p>So far the charts have been one dimensional, now you need to show sales by category and quarter. You could choose to create another chart, but because you want to limit the amount of objects, you modify the Sales by Category chart.</p>
-<ul>
-<li>On the products details sheet, go to the properties fo rhte chart.</li>
-<li>In dimensions choose Quarter and Add. Ensure that Quarter is the second dimension. Use demote and promote if needed. Clear the label for quarter.</li>
-<li>In style under subtype choose stacked.</li>
-<li>In presentation, ensure that the show legend is selected, click the settings button, select reverse order, click ok.</li>
-<li>In colours select persistent colours</li>
-<li>In font select 8 click ok.</li>
-</ul>
-<p><img src="./img/11a.png" alt=""></p>
-<p>Next we want to move the legend to a horizontal position.</p>
-<ul>
-<li>Press Ctrl+Shift and click the chart, place the pointer over the legend and while pressing Ctrl+Shift, hold the left mouse button and drag the pointer to the left bottom corner position. Observe that the orientation of the legend changes to horizontal.</li>
-</ul>
-<p><img src="./img/11.png" alt=""></p>
-<ul>
-<li>Size and arrange the Sales by Category, Top 5 Products, and Bottom 5 Products as shown below:</li>
-</ul>
-<p><img src="./img/12.png" alt=""></p>
+<p><img src="./img/08.png" alt=""></p>
+<h2>Selections in table boxes</h2>
+<p>With QlikView&#39;s associative logic, the  contents of the table box are automatically updated when you  make selections in other objects. As in a box, cells that you select in a table box turn green when you select them, but when you release the mouse button, they revert to their original colour. The size of the table is adjusted to display only the reulst of your selection.
+Selections in a column are indicated with a beacon to the right of the field name.</p>
+<h2>Sorting in table boxes</h2>
+<p>There are two different methods of sorting in table boxes. First of al, you can set the order in which the columns are displayed, from left to right. You do this by clicking the title row of a column and dragging it to a new position. A blue outline of the field indicates that you are performing a drag and drop operation.
+The order can also be set in the Table box Properties&gt;General dialog by means of the Promote and Demote buttons.</p>
+<p>Secondly the rows in the table box can be sorted according to the sort order for the values of specific fields in the table box. This is done in the dialog Table Box Properties&gt;Sort. there you can also set a sort priority by moving fields up or down in the list. The sort priority is independent from the order in which the columns are displayed.</p>
+<p>An alternative and convenient way is to simply right click the column of the field you wish to sort on and select the Sort command from the table box menu. Double clicking the column header works equally well. Repeated use of this toggles the sort order for the selected field betwen ascending and descending order. A small arrow icon at the top of the column indicates for which field the table is sorted and if the sort order is ascending or descending.</p>
+<h2>Setting the alignment of columns</h2>
+<p>The Table Box Properties&gt;Presentation tab contains the options for text alignments in the columns. You can separately determine the alignment of text and numbers. Select one of the fields and make the necessary adjustments under alignment. It is a design best practice to choose the same alignment fo rthe column label and text and numbers.</p>
+<h2>Pivot tables</h2>
+<p>The pivot table is one of the most powerful tools for analysing data. It offers substantial functionality but is still easy to use. Pivot tables show dimensions and expressions in rows and columns, for examples, in cross tables. </p>
+<h2>Straight tables</h2>
+<p>in opposition to the pivot table, the straight table cannot display subtotals or serve as a cross table. However, any of its columns can be sorted and each of its rows contains one combination of dimensions plus expressions. A straight table is often used with one dimension. Having the dimension as a cyclic or drill down group offers more flexibility in looking at the same metrics.</p>
+<h2>Mini Charts</h2>
+<p>Graphs show more than numbers, but numbers show the exact actual figures. With mini charts, there is no need to pick one or the other. Minit Charts have a high information density; they enable you to show much information in a very limited space.
+There are various representaiton modes for mini charts. use lines to show the movements, bars to show the quanitiative values, and whiskers to show the win/loss values.
+When you use mini charts, you can add valuable context to your tables because they do not display only actual figures but individual historical measurements and seeing facts in a historical context leads to better decisions.</p>
 
       </div>
      
       <div  class="ui tab segment lab" data-tab="05">
-        <h1>Order Trend</h1>
-<p>The CEO needs to see the trend of orders by month and wants to compare 2013 with 2012. Monitoring the order trend is key to the copany because the company experieinced a significant decrease of orders in 2013.</p>
-<p>The number of orders measure is defined as count(distinct OrderId). Lets look at why this is the case.
-From the file menu choose table viewer, right click the facts table and then select preview. The facts table contains rows for every order line. Therefore the orderID is repeated for each order line. If we need to calculate the number of orders then we want to count distinct orderId&#39;s.</p>
+        <h1>Create a straight table</h1>
+<p>You need to provide a chart that shows a detailed view of the customers&#39; Sales, Margin, Quantity, the date of the latest order, and the average discount they received. The users need to see the actual numbers, but also a fast and accurate overview of order trends and anumber of orders. They need to rank and sort the data.</p>
 <ul>
-<li>On the Dashboard sheet, create a new chart object. Name it Order Trend and do not show the title in the Chart, choose a line chart and click next.</li>
-<li>In dimensions select Month and label it. Click Next.</li>
-<li>In the fields tab, choose Total count and Distinct for Aggregation, for field choose OrderID click paste and Ok.</li>
-<li>Label it #Orders and in display options, for symbol select Auto and for Line, Normal. click next.</li>
-<li>Sort by numeric value Month and clear any other sort settings. click next.</li>
-<li>Ensure that plot area background style is set to minimal click next, next again.</li>
-<li>Under expression axeis (Axes tab) select Show Grid.</li>
-<li>click finish.</li>
-<li>place the chart as shown below:</li>
+<li>On the customer details sheet create a new chart object. For window title type Customer Details, under chart type, select the straight table. click next.</li>
+<li>Define a dimension, select CompanyName from the available fields/groups, type Company for the label. click nexct.</li>
+<li>Define the expressions, sum(LineSalesAmount) label it Sales, Sum(Margin) label it Margin, COUNT(DINSTINCT OrderID) label it #Orders, Max(OrderDate) label it Latest Order, Avg(Discount) label it Avg Discount.</li>
 </ul>
-<p><img src="./img/13.png" alt=""></p>
-<h2>Different measures in a single chart</h2>
-<p>The CEO wants to analyse Sales, Margin, and Margin% by month in a single chart and compare these figures with the order trend.
-So far your charts have used one or two dimensions. Now we need to add more expressions to a chart.</p>
+<h2>Create a mini chart for Sales</h2>
 <ul>
-<li>On the Dashboard sheet, create a new chart object name it Sales Trend, don&#39;t show the title, choose a combo chart add the dimension Month and clear the label.</li>
-<li>Add the expression sum of LineSalesAmount label it Sales</li>
-<li>Add the expression sum of Margin label it Margin, in display options ensure that only Bar is selected.</li>
-<li>Add the expression  sum of Margin divided by sum of LineSalesAmount, in display options ensure that only line is selected.</li>
-<li>Select Values on Data points. Click Next</li>
-<li>Choose Month and sort by Numeric and Ascending, click next.</li>
-<li>Choose vertical orientation, and minimal plot area background style. click next.</li>
-<li>Leave the default settings for presentation, click next.</li>
-<li>Under Expression Axes select Sales and choose position to be left bottom, for primary dimension labels choose diagonal.</li>
-<li>Under Expression Axes select Margin and choose position to be left bottom.</li>
-<li>Under Expression Axes select Margin% and choose position to be right top. Clck next and next again.</li>
-<li>For each of Sales and Margin choose number format to be integer.</li>
-<li>For symbol type $, for Thousand type K$, for Million type M$</li>
-<li>For Margin% choose number format to be integer and show in percent(%).</li>
-<li>Click Finish</li>
+<li>Right click on the Sales expression and select copy.</li>
+<li>Right click on a blank space in the expressions container and select Paste.</li>
+<li>Use the promote button to move it below the Sales expression.</li>
+<li>Label the new expression Sales trend. Under Total Mode, select No totals, select mini chart under representation.</li>
+<li>click mini chart settings, select month year for dimension, and sparkline for mode. click ok.</li>
+<li>copy and paste the #orders expression, promote it to just below the #orders expression, ensure the copied expression is selected and then select Linear Gauge under representation. Under total mode select no totals, click gauge settings. </li>
+<li>In gauge settins, for Max, type = Max(Aggr(Count(DISTINCT OrderID), Company_Name))</li>
+<li>under segments setup, remove segment 2, for segment 1, click the colour tile and choose a gray colour for the base color. Click ok twice.</li>
+<li>Under indicator, under mode, select fill to value and under style select line.</li>
+<li>Select Hide gauge outlines and hide gauge outlines</li>
+<li>Click next, under columns in the priority box select company and under sort by select expression, and then select ascending. type sum(LineSalesAmount) in the expression field. click next.</li>
+<li>FOr presentation under columns, select company, and under alignment select left for label and data (Text).</li>
+<li>under columns, select Sales, and under alignment, select right for label, data (numeric), and Data(Text).</li>
+<li>Apply the same settings as in the previous step to the remaining expressions. click next.</li>
+<li>Under expressions, select Avg Discount, in the Upper&gt;= field, type 0.15, and select Bold. </li>
+<li>click the text colour tile, choose a red colour for the base. click ok twice and click next.</li>
+<li>Under current style select light, click next.</li>
+<li>Under expressions, select Sales and Margin, and under Number Format Settings, select integer.</li>
+<li>Under expressions, select Avg Discount, and under Number Format Settings, select Fixed to and 1 Decimals. then, select show in person (%). click next three times and then finish.</li>
 </ul>
-<p><img src="./img/14.png" alt=""></p>
-<p>Before continuing, arrange the objects on the dashboard so they are aligned properly and they fit to screen size 1024*768 pixels.
-In the layout properties reduce the border width, and remove any special icons in the caption except menu.</p>
+<p><img src="./img/09.png" alt=""></p>
 
       </div>
      
       <div  class="ui tab segment lab" data-tab="06">
-        <h1>Scatter Chart</h1>
-<p>CMO needs to analyze the correlation between the number of products a customer has ordered and its sales. Extending the number of products to existing customer is one of the goals for 2014. For that, the CMO has to identify customers who purchased a low number of products but with high sales.</p>
-<p>The scatter chart differs from the bar, line, and combo chart because the dimension are shown as dots. The positions of the X and Y values are defined by the measures. In your chart, each customer is represented by a dot.</p>
+        <h1>Create a pivot table</h1>
+<p>The CMO needs to anlayse product performance on product level by year, quarter or division. Here you have many dimensions but only two measures, sales and margin.</p>
 <ul>
-<li>On the Customer details sheet add a new chart object. Give it the title #Products versus Sales and Margin. Clear the show title. choose scatter chart as the chart type.</li>
-<li>Click next, add the dimension CompanyName, label it Customer, click next.</li>
-<li>On the expressions page for X, select LineSalesAmount, give it the label Sales, for Y, select RecNo_Products, and then type #Products for the label. Ensure the the Z Bubble Chart is cleared.</li>
-<li>Click Next, and next again.</li>
-<li>In Style, under Look, select :</li>
+<li>on the customer details sheet, right click the customer details chart and select copy to clipboard and then object.</li>
+<li>Paste the object onto the product details sheet.</li>
+<li>go to the properties of the copied chart and set the title to Product Details.</li>
+<li>Under chart type, select pivot table.</li>
+<li>On the dimension tab in the available fields/groups remove CompanyName dimensions, then select Year, Quarter, DivisionName, and CategoryName dimensions. Click Add.</li>
+<li>Select DivisionName and for label type Division, select CategoryName and for label type Category.</li>
+<li>On the expressions tab, clear enable for Sales Trend, #Orders, the order trend linear gauge, Latest Order and Avg Discount.</li>
+<li>Ensure that the Sales and Margin expressions are enabled.</li>
+<li>Define sorts, under dimensions, select Year, under sort by, select Numeric Value, and then select Ascending.</li>
+<li>For the Quarter dimension do the same.</li>
+<li>For the Division dimension sort by Text A-&gt;Z, do the same for the Category dimension.</li>
+<li>On the presentation tab, under dimensions and expressions, selct Year, Quarter, Division and Category, and select Show Partial Sums. click ok</li>
+<li>Right click the Year column and select Expand All, do the same for Quarter, Division and Category columns.</li>
+<li>Select the Year column, while pressing and holding the left mouse button, drag the column to the maximum right position. Notice how the blue arrow changes from the vertical to horizontal position when you reach the right border.</li>
 </ul>
-<p><img src="./img/15.png" alt=""></p>
+<p><img src="./img/10.png" alt=""></p>
 <ul>
-<li>Ensure that under plot area background style, Minimal is selected. Click next.</li>
-<li>In presentation select only symbols, clear autosize symbols, and set the symbol size to 6pt. click Next and next again.</li>
-<li>In colours select persistent colours, click next.</li>
-<li>In numbers in the expressions box select Sales and #Products, and under Number Format settings, select integer. Click Finish.</li>
+<li>Move the pointer to the top of the object and then release the mouse button.</li>
+<li>The year column is now displayed as a horizontal row.</li>
+<li>Proceed with Quarter and pivot the column to be shown as a horizontal row.</li>
 </ul>
-<p><img src="./img/16.png" alt=""></p>
-<h2>Group by a second dimension</h2>
-<p>The CMO is also interested in seeing the customers grouped by division.</p>
-<ul>
-<li>Edit the dimension properties of the scatter chart. Add DivisionName and give it the label Division, select suppress when value is Null. Click Ok.</li>
-<li>Add a trend line showing the average number of products.</li>
-<li>On the expressions tab select Advanced mode, select #Products expression and then under Trendline, select Average. Click Ok.</li>
-</ul>
-<p><img src="./img/17.png" alt=""></p>
-<h2>Add a third expression</h2>
-<p>Finally add the third expression that defines the size of the dots. Use Margin as the third expression.</p>
-<ul>
-<li>In the expression properties add sum(Margin), click ok and label it Margin.</li>
-<li>In the presentation tab set the Max buble size to 10pt click ok.</li>
-</ul>
-<p><img src="./img/18.png" alt=""></p>
-
-      </div>
-     
-      <div  class="ui tab segment lab" data-tab="07">
-        <h1>Guage Chart</h1>
-<p>The guage chart has been in the BI dashboard industry for a long time and it is a very popular chart type. their general purpose is to determine the range of a given value. In a business dashboard it only works effectively in attracting the user&#39;s attention and doesn&#39;t work so well in getting hte point accross. A linear guage uses the space more effectively, and reducing the chart decoration makes the chart more intuitive. </p>
-<p>The CEO needs to monitor the Margin% for the current year to date. Create a chart that displays the KPI Margin Percent based on the selection status. The chart must display the Margin Percentage, include segments for the target Margin Percentage, and clearly show which values fall above or below that point.</p>
-<p>These are the Margin% KPI&#39;s target values:</p>
-<p>Poor performance: lower bound = up to 10%
-Mediocre performance: Mid bound = up to 15%
-Good performance: Upper bound = over 15%</p>
-<ul>
-<li>Create a new chart object on the dashboard sheet and choose gauge chart, click Next, click next again.</li>
-<li>Create the expression Sum(Margin)/Sum(LineSalesAmount), click ok, for the label Margin%, click next and next again.</li>
-<li>Select look and orientation as below:</li>
-</ul>
-<p><img src="./img/19.png" alt=""></p>
-<ul>
-<li>Click next, on presentation clear autowidth segments, for Max type 0.5, under indicator, Mode select Fill to value.</li>
-<li>Under show scale, set Major Units to 6. Clear Show Labels on Every, select Hide Segment Boundaries, select Hide Guage Outlines.</li>
-<li>Define the segments:<ul>
-<li>Segment 1: Poor performance: lower bound = up to 10%</li>
-<li>Segment 2: Mediocre performance: Mid bound = up to 15%</li>
-<li>Segment 3: Good performance: Upper bound = over 15% </li>
-</ul>
-</li>
-<li>A segments width is defined by its lower bound and the lower bound of the next segment. Segment 1 lower bound = 0, segment 2 lower bound = 0.10, segment 3 lower bound = 0.15, min value = 0 max value = 0.5</li>
-<li>For segment 1 select a lower bound colour, by clicking the colour tile and then under base colour click the colour tile and choose red. Click Ok twice.</li>
-<li>set segment 2 lower bound colour to yellow. Create a new segment for segment 3 by clicking segments setup and Add, colour this a new greem colour.</li>
-<li>Under reference lines select add, the reference lines dialog opens, for label type Goal.  for Expression type 0.2 click ok.</li>
-<li>Under text in chart, select Add, under text, type =Num(Sum(Margin)/Sum(LineSalesAmount),&#39;##.##%&#39;). click on Font, select Bold and size 11. click ok. click ok again.</li>
-<li>Click next and next again.</li>
-<li>In colours set transparency to 100%, click next.</li>
-<li>In numbers set Margin% to Fixed to 2 decimal places and display as percent.</li>
-<li>Click next until you come to the caption tab, clear show caption, click finish.</li>
-</ul>
-<p><img src="./img/20.png" alt=""></p>
-<ul>
-<li>Press Ctrl+Shift and use your mouse to resize and move the guage for best diplay and fit.</li>
-</ul>
-<p><img src="./img/21.png" alt=""></p>
-<h2>Create a linear guage with dynamic border bounds. In this guage, two segments are sufficient, one for poor (below 15%) and the other for good performance.</h2>
-<ul>
-<li>On the dashboard sheet create a new chart object, select guage, clear title.</li>
-<li>No dimensions are needed.</li>
-<li>Edit an expression as 1, click ok.</li>
-<li>In style select look and orientation as before. </li>
-<li>In presentation clear autowidth segments, for Max type 0.5</li>
-<li>For segment 1 click the colour tile and under base colour select calculated, edit an expression type =if(Sum(Margin)/Sum(LineSalesAmount)&gt;=0.15, Green(), LightRed()) Click ok.</li>
-<li>For segment 2 under lower bound, click the ellipsis and edit an expression type Sum(Margin)/Sum(LineSalesAmount) click the colour tile under base colour choose fixed and select a light grey colour.</li>
-<li>Under indicator, Mode select No Indicator.</li>
-<li>Clear show scale, clear show labels on every, select hide segment boundaries, select hide gauge outlines.</li>
-<li>Under Text in chart, select add, under text type =Num(Sum(Margin)/Sum(LineSalesAmount),&#39;##.##%&#39;).</li>
-<li>Click font, choose bold and size 11.</li>
-<li>In colours set transparency to 100%</li>
-<li>In caption clear show caption.</li>
-<li>Click Finish.</li>
-</ul>
-<p>This creates a guage that is generated using expressions to be shown as colour bars. 
-The first segment represtents any value from 0.0 lower bound to the Sum(Margin)/Sum(LineSalesAmount), it is coloured red if less than 15% and green otherwise.
-The second segment represents the grey part of the bar and it has a lower bound equal to the Sum(Margin)/Sum(LineSalesAmount) so the grey only shows from that point up to the max of .5 or 50%</p>
-<p><img src="./img/22.png" alt=""></p>
+<p><img src="./img/11.png" alt=""></p>
 
       </div>
      
