@@ -1,0 +1,467 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/solarized-light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+     
+
+     <style>
+       
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+
+
+     </style>
+
+   </head>
+
+  <body>
+    
+
+<style>
+  
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom: thin solid black;
+}
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+
+
+</style>
+
+<div class="ui fixed top pointing inverted menu labmenu">
+  <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
+    <a href="../index.html">
+      Business Analytics
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    
+    <a class="item" data-tab="Lab-09">
+      Lab-09
+    </a>
+    
+    <a class="item" data-tab="01">
+      01
+    </a>
+    
+    <a class="item" data-tab="02">
+      02
+    </a>
+    
+    <a class="item" data-tab="03">
+      03
+    </a>
+    
+    <a class="item" data-tab="04">
+      04
+    </a>
+    
+    <a class="item" data-tab="05">
+      05
+    </a>
+    
+    <a class="item" data-tab="06">
+      06
+    </a>
+    
+    <a class="item" href="../../index.html">
+      <i class="home icon"></i>
+    </a>
+  </div>
+</div>
+
+<div class="ui segment pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    
+      
+        <a class="item" href="../../topic01/book/index.html">
+          Lab-01
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic01/book-a/index.html">
+          Lab-02
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic02/book/index.html">
+          Lab-03
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic02/book-b/index.html">
+          Lab-04
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic02/book-c/index.html">
+          Lab-05
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic03/book/index.html">
+          Lab-06
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic04/book/index.html">
+          Lab-07
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic04/book-a/index.html">
+          Lab-08
+        </a>
+      
+    
+      
+        <a class="active item" href="../../topic05/book/index.html">
+          Lab-09
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic05/book-b/index.html">
+          Lab-10
+        </a>
+      
+    
+  </div>
+  <div class="pusher">
+    <div class="ui basic segment">
+      <br>
+      
+      <div  class="ui tab segment lab" data-tab="Lab-09">
+        <h1>Objectives</h1>
+<p>In this lab you will develop several different types of groups and investigate table design.</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="01">
+        <h1>Groups</h1>
+<h2>Dimension Groups</h2>
+<p>You can create drill down or cyclic field groups to be used as dimensions.
+A list shows all groups in the document. An icon to the left of each group name indicates whether it is a drill down group or a cyclic group. You can select a group by clicking in the list. The selected groups are shown in the Used Fields area.</p>
+<p><img src="./img/01.png" alt=""></p>
+<h2>Drill-Down groups</h2>
+<p>When several fields form a natural hierarchy, it makes sense to create a drill-down group. Typical examples of hierarchic groups are:</p>
+<ul>
+<li>Time: Year, Quarter, Month</li>
+<li>Geography: Continent, Country, State, City</li>
+</ul>
+<p>When you use a drill-down group as a dimension in a chart, the chart uses the first field in the group&#39;s list of fields that has more than one possible value. If you make selections that cause the field to have only one possible value, the next field in the list is used instead, provided that it has more than one possible value. If no field in the list has more than one possible value, the last field is used anyway.</p>
+<p>For example Year is used as the chart dimension until a single year is selected. The chart would then show the Quarter&#39;s for that year, if a single quarter is selected the chart switches to Month.</p>
+<p>As selections disappear so that more than one field becomes available in the upper fields of the group&#39;s field list, the chart is automatically drilled back up. You can force a drill up by clicking on the drill-up icon in the chart.</p>
+<h2>Cyclic groups</h2>
+<p>Sometimes you may find it useful to group fields that do not form a natural hierarchy. You then enable the user to make quick changes to the data to be displayed in the chart or list box.</p>
+<p>You can group any fields together in a cyclic group. When a cyclic group is used as a chart dimension, the chart initially uses the first field in the list. You may then switch to another field by clicking the cycle icon in the chart. The fields are displayed in teh order in which they appear in the group&#39;s field list. When the last field in the list has been used, the turn goes back to the first field again. In this way the chart may cycle through the field indefinitely.</p>
+<h2>Fast Type Change</h2>
+<p>As a designer, you are often challenged by the limited screen area. Imagine having two different user types in your audience. One group, prefers visual charts and the other absolutely wants to see numbers, preferably in a table. you don&#39;t need to create two separate objects in order to serve both user types.</p>
+<p>The type of chart can be changed by user without going to the chart properties dialog, provided that the fast type change option has been selected on the general tab of the properties.</p>
+<p>An icon showing the next available chart type displays in the chart. When you left click the icon, the chart changes to the indicated type. When you right click the icon, you see a drow down menu with all the available types.</p>
+<p>You can choose the position of the fast type change icon. If you choose Caption, the icon displays in the chart caption, provided your caption is shown. If you choose In Chart, the icon displays inside the chart, provided that the chart is not a pivot table or straight table. </p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="02">
+        <h1>Groups and Fast Type Change Option</h1>
+<p>On the Dashboard sheet you want to show the Sales Trend as a table.</p>
+<ul>
+<li>Go to properties of the sales trend on the dashboard sheet.</li>
+<li>In General choose Combo Chart and Straight Table in the allowed types area of Fast Type Change.</li>
+</ul>
+<p><img src="./img/02.png" alt=""></p>
+<ul>
+<li>click ok</li>
+</ul>
+<p><img src="./img/03.png" alt=""></p>
+<h2>Drill down dimension group</h2>
+<p>Naming conventions:</p>
+<ul>
+<li>Cycle groups start with a <code>&lt;</code></li>
+<li>Drill down gropus start with a <code>&gt;</code></li>
+</ul>
+<p>Create a drill down for the Order Trend chart on the dashboard sheet. It should contain the fields Year, Quarter, and Month. Remove the Month dimension and use the new group dimension.</p>
+<ul>
+<li>In properties for the Order trend chart on the dashboard sheet go to the dimensions tab.</li>
+<li>Click Edit Groups, click new, for group name type <code>&gt;</code>TimeGroup.</li>
+<li>Select drill down group, in the available fields select Year, Quarter, and Month. Click Add.</li>
+<li>Click Ok, and then in the groups dialog, click ok again.</li>
+<li>In the dimensions dialog in the available fields/groups box remove Month and select <code>&gt;</code>TimeGroup, and click add. click Ok.</li>
+</ul>
+<p><img src="./img/04.png" alt=""></p>
+<h2>Creating an expressions group</h2>
+<p>The pie chart that represents Sales by Division, you now want to allow the user to view that pie chart for not only Sales but also Margin and number of orders. This requires writing two new expressions and group the three together.</p>
+<ul>
+<li>On the dashboard sheet go to properties for the pie chart and in the general tab change the title to Distribution by Division</li>
+<li>Select show title in Chart, In title settings choose Horizontal Alignment and select left.</li>
+<li>In Font sytle choose Bold size 10.</li>
+<li>Define an expression for Sales, label it Distribution - Sales.</li>
+<li>Add an expression Sum(Margin) label it Distribution - Margin</li>
+<li>Add an expression Sum(Margin)/Sum(LineSalesAmount), Label it Distribution - Margin%</li>
+<li>Now to group them together, click on Distribution - Margin and then click Group, then expand the group and drag and drop the remaining expression into the group.</li>
+<li>On the presentation tab under Text in Chart click Add, the Chart Text dialog opens, under Text, type Sales|Margin|Margin%</li>
+<li>Click Font, select size 8. Click ok.</li>
+<li>Arrange the chart components to look as below:</li>
+</ul>
+<p><img src="./img/05.png" alt=""></p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="03">
+        <h1>Containers</h1>
+<p>The container object server as a container for sheet objects. Small tabs or a drop down list enable the user to choose which object to show. The container object can thus be used instead of the more traditional Fast Type Change to toggle between object types. Also, the container object has the additional advantage that the objects in the container can use different dimensions an dexpressions.</p>
+<p>You can group objects in a container by function, context or both. Container objects give QlikView document designers a way to present multiple perspectives on a set of facts in a single space saving, easy to use object. Containers simplify the presentation and enhance the analysis of any set of document objects.</p>
+<p>You build containers by selecting from the list of available document objects. User sequence the list and also indicate their preference for object selection. Before you can place objects in a container, you have to first create them.</p>
+<p>There are two container types: Grid and Single Object. Grid allows you to place multiple objects in columns and rows. Single object allows you to display one object at a time.</p>
+<h2>Exercise:</h2>
+<p>There is not enough screen area to show all obects side by side on the sales person details sheet. You want to show the sales trend and order trend charts on the sales person details sheet.</p>
+<ul>
+<li>Create a new sheet object on the sales person sheet, it should be a container object.</li>
+<li>In general under existing objects, under Filter, select Charts, and then select the Sales Trend, and the Order Trend charts, and then click Add to add them to Objects Displayed in container.</li>
+<li>On the presentation tab for contianer type choose single object, under appearance select Tabs at Top. remove the caption and click ok.</li>
+<li>Place the conatiner as below:</li>
+</ul>
+<p><img src="./img/06.png" alt=""></p>
+<h2>Add a chart to the container</h2>
+<p>You want to add a new chart that does not exist in the layout to the container.</p>
+<ul>
+<li>Sales person average deal size chart</li>
+<li>In the Layout menu choose add sheet, call it Temp. </li>
+<li>On the Dashboard sheet right click the Sales Trend chart and select copy to clipboard, and then select object.</li>
+<li>Right click on the temp sheet and select paster sheet object.</li>
+<li>go to the properties of the chart and change the title to Sales Person Average Deal Size.</li>
+<li>On the dimension tab, remove moth, and add SalesPerson. clear label.</li>
+<li>Select Sales, Margin, and Margin % expressions and clear Enable.</li>
+<li>Create two expressions as below:<ul>
+<li>label: Avg Deal Size, Sum(LineSalesAmount)/Count(DISTINCT OrderID) display option: Bar</li>
+<li>label: #Customers, Sum(RecNo_Customers) display option: Symbol/Auto</li>
+</ul>
+</li>
+<li>On the presentation tab, under Line/Symbol Settings, set Symbol Size to 6pt.</li>
+<li>On the Axes tab, under Expresseion Axes, select #Customers. Under position, select Right(Top). Click Ok</li>
+<li>On the Sales Person Details sheet right click one of the tabs of the container object, and then select properties.</li>
+<li>On the general tab, seelct Sales person Average Deal Size chart and click Add. Click Ok.</li>
+</ul>
+<p><img src="./img/07.png" alt=""></p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="04">
+        <h1>Table Design</h1>
+<p>Objectives:
+Learn when to use a table, explain how to select and sort values in tables, define the difference between a straight table, pivot table, and a table box. Explain how to enhance a table with mini charts and visual cues.</p>
+<p>A table box is a combination of list boxes. Insteade of placing each field in its own object sepearately, the table box combines them. the content of every row is logically connected. The columns may be fretched from different input tables, letting the user create tables from any possible combination of input tables. So when you want to present the conttents of several list boxes in one table, you need a table box.</p>
+<ul>
+<li>create a Table box object on the order details sheet, Set the title to be Order Details, select Facts as the Table to show fields from and click Add all.</li>
+<li>Under fields displayed in table box, select %Key_Customers, %Key_Employees, %Key_Products, and RecNo_OrderDetails. click Remove.</li>
+<li>Under Show Fields from table, select All Tables. </li>
+<li>Under Available Fields, select SalesPerson, CompanyName, and ProductName. click Add</li>
+<li>On presentation tab, under fields, select OrderDate, ProductName, and SalesPerson, and then select Dropdown select. click ok</li>
+<li>You are going to use the OrderDate and Discount fields in other charts. To avoid defining settings each time the fields are used, you define the number format settings in the document properties.</li>
+<li>In the settings menu, select Document properties, select the number tab, under fields, select discount, and hten under Number Format Settings, select Integer and Show in Percent(%).</li>
+<li>Under fields, select OrderDate, adn then under Number Format Setting, select Date, click ok</li>
+</ul>
+<p><img src="./img/08.png" alt=""></p>
+<h2>Selections in table boxes</h2>
+<p>With QlikView&#39;s associative logic, the  contents of the table box are automatically updated when you  make selections in other objects. As in a box, cells that you select in a table box turn green when you select them, but when you release the mouse button, they revert to their original colour. The size of the table is adjusted to display only the reulst of your selection.
+Selections in a column are indicated with a beacon to the right of the field name.</p>
+<h2>Sorting in table boxes</h2>
+<p>There are two different methods of sorting in table boxes. First of al, you can set the order in which the columns are displayed, from left to right. You do this by clicking the title row of a column and dragging it to a new position. A blue outline of the field indicates that you are performing a drag and drop operation.
+The order can also be set in the Table box Properties&gt;General dialog by means of the Promote and Demote buttons.</p>
+<p>Secondly the rows in the table box can be sorted according to the sort order for the values of specific fields in the table box. This is done in the dialog Table Box Properties&gt;Sort. there you can also set a sort priority by moving fields up or down in the list. The sort priority is independent from the order in which the columns are displayed.</p>
+<p>An alternative and convenient way is to simply right click the column of the field you wish to sort on and select the Sort command from the table box menu. Double clicking the column header works equally well. Repeated use of this toggles the sort order for the selected field betwen ascending and descending order. A small arrow icon at the top of the column indicates for which field the table is sorted and if the sort order is ascending or descending.</p>
+<h2>Setting the alignment of columns</h2>
+<p>The Table Box Properties&gt;Presentation tab contains the options for text alignments in the columns. You can separately determine the alignment of text and numbers. Select one of the fields and make the necessary adjustments under alignment. It is a design best practice to choose the same alignment fo rthe column label and text and numbers.</p>
+<h2>Pivot tables</h2>
+<p>The pivot table is one of the most powerful tools for analysing data. It offers substantial functionality but is still easy to use. Pivot tables show dimensions and expressions in rows and columns, for examples, in cross tables. </p>
+<h2>Straight tables</h2>
+<p>in opposition to the pivot table, the straight table cannot display subtotals or serve as a cross table. However, any of its columns can be sorted and each of its rows contains one combination of dimensions plus expressions. A straight table is often used with one dimension. Having the dimension as a cyclic or drill down group offers more flexibility in looking at the same metrics.</p>
+<h2>Mini Charts</h2>
+<p>Graphs show more than numbers, but numbers show the exact actual figures. With mini charts, there is no need to pick one or the other. Minit Charts have a high information density; they enable you to show much information in a very limited space.
+There are various representaiton modes for mini charts. use lines to show the movements, bars to show the quanitiative values, and whiskers to show the win/loss values.
+When you use mini charts, you can add valuable context to your tables because they do not display only actual figures but individual historical measurements and seeing facts in a historical context leads to better decisions.</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="05">
+        <h1>Create a straight table</h1>
+<p>You need to provide a chart that shows a detailed view of the customers&#39; Sales, Margin, Quantity, the date of the latest order, and the average discount they received. The users need to see the actual numbers, but also a fast and accurate overview of order trends and anumber of orders. They need to rank and sort the data.</p>
+<ul>
+<li>On the customer details sheet create a new chart object. For window title type Customer Details, under chart type, select the straight table. click next.</li>
+<li>Define a dimension, select CompanyName from the available fields/groups, type Company for the label. click nexct.</li>
+<li>Define the expressions, sum(LineSalesAmount) label it Sales, Sum(Margin) label it Margin, COUNT(DINSTINCT OrderID) label it #Orders, Max(OrderDate) label it Latest Order, Avg(Discount) label it Avg Discount.</li>
+</ul>
+<h2>Create a mini chart for Sales</h2>
+<ul>
+<li>Right click on the Sales expression and select copy.</li>
+<li>Right click on a blank space in the expressions container and select Paste.</li>
+<li>Use the promote button to move it below the Sales expression.</li>
+<li>Label the new expression Sales trend. Under Total Mode, select No totals, select mini chart under representation.</li>
+<li>click mini chart settings, select month year for dimension, and sparkline for mode. click ok.</li>
+<li>copy and paste the #orders expression, promote it to just below the #orders expression, ensure the copied expression is selected and then select Linear Gauge under representation. Under total mode select no totals, click gauge settings. </li>
+<li>In gauge settins, for Max, type = Max(Aggr(Count(DISTINCT OrderID), Company_Name))</li>
+<li>under segments setup, remove segment 2, for segment 1, click the colour tile and choose a gray colour for the base color. Click ok twice.</li>
+<li>Under indicator, under mode, select fill to value and under style select line.</li>
+<li>Select Hide gauge outlines and hide gauge outlines</li>
+<li>Click next, under columns in the priority box select company and under sort by select expression, and then select ascending. type sum(LineSalesAmount) in the expression field. click next.</li>
+<li>FOr presentation under columns, select company, and under alignment select left for label and data (Text).</li>
+<li>under columns, select Sales, and under alignment, select right for label, data (numeric), and Data(Text).</li>
+<li>Apply the same settings as in the previous step to the remaining expressions. click next.</li>
+<li>Under expressions, select Avg Discount, in the Upper&gt;= field, type 0.15, and select Bold. </li>
+<li>click the text colour tile, choose a red colour for the base. click ok twice and click next.</li>
+<li>Under current style select light, click next.</li>
+<li>Under expressions, select Sales and Margin, and under Number Format Settings, select integer.</li>
+<li>Under expressions, select Avg Discount, and under Number Format Settings, select Fixed to and 1 Decimals. then, select show in person (%). click next three times and then finish.</li>
+</ul>
+<p><img src="./img/09.png" alt=""></p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="06">
+        <h1>Create a pivot table</h1>
+<p>The CMO needs to anlayse product performance on product level by year, quarter or division. Here you have many dimensions but only two measures, sales and margin.</p>
+<ul>
+<li>on the customer details sheet, right click the customer details chart and select copy to clipboard and then object.</li>
+<li>Paste the object onto the product details sheet.</li>
+<li>go to the properties of the copied chart and set the title to Product Details.</li>
+<li>Under chart type, select pivot table.</li>
+<li>On the dimension tab in the available fields/groups remove CompanyName dimensions, then select Year, Quarter, DivisionName, and CategoryName dimensions. Click Add.</li>
+<li>Select DivisionName and for label type Division, select CategoryName and for label type Category.</li>
+<li>On the expressions tab, clear enable for Sales Trend, #Orders, the order trend linear gauge, Latest Order and Avg Discount.</li>
+<li>Ensure that the Sales and Margin expressions are enabled.</li>
+<li>Define sorts, under dimensions, select Year, under sort by, select Numeric Value, and then select Ascending.</li>
+<li>For the Quarter dimension do the same.</li>
+<li>For the Division dimension sort by Text A-&gt;Z, do the same for the Category dimension.</li>
+<li>On the presentation tab, under dimensions and expressions, selct Year, Quarter, Division and Category, and select Show Partial Sums. click ok</li>
+<li>Right click the Year column and select Expand All, do the same for Quarter, Division and Category columns.</li>
+<li>Select the Year column, while pressing and holding the left mouse button, drag the column to the maximum right position. Notice how the blue arrow changes from the vertical to horizontal position when you reach the right border.</li>
+</ul>
+<p><img src="./img/10.png" alt=""></p>
+<ul>
+<li>Move the pointer to the top of the object and then release the mouse button.</li>
+<li>The year column is now displayed as a horizontal row.</li>
+<li>Proceed with Quarter and pivot the column to be shown as a horizontal row.</li>
+</ul>
+<p><img src="./img/11.png" alt=""></p>
+
+      </div>
+     
+    </div>
+  </div>
+</div>
+  <div class="ui bottom fixed borderless right menu">
+    <div class="ui right tiny menu">
+      <div class="ui mini message segment">
+        Dr. Brenda Mullally (bmullally@wit.ie).
+        <a  href="http://creativecommons.org/licenses/by-nc/4.0/" title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+            target="_blank">Creative Commons License
+        </a>
+      </div>
+    </div>
+  </div>
+
+    <footer>
+
+    </footer>
+    <script>
+      $(document).ready(function () {
+  $('img').addClass('ui image');
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function (i) {
+    if (($images[i].alt).length > 0) {
+      const divImg = $(document.createElement('div')).addClass('ui basic segment');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass('ui blue ribbon label');
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.embed').embed();
+
+  $('.ui.menu .item')
+      .tab({
+        history: true,
+        historyType: 'hash',
+      });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+      .sidebar({ context: $('.pushable') })
+      .sidebar('setting', 'transition', 'slide out')
+      .sidebar('attach events', '#toc');
+});
+
+    </script>
+  </body>
+
+ </html>
