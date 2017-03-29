@@ -1,0 +1,35 @@
+//====================================================================================================
+// COMMON VARIABLES LOAD SCRIPT
+// 
+// Sample script to load the common variables into the application.   
+// You may wish to store these in Excel (as was done here) or in a database or flat file. It won't 
+// impact the usage of the variables.   Once they are read into the application here they are then 
+// created as document variables for this application with the second section of code below.   
+//====================================================================================================
+
+
+CommonVariables:
+LOAD Subject, 
+     VariableName, 
+     VariableValue
+FROM
+[..\External Data\Variables.xlsx]
+(ooxml, embedded labels, table is Sheet1);
+
+
+
+
+// ---------------------------------------------------------------------------
+// This code converts the variables from table values to document variables
+// ---------------------------------------------------------------------------
+Let RowCount = NumMax(NoOfRows('CommonVariables'),0)-1;
+For i=0 to '$(RowCount)'
+  Let TempVarName = peek('VariableName',$(i),'CommonVariables');
+  Let TempVarValue = peek('VariableValue',$(i),'CommonVariables');
+  Let $(TempVarName) = '$(TempVarValue)';
+Next
+
+// -------------------------------------------------------------------------------------------
+// You can drop the CommonVariables table if you don't want to use it for display in the app
+// -------------------------------------------------------------------------------------------
+DROP TABLE CommonVariables;
