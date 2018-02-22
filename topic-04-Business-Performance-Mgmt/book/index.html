@@ -1,0 +1,544 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     
+
+     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+     
+
+     <style>
+       
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+     </style>
+
+   </head>
+
+  <body>
+    
+
+<style>
+  
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom:thin solid black;
+}
+
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+body
+{
+  overflow-y: scroll;
+}
+
+.pushable > .pusher
+{
+  padding-bottom: 1.5rem;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+</style>
+
+<div class="ui fixed top pointing inverted stackable menu labmenu">
+  <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
+    <a href="../index.html">
+      Data Visualisation and Business Peformance Management
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    
+    <a class="item" data-tab="Lab-06">
+      Lab-06
+    </a>
+    
+    <a class="item" data-tab="01">
+      01
+    </a>
+    
+    <a class="item" data-tab="02">
+      02
+    </a>
+    
+    <a class="item" data-tab="03">
+      03
+    </a>
+    
+    <a class="item" data-tab="04">
+      04
+    </a>
+    
+    <a class="item" data-tab="Exercises">
+      Exercises
+    </a>
+    
+    <div class="item">
+      
+    </div>
+  </div>
+</div>
+
+<div class="ui segment pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    <br><br>
+    
+      
+        <a class="item" href="../../topic-02-BA-Intro/book/index.html">
+          Lab-01
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic-02-Data-Discovery/book/index.html">
+          Lab-02
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic-02-Data-Discovery/book-a/index.html">
+          Lab-03
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic-02-Data-Discovery/book-b/index.html">
+          Lab-04
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic-03-Data-Mining-Process/book-ca/index.html">
+          Lab-05
+        </a>
+      
+    
+      
+        <a class="active item" href="../../topic-04-Business-Performance-Mgmt/book/index.html">
+          Lab-06
+        </a>
+      
+    
+  </div>
+  <div class="pusher" tabindex="-1">
+    <div class="ui basic segment" id="labchat">
+      <br>
+      
+      <div  class="ui tab segment lab" data-tab="Lab-06">
+        <h1>Objectives</h1>
+<p>Excel provides powerful tools for distilling a complex data set into meaningful information: Pivot Tables and PowerPivot Tables</p>
+<p>This lab was created using material from Data Visualisation with Advanced Excel by PwC </p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="01">
+        <h1>PivotTables</h1>
+<p>PivotTables allow you to create custom summaries and charts of key information in the data. To apply pivottables you need a data set with column labels in the first row.</p>
+<p>The data set <a href="./archives/accounting.xlsx">Accounting Professionals</a> provides the results of a survey of 27 employees in a tax division of a Fortune 100 company. </p>
+<p>Select any cell in the data set and choose Insert PivotTable from the Insert tab and follow the steps of the wizard.</p>
+<p>Excel creates a new worksheet with a pivotTable as shown below:</p>
+<p><img src="./img/01.png" alt=""></p>
+<p>You should first decide what types of tables you wish to create. For example in the accounting data set, suppose you want to count the average number of years of service for males and females with and without a graduate degree. If you drag the variable Gender from the field list to the row labels area, the variable graduate degree? into the column labels area and the variable years of service into the values area, then you have created the PivotTable.</p>
+<p><img src="./img/02.png" alt=""></p>
+<p>However, the sum of years is probably not what you would want.</p>
+<p>In the Analyze tab for Pivot Table Tools in the menu bar, click on the Active Field group and choose Field Settings. You will be able to change the summarisation method in the PivotTable in the dialog. Selecting the Average results in the PivotTable shown below. We see that the average number of years of service is not much different for holders of graduate degrees, but that females have much fewer years of service than males.</p>
+<p><img src="./img/03.png" alt=""></p>
+<p>The beauty of pivotTables is that if you wish to change the analysis, you can simply uncheck the boxes in the field list or drag the variable names to different field areas.
+You may easily add multiple variables in the fields to create different views of the data.</p>
+<p>Create PivotTables to find the average number of years of undergraduate study for each age group with and whithout a CPA and the number of employees in each age group with and without a CPA in the Excel file Accounting Professionals.</p>
+<p>Create a PivotTable showing the count of the number of employees by age group.</p>
+<p><img src="./img/04.png" alt=""></p>
+<p>PivotTables also provide an easy method of constructing cross-tabulations for categorical data. 
+Extend the one above, drag the field Graduate Degree? into the column label box in the field list. This PivotTable is a cross-tabulation of the number of employees in each age group who do or do not posses a graduate degree.</p>
+<p><img src="./img/05.png" alt=""></p>
+<p>Open the file <a href="./archives/BicycleForPivot.xlsx">Bicycle Pivot</a>. Create a PivotTable to determine the total revenue for material groups in each sales organisaiton.</p>
+<p>Experiment with adding filters to the pivotTable, such as Distribution Channel. </p>
+<p>You can also drill down into the data by right clicking on the category Mountain bike, choose Expand/Collapse and then Expand, then choose the detail you want to see, in this case Material.
+Remove the drill down by removing the Material field in the field list for rows.</p>
+<p>Try restricting to the first quarter of 2007. To do this we add the field Date to the rows section, and then right click on one of the dates displayed, choose Group, and add Quarters, and Years to the groups.Then move the Years and Date fields that appear in the rows section to the filter section. Then click on the dropdown box for Years and tick 2007, click on the dropdown box for Date and choose the first quarter. </p>
+<p><img src="./img/06.png" alt=""></p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="02">
+        <h1>PowerPivot</h1>
+<p>There are many ways to analyse and summarise data in Excel, one feature is called PowerPivot. It is similar to the PivotTable feature you covered in step 1. However, POwerPivot is able to run pivot tables by merging several big datasets and run pivot tables off the consolidated data.</p>
+<p>To use PowerPivot you must be familiar with the Internal Data Model (IDM). IDM is the analytical engine that Excel uses behind the scenes to construct the PowerPivot. It is basically a database in which Excel organises information. Two features that are useful: first, it can establish relatinships between multiple databases. Second, it can hold unlimited number of rows and columns. You are only limited by a 2 gigabyte workbook and the memory available on the machine where Excel is running. (IDM is only available in Excel 2013 or newer)</p>
+<p>To active PowerPivot we need to add it to our available tabs in Excel. Go to the File menu and choose options.</p>
+<p><img src="./img/07.png" alt=""></p>
+<p>Excel options box opens, choose Add-ins from the menu on the left and then choose COM Add-ins from the drop down list Label Managed:</p>
+<p><img src="./img/08.png" alt=""></p>
+<p>Click Go.</p>
+<p>Check the box for Microsoft PowerPivot for Excel and click OK.</p>
+<p><img src="./img/09.png" alt=""></p>
+<p>Now you should see the PowerPivot tab appear on the top ribbon in Excel.</p>
+<p><img src="./img/10.png" alt=""></p>
+<h2>Linking Data Tables</h2>
+<p>We will work on some Airline data for this step. Open the file <a href="./archives/PowerPivotLesson.xlsx">Power Pivot Lesson</a>.
+There are four data tables in this workbook each containing different kindds of airline data. </p>
+<p>The first is Flights, it contains information relating to flights out of Chicago, including:</p>
+<ul>
+<li>destination</li>
+<li>the ID of the aircraft</li>
+<li>the scheduled departure time</li>
+<li>pricing information </li>
+<li>date of the flight</li>
+</ul>
+<p>The second is Routes, it provide insight into:</p>
+<ul>
+<li>the specific departure and arrival airports</li>
+<li>the distance</li>
+<li>list price</li>
+</ul>
+<p>Note that all flights are coming out of ORD with is the airport code for O&#39;Hare International Airport Chicago.</p>
+<p>The third data table is the Aircraft tab, it provides specs for all aircraft in the fleet:</p>
+<ul>
+<li>type of aircraft,</li>
+<li>seat capacity</li>
+<li>fuel cost per seat per mile</li>
+</ul>
+<p>The last data table is the Airports tab which provides:</p>
+<ul>
+<li>airport full name</li>
+<li>number of available gates</li>
+</ul>
+<p>This lesson will address how to analyse this data, it is no simple task as the data is spread over several tabs. For example if the business asked you to analyse the types of aircraft that frequent certain routes and have delays, it would require you to combine data from the flights, aircraft and routes tabs. Instead of going back and forth between tabs we can use the relational data model and PowerPivot to analyse data across multiple tabs.</p>
+<p>First we convert the flights data into a table format so that we can use it in our PowerPivot data model. </p>
+<p>Click on the flights tab, select the entire dataset, navigate to the insert menu ribbon and choose Table from the options available. You will see a dialog box open to confirm the data range and confirm that the data has a row of headers. It is considered best practice to include headers when selecting a data set. This allows Excel to add informative field names in the data model and clarity to the user.</p>
+<p><img src="./img/11.png" alt=""></p>
+<p>Click OK. The dataset is now formated in a default table style. You will notice when the table is active that another tab called Table Tools Design appears on the main ribbon and the name of the table is presented to you.</p>
+<p><img src="./img/12.png" alt=""></p>
+<p>Now when we select any cell the design tab appears. We can change the name of the table as it is good practice to change it from the default. Let&#39;s call this set of data flights.</p>
+<p><img src="./img/13.png" alt=""></p>
+<p>Repeat this step for the other three datsets.</p>
+<p>Next we complete our data model in PowerPivot. </p>
+<ul>
+<li>Start with the flights table, click on a cell in the table</li>
+<li>Navigate to the PowerPivot tab and click on the Add to Data Model button</li>
+</ul>
+<p><img src="./img/14.png" alt=""></p>
+<p>The PowerPivot table is then displayed in a separate window. </p>
+<ul>
+<li>repeat these steps for each table until all four are added.</li>
+</ul>
+<p><img src="./img/15.png" alt=""></p>
+<p>Now that we have added all 4 of the tables to our data model, we need to form the required relationships between the tables to create our PowerPivot.</p>
+<ul>
+<li>Click on the tab called Pivot 1a. Next navigate to the PowerPivot tab, and select the Manage option. It may take a couple of seconds to load the data. </li>
+<li>Click on the Diagram View option</li>
+</ul>
+<p><img src="./img/16.png" alt=""></p>
+<p>This enables us to see each of the tables we have saved within the data model. For each table we must identify the links to the other tables by dragging lines between the tables, in order to create relationships. In order for this linking to work the columns must have exactly the same name.</p>
+<p><img src="./img/17.png" alt=""></p>
+<p>Route ID appears in the routes table and the flights table, this means it is a foreign key in the flights table and a primary key in the routes table.</p>
+<ul>
+<li>Click on the route ID in the flights table and drag it onto the route ID in the routes table.</li>
+</ul>
+<p><img src="./img/18.png" alt=""></p>
+<p>This creates a link in the diagram showing that these fields are the same. aircraft ID also appears in two tables, create the link as before. Lastly link the two occurrences of airport ID.</p>
+<p>Tip: always link from the foreign key side to the primary key side in a relationship.</p>
+<p><img src="./img/19.png" alt=""></p>
+<p>All tables in the diagram are now connected, no single table stands on its own. 
+Close the PowerPivot view.</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="03">
+        <h1>PowerPivot to Visualise Data</h1>
+<p>For this exercise you are asked to look into the specific metrics with regard to flights and the aircraft that are being used. We are going to use the data model that we created in the last step.</p>
+<p> If we want to answer the qustion: How many flights use the A319 aircraft? We know that flight and aircraft data are stored in two different tabs of data. However we have used the aircraft ID to link those data sets together.</p>
+<p>Go to a new tab name it Exercise 2. We are going to place our pivot table in this new tab so it can expand as needed. 
+- Select the first cell in A1.
+- Next navigate to the PowerPivot tab on the ribbon
+- Click Manage
+- Click Pivot Table</p>
+<p><img src="./img/20.png" alt=""></p>
+<ul>
+<li>It prompts you to confirm that you want a pivot table created in the existing worksheet.</li>
+</ul>
+<p><img src="./img/21.png" alt=""></p>
+<ul>
+<li>All four tables in our data model appear on the right hand side.</li>
+<li>To answer the question we must combine the aircraft and flight datasets. Exapand those two datasets.</li>
+</ul>
+<p><img src="./img/22.png" alt=""></p>
+<ul>
+<li>Now we can see flight ID and aircraft type. Drag these two fields into the values and rows fields respectively.</li>
+<li>Now we see the pivot table form.</li>
+<li>It shows a count of the flightIDs which is what we want to show since we are answering the question how many flights use the A319 aircraft.</li>
+<li><p>Cell B2 shows us there were 3879 flights that used the A319 aircraft.</p>
+</li>
+<li><p>The second question we wish to answer is: What is the most common type of aircraft used across all flights? What is the answer?</p>
+</li>
+<li><p>The next question is : What is the maximum average ticket price for flights on the A320 aircraft?</p>
+</li>
+<li><p>You can create a new tab if you wish to answer this question or re-work your existing power pivot.</p>
+</li>
+<li>We need the aircraft type (rows) and ticket price (values)</li>
+<li>By default the average ticket price is summed so we want to change this</li>
+<li>Click the dropdown arrow for Sum of Avg Ticket Price in the Values section, choose Value Field Setting.</li>
+</ul>
+<p><img src="./img/23.png" alt=""></p>
+<ul>
+<li>Choose Max from the list of options to summarise by.</li>
+</ul>
+<p><img src="./img/24.png" alt=""></p>
+<h2>PivotCharts</h2>
+<p>Another feature of PowerPivot is PivotCharts.</p>
+<p>This allows you to visualise data across multiple data sources. In this particular case we are being asked to visualise the number of flights flown for each aircraft type.</p>
+<ul>
+<li>Open a new tab name it PivotChart</li>
+<li>Click in cell D12 and then click on PowerPivot, then the Manage button and then the arrow below PivotTable.</li>
+<li>Choose PivotChart and use the existing workbook.</li>
+</ul>
+<p><img src="./img/25.png" alt=""></p>
+<ul>
+<li>You can adjust the height and width of the chart.</li>
+<li>Next select the fields for the x and y axis.</li>
+<li>Aircraft type should be placed in the Axis section.</li>
+<li>FlightID should be placed in the Values section.</li>
+<li>You can change the title by double clicking the text (change it to Flight ID vs Aircraft Type).</li>
+<li>The filter in the bottom left corner of the chart can be used to filter to only two types of aircrafts.</li>
+</ul>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="04">
+        <h1>Calculated Fields</h1>
+<p>There are some values that need to be calculated in order to better understand the data. The CFO of the airline has identified the cost per mile for each aircraft in dollars, and the total revenue for each flight, assuming there is a 10% tax on all fares.</p>
+<p>Using Excel formulas we can leverage existing fields to address the CFO&#39;s request.</p>
+<ul>
+<li>Which aircraft has the highest fuel cost per mile?</li>
+<li>Look at the aircraft tab, we have the fuel cost receipt per mile in column D. This is per seat not per aircraft. We can see the seat capactiy in column C.</li>
+<li>The fuel cost is also in cents, we want to show it in dollars</li>
+<li>To include this in our PowerPivot we use the calculated field.</li>
+<li>Click on PowerPivot and choose Manage, choose the aircraft tab, you can then see the Add Column option </li>
+</ul>
+<p><img src="./img/26.png" alt=""></p>
+<ul>
+<li>Click on the Add Column and in the Formula bar we enter the formula by typing = then selecting the seat capacity field, multiplied by the fuelcostperseatmile field and divided by 100.</li>
+</ul>
+<p><img src="./img/27.png" alt=""></p>
+<ul>
+<li>We should provide a new name for the field. Double click in the title of the column and call it FuelCostPerMile(Dollars)</li>
+<li>Lastly we want to format the calculated field. Highlight the column and on the formatting section on the Home tab choose Decimal Number for the format.</li>
+<li>Now we can you this data in our next pivot table.</li>
+<li>Open a new tab and name it calculatedFields select cell A1</li>
+<li>Click on PowerPivot, Manage and then PivotTable</li>
+<li>You should see the new calculated field in the list of fields for aircraft.</li>
+</ul>
+<p><img src="./img/28.png" alt=""></p>
+<ul>
+<li>Drag the new calculated field into the values section and the aircraft type into the rows section.</li>
+<li>Right click in cell B2 and choose Sort Highest to Lowest (with little data this isn&#39;t essential here but important to know how to sort data in a powerpivot)</li>
+<li>We can see the B737 has the highest cost per mile in fuel.</li>
+</ul>
+<p>Which flight(s) have the highest total revenue?</p>
+<p>To answer this we need to know the total revenue for each flight less 10% tax.</p>
+<ul>
+<li>Add a new calculated field to the flights table, your formula should multiply the Total Fare field by 0.9</li>
+<li>Name the new column TotalRevenue</li>
+</ul>
+<p><img src="./img/29.png" alt=""></p>
+<ul>
+<li>Create a new powerpivot table in a new sheet.</li>
+<li>Drag the totalrevenue field into the values section, this gives us the sum of all revenue on all flights.</li>
+<li>We drag the flight id into the row section as we want to see the flight revenues individually</li>
+<li>Which one has the largest? Sort it so you can see the top is four flights that have the highest revenue.</li>
+</ul>
+<p><img src="./img/30.png" alt=""></p>
+<p>Next you are to create a pivot chart to show the lowest revenue gained from a flight.</p>
+<ul>
+<li>Create a PivotChart as you did in step3. This time the axis is the flightID with the TotalRevenue field as the value.</li>
+<li>We need to sort the chart by clicking on the filter button with the FlightID label in the bottom left corner of the chart. Choose More Sort Options from the menu. This brings up a popup window that allows us to sort the data in the chart. Choose descending and from the list choose TotalRevenue. Click Ok to confirm.</li>
+<li>Give the chart an appropriate name.</li>
+</ul>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="Exercises">
+        <h1>Practice PowerPivot and PivotChart</h1>
+<ul>
+<li>You will now create new PowerPivots to answer the following questions:</li>
+</ul>
+<ul>
+<li>How many flights are flown from O&#39;Hare (ORD) to Los Angeles International Aiport (LAX)?</li>
+<li>Which route accounts for the lowest percentage of total revenue? </li>
+<li>What was the most popular month to fly to Fort Lauderdale (FLL)?</li>
+<li>Create a pivot chart to show the number of flights per month on the ORD-PHL route.</li>
+</ul>
+<p>To answer the first question:</p>
+<ul>
+<li>Create a pivot table using PowerPivot on a new tab.</li>
+<li>We want to count the number of flights on a specific route, so count the flightID&#39;s. drag the flightid&#39;s field into the values section.</li>
+<li>The routes table only gives us flights leaving from Ohare so we can drag the airport id into the rows section. We can see in row 16 the number of flights to LAX is 699.</li>
+</ul>
+<p>To answer the second question:</p>
+<ul>
+<li>Create a pivot table using PowerPivot on a new tab.</li>
+<li>We want to sum the total revenue so drag it into the values section.</li>
+<li>We need to look at revenue for each route so drag routeid into the rows section.</li>
+<li>The table shows us the sum of total revenue per route not the percentage of total revenue.</li>
+<li>right click on the pivot table and choose Show Values As, and choose Percentage of Grand Total.</li>
+<li>You an then also sor the table so that the lowest is shown at the top</li>
+<li>The answer is Salt Lake City (SLC)</li>
+</ul>
+<p>Try to answer the third question yourself. (hint you will need to filter the table using routeid).
+Try to create the chart yourself.</p>
+
+      </div>
+     
+    </div>
+  </div>
+</div>
+<!--<div class="ui bottom fixed borderless right menu">
+  <div class="ui right tiny menu">
+    <div class="ui mini message segment">
+      .
+      <a href="http://creativecommons.org/licenses/by-nc/4.0/"
+         title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+         target="_blank">Creative Commons License
+      </a>
+    </div>
+  </div>
+</div>-->
+
+<script>
+  $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+</script>
+
+
+
+    <footer>
+
+    </footer>
+    <script>
+      $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+    </script>
+  </body>
+
+ </html>
