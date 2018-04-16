@@ -1,0 +1,587 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+     
+
+     <style>
+       
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+     </style>
+
+   </head>
+
+  <body>
+    
+
+<style>
+  
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom:thin solid black;
+}
+
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+body
+{
+  overflow-y: scroll;
+}
+
+.pushable > .pusher
+{
+  padding-bottom: 1.5rem;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+</style>
+
+<div class="ui fixed top pointing inverted stackable menu labmenu">
+  <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
+    <a href="../index.html">
+      Decision Modelling
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    
+    <a class="item" data-tab="Lab-11">
+      Lab-11
+    </a>
+    
+    <a class="item" data-tab="01">
+      01
+    </a>
+    
+    <a class="item" data-tab="02">
+      02
+    </a>
+    
+    <a class="item" data-tab="03">
+      03
+    </a>
+    
+    <a class="item" data-tab="04">
+      04
+    </a>
+    
+    <a class="item" data-tab="05">
+      05
+    </a>
+    
+    <a class="item" data-tab="06">
+      06
+    </a>
+    
+    <div class="item">
+      
+    </div>
+  </div>
+</div>
+
+<div class="ui segment pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    
+      
+        <a class="item" href="../../topic-02-BA-Intro/book/index.html">
+          Lab-01
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic-02-Data-Discovery/book/index.html">
+          Lab-02
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic-02-Data-Discovery/book-a/index.html">
+          Lab-03
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic-02-Data-Discovery/book-b/index.html">
+          Lab-04
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic-03-Data-Mining-Process/book-ca/index.html">
+          Lab-05
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic-04-Business-Performance-Mgmt/book/index.html">
+          Lab-06
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic-05-Charting-Dashboards/book-charts/index.html">
+          Lab-07
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic-05-Charting-Dashboards/book-dashboards/index.html">
+          Lab-08
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic-06-Business-Analytics/book-todoca/index.html">
+          Lab-09
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic-06-Data-Mining-Techniques/book-relationships/index.html">
+          Lab-10
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic-07-Decision-Modelling/book/index.html">
+          Lab-11
+        </a>
+      
+    
+  </div>
+  <div class="pusher" tabindex="-1">
+    <div class="ui basic segment" id="labchat">
+      <br>
+      
+      <div  class="ui tab segment lab" data-tab="Lab-11">
+        <h1>Ojectives</h1>
+<p>Introduction to Goal Seek, Scenario Manager, Data Tables and Simulation</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="01">
+        <h1>Goal Seek</h1>
+<p>An airline company you&#39;re working for is considering expanding their portfolio by adding Atlanta as a new destination. This would require an initial investment of $250,000 to secure capacity at the Atlanta airport. </p>
+<p>Your market research team estimates that the additional route would generate $100,000 in incremental profit in year one. And an additional $50,000 in incremental profit during years two through five. In order to determine whether or not this is a worthwhile investment, let&#39;s look into net present value or NPV and internal rate of return or IRR. </p>
+<p>NPV accounts for the time value of money and calculates how much the returns are worth in today&#39;s terms if you were to receive that in the future time period. In simple terms, NPV is how much a dollar given to you in 5 years is worth today. NPV also includes any cost associated with the investment. If NPV is positive then the project is potentially worthwhile.</p>
+<p>IRR looks at the same problem from a different angle. IRR seeks to find what the interest rate must be equal to in order for NPV to be zero. Generally the higher a project&#39;s IRR the more desirable it is to undertake. It can be considered the rate of growth a project is expected to generate.</p>
+<p>In summary NPV can be viewed as the profitability of a project in absolute terms, where IRR is the profitability of a project in relative terms, or percentages. </p>
+<p>Open this Excel file <a href="./archives/DM-techniques-labs.xlsx">Goal Seek file</a> </p>
+<p>First, we&#39;ll use the NPV formula before showing how Goal Seek can help us arrive at the same answer much faster and more precisely. First, we&#39;ll set up a formula for NPV in Excel which is dependent on the value of our discount rate. Let&#39;s type in the formula. </p>
+<p>The syntax for NPV is:</p>
+<pre><code>
+=NPV(rate,[value1],[value2],..)</code></pre>
+<p>Your formula in cell H27 should look like this:</p>
+<pre><code>
+=NPV(H26,B26:B31)</code></pre>
+<p>We must now enter the discount rate, in our case we will put in the value 10 into cell H26. This gives us an NPV of approxiately €429,000.</p>
+<p><img src="./img/13.png" alt=""></p>
+<p>To calculate what discount rate will force the NPV to equal zero, we also have a few options. The brute force way is to use trial and error with the input value and see when you&#39;re getting close to the desired answer. We can try it with 25%. 35%, 55%. And as you can see as a discount rate becomes larger the NPV is getting closer to zero. So we know that the IRR must be around 55%. </p>
+<p>However, if you want to save the time and skip straight to the results,
+Goal Seek is a perfect tool. In order to quickly determine what
+the internal rate of return is or in other words, what the discount
+rate is to make the NPV equal zero. </p>
+<ul>
+<li>Go the Data tab &gt; What-If Analysis &gt; Goal Seek. </li>
+<li>In the pop-up window, you will see that there are three input parameters, set cell, to value, and by changing cell. </li>
+<li>&quot;Set cell&quot; is where we specify which cell is the outcome we&#39;re trying to monitor. In our case, it is the NPV cell H27. </li>
+<li>In the &quot;To Value&quot; field, type in the value of the desired outcome, which in our case, we want the NPV to be 0. </li>
+<li>Finally, &quot;by changing&quot; cell field is where we can specify which variable we would like to manipulate to get the result we want. Here is the discount rate cell H26. </li>
+</ul>
+<p><img src="./img/14.png" alt=""></p>
+<ul>
+<li>After all three fields are filled out let&#39;s click on OK. </li>
+</ul>
+<p>Excel will then automatically cycle through different values of an IRR to make the NPV equal to 0. The final answer Goal Seek came up with is 57%. (this answer is shown in cell H26 the discount rate) In other words, if the discount rate is 57% the NPV of the investment will be 0. You can copy the value from the discount rate cell into the IRR using goal seek cell.</p>
+<p>Now, let&#39;s double check our answers. Luckily for us, Excel already has
+a built-in formula specifically for calculating IRR as long as you have
+the financial outlay of the investment. </p>
+<ul>
+<li>In cell H30 type in the IRR formula</li>
+</ul>
+<pre><code>=IRR(B26:B31).</code></pre>
+<p>As you can see, the formula returns 57%, which is exactly the same result that the goal seek tool has arrived at. Now, you can see Goal Seek allows you to experiment with an input variable to get to and desired answer. We use this all the time to help define our scenarios.</p>
+<p>For example, Goal Seek is a perfect tool to determine what the price of electricity needs to be to make a natural gas power plant economic at different gas prices. </p>
+<p>As long as you have established an Excel formula or math equation to define how the variable and the end result are related. Goal Seek can help you take the guess work out of your calculation by quickly finding what variable value you need to achieve the end result you want. </p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="02">
+        <h1>Scenario Manager</h1>
+<p>In this exercise, we will go through how to use Scenario Manager to try out different values in your variables and compare results. </p>
+<p>Scenario Manager sets the parameters we want to a certain value, calculates the results, then instantly recalls and replaces the input value with different sets of numbers based on the scenarios you have set up. </p>
+<p>For our problem, the business development team has asked us to explore the potential profitability and growth of a new flight route under different market conditions. </p>
+<p>Here is a simplified version of a income statement. In orange are historical numbers for the Ticket Revenue, Fee Revenue, as well as Cost of Sales and SG&amp;A Expenses from the past three years. </p>
+<p><img src="./img/15.png" alt=""></p>
+<p>A simple calculation will tell us that the company has achieved steady growth and operating income on this new route expansion from 2014 to 2016. In row 66 to row 68, the starting sheet has already calculated the Annual Growth Rate, the Growth Margin, as well as the SG&amp;A (selling, general and admin) Expense as a percentage of ticket revenue. </p>
+<p>On the right side of the table, we have projected revenue, costs, and expenses, if revenues, costs, and expenses grow at the rate specified from
+the assumption table in cells F66 to J68. </p>
+<p>The CEO has requested that we determine how the projected performance of the company will look if there are changes in how the company grows revenue and manages costs. In other words, we want to see how the projected income statement changes if the numbers in cell F66 to F68 change. </p>
+<p>To set up your Scenario Manager, let&#39;s highlight the cells
+that are going to change. And then go to the Data tab &gt; What-If Analysis &gt; Scenario Manager. </p>
+<p><img src="./img/16.png" alt=""></p>
+<p>Let&#39;s first create a scenario to capture what we have on the table as a baseline for comparison. In the Scenario Manager pop-up window, click on ADD to create a new scenario. A new window called Add Scenario will appear. </p>
+<p>First, let&#39;s give this scenario a name called Baseline. Now, because we have already selected the cells containing the variables we want to change, the Changing cell field is already filled out for us. However, if you had not selected the cells before going to Scenario Manager, or would like to change your selection, you can also set the parameters here. </p>
+<p><img src="./img/17.png" alt=""></p>
+<p>If you would like to attach a note on any clarification or background you want to provide for the scenario, you can do so in the comment box here. However, it is not required. It is best practice to leave some comments just in case you or someone else wants to review your assumptions in the future. </p>
+<p>Lastly, there are also options to Prevent changes and Hide the scenario if you like. For our purpose, let&#39;s keep the default setting and click OK. Then, you will be taken to the final step of setting up the scenario, defining the value of each cell to change in the scenario.</p>
+<p><img src="./img/18.png" alt=""></p>
+<p>The numbers that are already in cell F66, F67, and F68 are the numbers we want to keep for the scenario, so we can simply click OK. That will take us back to our Scenario Manager pop-up window, so we can see the Baseline scenario that we just set up in the list of scenarios. </p>
+<p><img src="./img/19.png" alt=""></p>
+<p>Now we can set up other scenarios using the same method. To set up our second scenario, first, we&#39;ll click on Add and type in our scenario name,
+High Growth with Margin Impact. The Changing cells in this scenario do not
+change from the scenario we just defined. So click OK in the Edit Scenario window. </p>
+<p>In the Scenario Values window, we need to update the values of the Changing cells for this particular scenario. </p>
+<p>Based on the scenario definition, we want to change the first cell, which is the Revenue Growth Rate, to 0.08. The second cell, which is the Growth Margin, to 0.45 and change the SG&amp;A expenses as a percentage of ticket revenue to 0.3. click on OK to complete the second scenario. </p>
+<p>Click on the Show button in Scenario Manager, notice how the results of the income statement changed based on our new assumptions. </p>
+<p>Operating Income in year 5 changed from around $1.7 million to around $2.2 million. </p>
+<p>The third scenario will be very similar. Click on Add and type in your third scenario name, Low Growth with Margin Impact. The changing sales are the same
+as the previous two scenarios, so we will simply click OK here. In the Scenario Values window, we can update the values of the changing sales for this scenario. 
+And in this alternative feature, sales have dropped to 3%. Growth Margin is lowered to 32%. And SG&amp;A Expenses as a percentage of ticket revenue is not impacted. So we will keep this at 27.5% After the variable&#39;s values have
+been updated for this scenario, click on OK to finish creating the third scenario. </p>
+<p>Now, it&#39;s time to set up our last scenario, click Add, And type in the name of our final scenario, Exploding Market Growth. The last scenario is a little bit
+different because we&#39;re considering an additional variable which is the 2%
+year over year growth as a result of the overall industry market growth,
+specified in cell K66. Therefore, in a changing cell field, let&#39;s add cell K66 and click OK. Because revenue, margin, and expenses stay the same as the original scenario, we will keep those numbers from the Baseline scenario at 8% Revenue Growth Rate, 45% Growth Margin, and 30% SG&amp;A Expense as a percentage of ticket revenue. Our last field is for the year over year growth rate, which we&#39;ll set to 2%. </p>
+<p>After the variable&#39;s values have been updated for this scenario, click OK to complete our fourth and final scenario. Now that everything&#39;s set up, there are two ways to view the result of your scenarios. </p>
+<p>The first way is to show the result one scenario at a time. To do that, simply click on the scenario name in the Scenario Manager window, then click Show. As you can see, the projective portion of the income statement, which is dependent on a variables that we have specified in our scenario, has just updated. We can toggle between the different scenarios by simply clicking on another scenario name and
+clicking Show. </p>
+<p>However, this view does not allow you to easily compare and contrast the result of
+all of your scenarios. In order to see the results of all the scenarios at once, we can create a summary by clicking on Summary on the right side of the Scenario Manager window. For Report type, choose Scenario Summary, and let&#39;s include Gross Profit, Operating Income, Compound Annual Growth Rate, also known as CAGR, as the metrics to view on the report for the period. One we click OK, the summary will be generated on a new tab. As you can see, the Gross Profit, Operating Income, and CAGR results from each of the four scenarios are listed on this table view. On the left side, there&#39;s an outline grouping tool. If we click on the minus sign, it will collapse the rows to only show the bottom row in the same grouping. When you click on the plus sign, everything will reappear. This allows you to view only the part of the summary that you&#39;re most interested in. </p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="03">
+        <h1>One Way Data Tables</h1>
+<p>We are now going to cover how to use a data table to gather multiple outcomes from a formula given a variable input. After this demonstration, you should be able to use a one way data table to understand the range of outcomes. For a given range of a variable input. </p>
+<p>We&#39;re going to analyze the impact of flight related costs. The forecasting team is looking to get a better understanding of how fuel and labor affect profitability in a proposed new route from Chicago to Atlanta. </p>
+<p>The operations team has determined the minimum cost per mile is $30, and the maximum cost per mile is $50, depending on the various market factors. The operations team has also provided estimates for the number of passengers per flight and the revenue per passenger. 170 and 150 respectively. </p>
+<p>We&#39;ve summarized this information in cells B113 through C120. Using the information provided by the operations team, we&#39;ve determined an estimated profit per flight in cell C120, however, recall that we would like to analyze how profit is impacted by cost per flight. This table only calculates the profits for one value of cost per mile at a time. </p>
+<p><img src="./img/21.png" alt=""></p>
+<p>However in reality, we are rarely confident on an exact number for the input for one of our variables. This is where the data table tool provides value, as it&#39;s going to allow us to fluctuate the value of the cost per mile variable. We&#39;ve provided the structure of the data table and cells, F113 through G124. </p>
+<p><img src="./img/22.png" alt=""></p>
+<p>Now we&#39;ll demonstrate how to use a one way data table to analyze the impact of cost per mile on profit. </p>
+<p>First, we need to link our objective formula located in cell C120 to the data table. 
+ - Select G113 and type the equal sign. 
+ - Then select C120 </p>
+<pre><code> =C120</code></pre>
+<ul>
+<li>Next, notice the range of values in cells F114 through F124. </li>
+<li>Each cell in this range represents a particular value of our variable, cost per mile, which is located in cell C117. </li>
+<li>When the data table is complete, for each value in cost per mile range, we&#39;ll have an outcome for a formula cell C120. </li>
+<li>select cells F113, through G124. </li>
+<li>Navigate to the data tab in the ribbon, and selected data table from the what if analysis drop down.</li>
+<li>We now are presented with two options, row input cell and column input cell. </li>
+<li>In this case, we have a column-oriented one way data table, because our range of values is located in a column. </li>
+<li>Our variable input is cost per mile, so using the reference box select cell C117 and click okay. </li>
+<li>Each value in cells G114 to G124 represents the outcome of the formula in cells C120, for each respective value in cells F114 to G124. </li>
+</ul>
+<p>Notice that when cost per mile is $50, profit falls to $0. We&#39;ve now demonstrated how to use a one way data table, to determine the range of outcomes given a variable input. In this case, cost per mile. </p>
+<p><img src="./img/23.png" alt=""></p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="04">
+        <h1>Two Way Data Tables</h1>
+<p>Building upon the example of the one-way data table, let&#39;s add an additional variable. The number of passengers per flight. We were working to understand profitability, and for the one-way data table, we assumed we knew the demand. However, just like the fuel costs, this variable we&#39;d expect to vary. </p>
+<p>The operations team has analyzed historical demand and determined that the minimum demand is 150 passengers, and the maximum demand is 200 passengers. </p>
+<p>Now we&#39;ll analyze how profit changes when we have two variable inputs, demand, passengers, and cost per mile. For total revenue, we multiply the number of passengers by revenue per passenger, which is $150.</p>
+<p>The two-way data table requires a slightly different set up. So now the objective profit per flight must be placed in F142 directly above the column input variable, fuel cost. Again, we&#39;ve provided the structure of the data table, this time in cells F142 through L153. </p>
+<p><img src="./img/24.png" alt=""></p>
+<p>Similar to our one-way data table, we&#39;ve provided the required input and the objective formula in the input parameters table. </p>
+<p>The inputs we are going to vary are passengers in cell C143, and cost per mile in cell C146. The objective formula, profit per flight, is in cell C149. </p>
+<p><img src="./img/25.png" alt=""></p>
+<p>We&#39;ve supplied a range of values for cost per mile in cells F143 through F153. </p>
+<p>Now, since we have a two-way data table, we have a second range of values, passengers, in cells G142 through L142. </p>
+<p>Let&#39;s begin building our data table. </p>
+<ul>
+<li>First we need to link our objective formula. This setup is slightly different than the one-way data table from before. In the other one-way data table we placed the link directly above the range of outcomes. For a two-way data table, we place the link above the column inputs and adjacent to the row input in our case this is cell F142. </li>
+<li>Select cell F142 and type the equals sign and link to the output cell C149 and hit Enter. </li>
+<li>Next using your mouse highlight cells F142 through L153. </li>
+<li>Navigate to the Data tab in the ribbon and select Data Table from the What If Analysis drop down. </li>
+<li>Our column variable input is cost per mile. So using the reference box, select cell C146. </li>
+<li>Using the reference box for row input cell, select C143 then click OK. </li>
+<li>Each value returned in the data table corresponds to the profit per flight given the two variables we are letting vary, cost and revenue. </li>
+</ul>
+<p>For example, the value of cell I148 is profit per flight with 170 passengers, and a cost of $40 per mile. This provides a succinct method to display a formula with multiple values for two different inputs. We&#39;ve now demonstrated how to use a two-way data table to determine the range of outcomes. Under two variables, cost per mile and passengers. </p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="05">
+        <h1>Simulator</h1>
+<p>We can use Excel to produce many outcomes for a given objective, such as profit.</p>
+<p>You will create a range of values using the random function thus giving the simulator a more realistic scenario.</p>
+<p>Scroll down in the excel sheet to view the simulation section.</p>
+<p>The operations team has prepared a summary of their outlook on demand over the coming year. They estimate that there will be as few as 135 passengers 10% of the time, 150 passengers 40% of the time, 175 passengers 30% of the time, and 185 passengers 20% of the time.</p>
+<p>They also estimate that the cost per mile will be between $30 and $50 with each value in the range equally likely. There is also other inputs such as the number of scheduled flights, miles per flight and revenue per passenger in cells B173 to H174.</p>
+<p><img src="./img/27.png" alt=""></p>
+<p>Now, we want to take the probability information above along with the inputs in cells in B174 to H174 to simulate annual profit for the proposed Chicago to Atlanta route. </p>
+<p>Using Excel&#39;s random functionality (number between 0 and 1) and the summary information we will run 90 simulations and compute an average annual profit under the uncertain conditions. </p>
+<p>To assist in our calculations later in the exercise, we&#39;ve created several aimed ranges. 
+ - First we have Total_Miles, located in cell E174, which refers to the total number of annual miles for the Chicago to Atlanta route. 
+ - Next we have Min_Cost_per_Mile and Max_Cost_per_Mile in cells F174 and G174, respectively. 
+ - Revenue_per_Passenger is in cell H174. </p>
+<p>The likelihood bins table in cells B181 to D185 identifies four possible outcomes for the number of passengers we can expect per flight. </p>
+<p>We must consider the likelihood of each outcome using the operation team&#39;s probability estimates. For example, we need to provide Excel with information that will choose 150 passengers roughly 40% of the time as an input for our 90 simulation runs. Likewise, 175 should be an input roughly 30% of the time, and so on. </p>
+<p>The reason we say roughly is because we&#39;re going to use Excel&#39;s RAND function to randomly generate a value which will help us determine which value of passengers to choose for each simulation run. </p>
+<p>The first step in this process is setting up likelihood bins. The bins are going to be used in conjunction with the VLOOKUP and the RAND functions. So let&#39;s turn our attention to the likelihood bins we&#39;ve started for you in cells B182 to B185.</p>
+<ul>
+<li>We have them set up, but how did we assign each bin a passenger per flight value? </li>
+</ul>
+<p><img src="./img/28.png" alt=""></p>
+<p> You may notice that we have 0%, rather than 40%, for 150 passengers. Notice that 41% is in cell B183. What this means is that when VLOOKUP is provided, say, 0.39, it will choose 150. However, for anything greater than or equal to 0.04, but less than 0.71, VLOOKUP will choose 175 passengers. In a similar manner, 185 will be chosen for RAND values greater than or equal to 0.71, but less than 0.91. For anything greater than 0.91 up to 1, VLOOKUP will choose 135. </p>
+<ul>
+<li>This helps explain the mechanics of the VLOOKUP, but where does the 71% come from?</li>
+</ul>
+<p>It wasn&#39;t a likelihood value provided by the operations team. Recall anything greater than or equal to 0, but less than 41%, will result in 150 for our VLOOKUP. That represents our 40% estimated probability, which is basically 40% minus 0%, which equals 40%. </p>
+<p>Now, returning to the 71%. Recall that 175 passengers are expected around 30% of the time. 71% minus 41% equals 30% in this case. The reason this works is because if we compute 100 values using the RAND function, we&#39;d expect approximately 30 values between 0.31 and 0.71. Again, this is approximate because RAND uses a random number generator. So each sample of 100 values will be a little different. </p>
+<p>Likewise, we expect to see 180 approximately 20% of the time. So we have 91% minus 71%, which equals 20%. </p>
+<p>Finally, since RAND returns values between 0 and 1, anything greater than or equal to 0.91, up to 1, should occur roughly 10% of the time, which corresponds to our estimate for 135. </p>
+<p>To summarize, we&#39;re going to generate 90 random values using RAND. </p>
+<ul>
+<li>We expect around 40% of those values to be less than or equal to 0.4, </li>
+<li>30% to be between 0.41 and 0.71, </li>
+<li>20% between 0.71 and 0.91, </li>
+<li>and 10% between 0.91 and 1. </li>
+</ul>
+<p>We&#39;re taking advantage of this property of RAND to generate a probability distribution of passengers per flight. </p>
+<p>In column D of the likelihood bins table, we have calculated the annual revenue associated with each level of passengers per flight in column C. </p>
+<pre><code>passengers per flight * annual proposed flights * revenue per passenger.</code></pre>
+<p>This will be the final output of the VLOOKUP calculation. </p>
+<p>Beginning in cell G181, we&#39;ve designated a range of cells to calculate profit, which is in column J. </p>
+<p>For each of the 90 profit calculations in column J, we&#39;ll have two random inputs, Cost per Mile in column H and Passenger Revenue in column I. </p>
+<p>Cost per Mile can be anywhere between $30 and $50, where each value in the range is equally likely. This is different than the range of passengers to expect, where we were provided with a probability distribution. Similar to passengers per flight, we&#39;re going to use the RAND function to calculate a random value for Cost per Mile, but this calculation does not require a VLOOKUP. </p>
+<p>So, let&#39;s begin by thinking about this problem. How do we get a value between two numbers using RAND? </p>
+<p>We can use the method below:</p>
+<p>Let&#39;s begin by typing in the formula in cell H182. Then we can explain why it works. </p>
+<p>First, begin by typing equal, then the name of the named range that refers to max cost per mile. Max_Cost_per_Mile. </p>
+<p>This will serve as our upper bound. Now, type -rand(). This is our random component. We want to multiply this by the difference between our upper bound and lower bound. </p>
+<p>So, type *( then the named range that represents the upper bound, Max_Cost_per_Mile minus our lower bound, Min_Cost_per_Mile). 
+Hit enter and we should have a value between 30 and 50. </p>
+<pre><code>=$G$174-rand()*($G$174-$F$174)</code></pre>
+<p>So, why does this work? Remember than RAND returns a value between 0 and 1. When RAND is close to 0, we have our upper bound being subtracted
+by a number very close to zero, since a number multiplied by close to zero will itself be close to zero. In this case, we&#39;ll be close to 50. On the other hand, if RAND is close to
+one, we have our upper bound 50 being subtracted by a number very close to the difference between 50 and 30, which is 20. 50 minus 20 equals 30, which is close to our lower bound. Finally, if RAND is close to 0.5, we&#39;ll be in the middle of our range, around 40. </p>
+<h1>Or if you have Excel 2013 we can use the formula RANDBETWEEN()</h1>
+<pre><code>=RANDBETWEEN(Min_Cost_per_Mile,Max_Cost_per_Mile)</code></pre>
+<p>Either method results in excel randoming generating a figure betwen $30 and $50.</p>
+<p><img src="./img/31.png" alt=""></p>
+<p>Turning to column I, let&#39;s use VLOOKUP, RAND and our likelihood bins to get a random revenue figure. </p>
+<ul>
+<li>Type =VLOOKUP And hit the tab key. The first argument is going to be a value returned by the RAND function. So type RAND, and open and close parenthesis then a comma. </li>
+<li>The table array argument is going to be the likelihood bin, named range, so type likelihood underscore bin (or select $B$181:$B$185) then a comma. </li>
+<li>Once VLOOKUP finds the correct bin, we want it to choose values from the third column. Type three, then a comma. </li>
+<li>Finally, we have the range_lookup argument. In this scenario, we want this argument to be set to true, so type true. We need the true option because we&#39;re looking for ranges of values to match against, not exact matches. </li>
+<li>To finalize the formula, close parentheses and hit Enter. </li>
+</ul>
+<pre><code>=VLOOKUP(RAND(),Likelihood_bins,3,TRUE)</code></pre>
+<p>We&#39;ve calculated annual revenue, so now we need to subtract annual cost using the value in cell H182 and the total miles named range. </p>
+<ul>
+<li>In cell J182 type equal I182, which is the annual revenue figure. </li>
+<li>Now, subtract annual costs by typing minus open parenthesis Total_Miles multiplied by H182. </li>
+<li>Close parenthesis and hit Enter. </li>
+</ul>
+<pre><code>==I182-(H182*Total_Miles)</code></pre>
+<p>We&#39;ve calculated one simulated value of profit. But we want 90, so we need to copy our formulas down the rest of the table. To copy the formulas down, highlight cells H182 to J182. Hover over the bottom right corner of J182 until you see the cross-hair. Once the cross-hair is visible, double click and the formulas will be copied down. Now we have 90 different values of profit, each accounting for the random nature of our inputs. </p>
+<p>Instead of one value, we now have a range of values. So how do we use this range to make a decision? Let&#39;s turn to the summary information. We&#39;ve provided summary information that is calculated from the results in cells J182 to J271, our 90 simulation runs. </p>
+<p>In cell C190, we have calculated the average profit from the 90 simulation runs. Since the calculation is random, the value will change with each iteration. If you want to recalculate the formulas using new random inputs for Passenger Revenue and Cost per Mile, hit the F9 key. Notice how the average fluctuates each time we press F9. </p>
+<p>The good news is the average profit is positive. But the average can be a tricky statistic if the data is skewed. Another way to view our simulation runs is to count the proportion of runs that produce a profit greater than zero.</p>
+<p> In cell C191, we&#39;ve provided this calculation along with a conditionally formatted cell, C192. The conditional formatting rules are based on the assumption that anything greater than or equal to 80% in cell C191 corresponds to a profitable scenario. So it will get a green traffic light icon. Less than 80% but greater than or equal to 75% means the scenario could be pursued, but with caution. So that range gets a yellow light. Scenarios with less than 75% profitable simulation runs should not be pursued and will get a red traffic light icon. Please note these threshold values are hypothetical. In reality, you&#39;d need to work with your team to determine when a scenario is worth pursuing given scenario specific objectives and concerns. We&#39;ve demonstrated how to use Excel to simulate a random process. </p>
+<p> <img src="./img/32.png" alt=""></p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="06">
+        <h1>Solver Plug In</h1>
+<p>One of the most powerful tools that can be used with Excel, the Solver Plugin. It is useful when you have a function or a series of functions and you want to know what value to put in for X so that
+ F(x) equals a certain kind of Y. We have three different choices for our Y, we can choose a certain target value, or we can choose a maximum or a minimum. We can also place constraints on our X for example that it must be a positive value or it needs to be zero, or one, and so on.</p>
+<p>Open the <a href="./archives/Solver-Add-In.xlsx">Solver file</a> and use the first tab called Basic Solver - Template. We have a function where we have a discrete annual interest rate. We want to know what the discrete annual interest rate is with an initial balance of €1000, and results in €5000 after 10 years? The interest rate is the unknown which gives us a value of $5000.</p>
+<p>If the solver plugin is installed you will see it on the Data tab at the far right.</p>
+<p><img src="./img/06.png" alt=""></p>
+<p>If it is not installed, from the File menu choose Options. In the Excel Options window choose Add-ins from the left side menu.</p>
+<p><img src="./img/04.png" alt=""></p>
+<p>Click on the Go... button to manage Excel Add-Ins. Check the box beside Solver Add-In and click OK.</p>
+<p><img src="./img/05.png" alt=""></p>
+<p>The Solver option now should be displayed on the data tab to the far right.</p>
+<p>Click on the Solver option now. For this model we are building our objective is that the cell B17 is to have the value 5000 contained in it. This is to be acheived by changing variable cell C4.</p>
+<p><img src="./img/07.png" alt=""></p>
+<p>Click Solve. Excel carries out the function and delivers the result of 17.46% in cell C4. The values in column B for each year also changed to reflect the new interest rate resulting in 5000 at year 10.</p>
+<p>We don&#39;t want to save the result so restore the original value of 10% for the interest.</p>
+<p><img src="./img/08.png" alt=""></p>
+<p>Next we want to solve where we want to keep our interest rate at 10% and change the initial balance in order to achieve the result of 5000 in 10 years. Use Solver again to calculate the initial balance (the changing variable is now B7).</p>
+<p>What if we have a more challenging problem, we would like to know how many years will 1,000 at 10% interest take to get to 5,000?
+We can&#39;t do this using our current functions as each year calculates the balance using the previous year and the interest rate.</p>
+<p>What we need to have is a variable for the number of years and it stays in one cell so that we have a reference to the number of years that requires a different formula.</p>
+<p>In cell B8 we have our initial balance multiplied by one plus the interest rate, we do this calculation for each year. </p>
+<pre><code>=(1+$C$4)*B7</code></pre>
+<p>When we do repeated multiplication of the same thing by itself it is called An Exponent. In this case the 1000 initial balance is multiplied by the interest rate, the result is again multiplied by the interest rate and so on for 10 years in our example. So in a new cell if you entered the following formula you would get the same result of 2593.74 after 10 years of an interest rate of 10%</p>
+<pre><code>
+=B7*(1+C4)^10</code></pre>
+<p><img src="./img/09.png" alt=""></p>
+<p>Now if we didn&#39;t want to state the 10 in the formula and use another cell so that it could be adjusted we can do that too. </p>
+<pre><code>
+=B7*(1+C4)^E7</code></pre>
+<p><img src="./img/10.png" alt=""></p>
+<p>Next we use Solver again our objective is for cell E9 to have the value 5000 and we want solver to change cell E7 (number of years) in order to figure out the solution.</p>
+<p><img src="./img/11.png" alt=""></p>
+<p>Solver works out that it would take 16.88 years to reach 5000 at a 10% interest rate.</p>
+<p><img src="./img/12.png" alt=""></p>
+
+      </div>
+     
+    </div>
+  </div>
+</div>
+<!--<div class="ui bottom fixed borderless right menu">
+  <div class="ui right tiny menu">
+    <div class="ui mini message segment">
+      .
+      <a href="http://creativecommons.org/licenses/by-nc/4.0/"
+         title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+         target="_blank">Creative Commons License
+      </a>
+    </div>
+  </div>
+</div>-->
+
+<script>
+  $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+</script>
+
+
+
+    <footer>
+
+    </footer>
+    <script>
+      $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+    </script>
+  </body>
+
+ </html>
